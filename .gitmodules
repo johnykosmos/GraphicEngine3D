@@ -4,3 +4,11 @@
 [submodule "dependencies/glad"]
 	path = dependencies/glad
 	url = https://github.com/Kosmit147/glad.git
+[submodule "dependecies/glm"]
+	path = dependecies/glm
+	url = https://github.com/g-truc/glm.git
+	branch = master
+[submodule "dependencies/glm"]
+	path = dependencies/glm
+	url = https://github.com/g-truc/glm.git
+	branch = master
