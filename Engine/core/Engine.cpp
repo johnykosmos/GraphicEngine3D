@@ -1,13 +1,20 @@
 #include "Engine.hpp"
 #include "Window.hpp"
+#include <memory>
 
 
 namespace eng{
-    Engine::Engine() : window(Window(WindowSpec())) {}
+    std::unique_ptr<Engine> eInstance = nullptr;
+
+    Engine::Engine(const WindowSpec& windowSpec) : window(windowSpec) {}
+    
+    void Engine::init(const WindowSpec& windowSpec){
+        if(!eInstance)
+            eInstance.reset(new Engine(windowSpec));
+    }
 
     Engine& Engine::getInstance(){
-        static Engine instance; // it is only accessible within this function although created only once
-        return instance;
+        return *eInstance;
     }
 
     Window& Engine::getWindow(){
