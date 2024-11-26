@@ -19,7 +19,6 @@ namespace eng{
 
         private:
             Engine(const WindowSpec& windowSpec);                
-            ~Engine() = default;               
             Engine(const Engine&) = delete;    
             Engine& operator=(const Engine&) = delete;
 

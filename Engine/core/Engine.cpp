@@ -4,7 +4,7 @@
 
 
 namespace eng{
-    std::unique_ptr<Engine> eInstance = nullptr;
+    std::unique_ptr<Engine> Engine::eInstance = nullptr;
 
     Engine::Engine(const WindowSpec& windowSpec) : window(windowSpec) {}
     
