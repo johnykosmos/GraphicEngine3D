@@ -3,6 +3,10 @@
 #include "Window.hpp"
 
 namespace eng{
+    Application::Application(){
+        Engine::init(WindowSpec());
+    }
+
     void Application::run(){
         Engine &eng = Engine::getInstance(); 
         Window &window = eng.getWindow();

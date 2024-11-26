@@ -12,7 +12,7 @@ namespace eng{
      */
     class Application{
         public:
-            explicit Application() = default;
+            explicit Application();
 
             /**
              * @brief Starts the main application loop 
