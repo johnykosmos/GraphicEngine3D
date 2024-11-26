@@ -27,5 +27,7 @@ namespace eng{
              *@return Instance of the Engine.
              */
             static Engine& getInstance();
+            
+            Window& getWindow();
     };
 }

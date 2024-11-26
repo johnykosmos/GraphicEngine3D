@@ -9,5 +9,9 @@ namespace eng{
         static Engine instance; // it is only accessible within this function although created only once
         return instance;
     }
+
+    Window& Engine::getWindow(){
+                return window;
+            }
     
 };

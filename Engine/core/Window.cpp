@@ -2,6 +2,10 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 
+void framebufferSizeCallback(GLFWwindow* window, int width, int height){
+        glViewport(0, 0, width, height);
+    }
+
 namespace eng{
     Window::Window(const WindowSpec& spec){
         if(!glfwInit())
@@ -11,7 +15,12 @@ namespace eng{
         if(!window){
             glfwTerminate();
             throw std::runtime_error("Failed to create a window!");
+        
         }
+
+        glfwMakeContextCurrent(window);
+
+        glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);
     }
 
     Window::~Window(){

@@ -9,7 +9,7 @@ namespace eng {
      * @brief Window specification.
      */
     struct WindowSpec{
-        int height = 800;
+        int height = 600;
         int width = 600;
         const char* title = "Engine Window";
     };

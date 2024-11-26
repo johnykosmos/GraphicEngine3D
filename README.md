@@ -1,4 +1,4 @@
-## How to install
+## Installation 
 
 1. Clone this repository using the ```--recursive``` option in git to clone all of the project's dependencies.
     ```
