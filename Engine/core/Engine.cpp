@@ -1,4 +1,5 @@
 #include "Engine.hpp"
+#include "Input.hpp"
 #include "Window.hpp"
 #include <memory>
 
@@ -18,7 +19,10 @@ namespace eng{
     }
 
     Window& Engine::getWindow(){
-                return window;
-            }
-    
-};
+        return window;
+    }
+
+    Input& Engine::getInputHandler(){
+        return inputHandler;
+    }
+}

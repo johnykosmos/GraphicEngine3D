@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Input.hpp"
 #include "Window.hpp"
 #include <memory>
 
@@ -9,12 +10,13 @@ namespace eng{
      * @brief The core of the whole 3D engine
      *
      * This class is the main component of the 3D engine, 
-     * implemented as a Signleton to ensure that only one instance
+     * implemented as a Singleton to ensure that only one instance
      * exists through the application's lifetime.
      */
     class Engine{
         private:
             Window window;
+            Input inputHandler;
             static std::unique_ptr<Engine> eInstance; 
 
         private:
@@ -39,5 +41,11 @@ namespace eng{
              * @return Window reference
              */
             Window& getWindow();
+
+            /**
+             * @brief Gets the inputHandler reference
+             * @return inputHandler reference
+             */
+            Input& getInputHandler();
     };
 }

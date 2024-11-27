@@ -1,10 +1,27 @@
 #include "Window.hpp"
+#include "Engine.hpp"
+#include "Input.hpp"
+#include "Keys.hpp"
 #include <GLFW/glfw3.h>
 #include <iostream>
 
 void framebufferSizeCallback(GLFWwindow* window, int width, int height){
         glViewport(0, 0, width, height);
     }
+
+void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods){
+    eng::Input& input = eng::Engine::getInstance().getInputHandler();
+    eng::Key mappedKey;
+    if(!eng::translateGLFWKey(key, mappedKey)){
+        return;
+    }
+
+    if(action == GLFW_PRESS){
+        input.setKeyPressed(mappedKey, true);
+    }
+    else if(action == GLFW_RELEASE)
+        input.setKeyPressed(mappedKey, false);
+}
 
 namespace eng{
     Window::Window(const WindowSpec& spec){
@@ -21,6 +38,8 @@ namespace eng{
         glfwMakeContextCurrent(window);
 
         glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);
+
+        glfwSetKeyCallback(window, keyCallback);
     }
 
     Window::~Window(){
