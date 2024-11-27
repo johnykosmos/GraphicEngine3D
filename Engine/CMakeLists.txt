@@ -4,13 +4,20 @@ project(Engine)
 
 add_library(
     Engine STATIC
-    # ADD MORE PATHS IN SRC/
-    core/Window.cpp
+    platform/Window.cpp
+    platform/Keys.cpp
+    platform/Input.cpp
     core/Engine.cpp
     core/Application.cpp
+
 )
 
-target_include_directories(Engine PUBLIC core)
+target_include_directories(
+    Engine PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/core
+    ${CMAKE_CURRENT_SOURCE_DIR}/platform
+)
+
 
 target_link_libraries(Engine PUBLIC glfw)
 target_link_libraries(Engine PUBLIC glad)
