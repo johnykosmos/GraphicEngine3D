@@ -18,3 +18,15 @@ Simple 3D graphics engine designed for purposes of Basics of Computer Graphics c
     cmake --build build
     ```
 
+## Project Requirements
+- Keyboard and mouse support
+- Variable refresh rate
+- Drawing primitives (3D)
+- Camera support
+- Class hierarchy
+- Support for geometric transformations on primitives
+- Lighting (can add support for a button that turns lighting off and on)
+- Shading (can add support for a button that turns shading off and on)
+- Object texturing
+- Tech demo (for defense)
+- Report and documentation

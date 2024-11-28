@@ -15,6 +15,11 @@ namespace eng{
             explicit Application();
 
             /**
+             * @brief Is called on every main loop iteration
+             */
+            virtual void onUpdate();
+
+            /**
              * @brief Starts the main application loop 
              */
             void run();

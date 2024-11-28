@@ -15,6 +15,8 @@ namespace eng{
         while(!window.shouldWindowClose()){
             window.pollEvents();
 
+            onUpdate();
+
             window.display();
                 
         }
