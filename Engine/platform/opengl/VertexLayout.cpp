@@ -5,7 +5,7 @@
 namespace eng{
     template<>
     void VertexBufferLayout::push<float>(unsigned int count){
-        layoutElements.push_back({GL_FLOAT, count, GL_FALSE, 4});
+        layoutElements.push_back({GL_FLOAT, count, GL_FALSE, GL_FLOAT});
         stride += count * sizeof(float);
     }
 

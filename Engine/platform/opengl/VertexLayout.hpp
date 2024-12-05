@@ -28,14 +28,9 @@ namespace eng{
     class VertexBufferLayout {
     private:
         std::vector<VertexBufferElement> layoutElements; 
-        unsigned int stride;                            
+        unsigned int stride = 0;                            
 
     public:
-        /**
-         * @brief Constructs a VertexBufferLayout with an initial stride of 0.
-         */
-        VertexBufferLayout() : stride(0) {}
-
         /**
          * @brief Adds an attribute to the layout.
          * 

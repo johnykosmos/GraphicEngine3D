@@ -6,5 +6,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_subdirectory("dependencies/glad")
 add_subdirectory("dependencies/glfw")
+add_subdirectory("dependencies/glm")
 add_subdirectory("Engine")
 add_subdirectory("test")

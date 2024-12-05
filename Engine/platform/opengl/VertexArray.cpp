@@ -4,7 +4,7 @@
 
 namespace  eng{
     VertexArray::VertexArray(){
-        glad_glGenVertexArrays(1, &id);
+        glGenVertexArrays(1, &id);
     }
 
     VertexArray::VertexArray(const VertexBuffer& vb, 
@@ -24,14 +24,14 @@ namespace  eng{
         GLuint offset = 0;
         auto elements = layout.getElements();
         for (auto element : elements){
-            glad_glVertexAttribPointer(index, 
+            glVertexAttribPointer(index, 
                     element.count, 
                     element.type,
                     element.normalized, 
                     layout.getStride(), 
-                    (void*)(uintptr_t)offset
+                    (void*)offset
                 ); 
-            glad_glEnableVertexAttribArray(index);
+            glEnableVertexAttribArray(index);
             offset += element.count * element.size;
             index++;
         }
@@ -44,14 +44,14 @@ namespace  eng{
     }
 
     void VertexArray::bind(){
-        glad_glBindVertexArray(id);
+        glBindVertexArray(id);
     }
 
     void VertexArray::unbind(){
-        glad_glBindVertexArray(0);
+        glBindVertexArray(0);
     }
 
     VertexArray::~VertexArray(){
-        glad_glDeleteVertexArrays(1, &id);
+        glDeleteVertexArrays(1, &id);
     }
 }
