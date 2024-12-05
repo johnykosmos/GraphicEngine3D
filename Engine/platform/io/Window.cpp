@@ -1,6 +1,6 @@
+#include <glad/glad.h>
 #include "Engine.hpp"
 #include "Keys.hpp"
-#include <GLFW/glfw3.h>
 #include <iostream>
 
 void framebufferSizeCallback(GLFWwindow* window, int width, int height){
@@ -30,10 +30,13 @@ namespace eng{
         if(!window){
             glfwTerminate();
             throw std::runtime_error("Failed to create a window!");
-        
         }
 
         glfwMakeContextCurrent(window);
+
+         if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+            throw std::runtime_error("Failed to initialize GLAD");
+
 
         glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);
 
