@@ -12,6 +12,7 @@ add_library(
     platform/opengl/GLBuffers.cpp
     platform/opengl/VertexLayout.cpp
     platform/opengl/VertexArray.cpp
+    platform/opengl/Shader.cpp
 )
 
 target_include_directories(
