@@ -1,6 +1,7 @@
 #include "VertexArray.hpp"
 #include "VertexLayout.hpp"
 #include "glad/glad.h"
+#include <cstdint>
 
 namespace  eng{
     VertexArray::VertexArray(){
@@ -20,6 +21,7 @@ namespace  eng{
         this->layout = &layout;
         bind();
         vb.bind();
+
         int index = 0;
         GLuint offset = 0;
         auto elements = layout.getElements();
@@ -29,7 +31,7 @@ namespace  eng{
                     element.type,
                     element.normalized, 
                     layout.getStride(), 
-                    (void*)offset
+                    (void*)(uintptr_t)offset
                 ); 
             glEnableVertexAttribArray(index);
             offset += element.count * element.size;

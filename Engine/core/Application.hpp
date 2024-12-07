@@ -17,7 +17,7 @@ namespace eng{
             /**
              * @brief Is called on every main loop iteration
              */
-            virtual void onUpdate();
+            virtual void onUpdate() = 0;
 
             /**
              * @brief Starts the main application loop 
