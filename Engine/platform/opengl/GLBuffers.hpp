@@ -1,6 +1,19 @@
 #pragma once
 
+#include <glm/vec3.hpp>
+
+typedef glm::vec3 Vec3;
+
 namespace eng{
+
+    /**
+     * @struct Vertex
+     * @brief Represents a vertex
+     */
+    struct Vertex {
+        Vec3 vertices;
+        Vec3 color;
+    };
 
     /**
      * @class VertexBuffer
