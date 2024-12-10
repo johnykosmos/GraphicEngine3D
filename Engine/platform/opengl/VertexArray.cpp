@@ -1,4 +1,5 @@
 #include "VertexArray.hpp"
+#include "GLBuffers.hpp"
 #include "VertexLayout.hpp"
 #include "glad/glad.h"
 #include <cstdint>
@@ -45,12 +46,16 @@ namespace  eng{
         ib.bind();
     }
 
-    void VertexArray::bind(){
+    void VertexArray::bind() const{
         glBindVertexArray(id);
     }
 
-    void VertexArray::unbind(){
+    void VertexArray::unbind() const{
         glBindVertexArray(0);
+    }
+
+    const IndexBuffer* VertexArray::getIndexBuffer() const{
+        return ib;
     }
 
     VertexArray::~VertexArray(){

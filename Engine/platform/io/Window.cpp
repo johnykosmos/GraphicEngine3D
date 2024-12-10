@@ -41,6 +41,7 @@ namespace eng{
         glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);
 
         glfwSetKeyCallback(window, keyCallback);
+        glEnable(GL_DEPTH_TEST);
     }
 
     Window::~Window(){

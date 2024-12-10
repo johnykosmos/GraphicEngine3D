@@ -61,12 +61,22 @@ namespace eng{
         /**
          * @brief Binds the Vertex Array Object, making it the active VAO.
          */
-        void bind();
+        void bind() const;
 
         /**
          * @brief Unbinds the Vertex Array Object, making no VAO active.
          */
-        void unbind();
+        void unbind() const;
+
+        
+        /**
+         * @brief Returns a const reference to the Index Buffer 
+         * associated with this object.
+         *
+         * @return const IndexBuffer& Reference to the IndexBuffer.
+         */
+        const IndexBuffer* getIndexBuffer() const;
+
 
     };
 

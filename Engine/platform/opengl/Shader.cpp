@@ -1,6 +1,7 @@
 #include "Shader.hpp"
 
 #include "glad/glad.h"
+#include <glm/gtc/type_ptr.hpp>
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -109,6 +110,11 @@ namespace eng {
 
     void Shader::bind() const {
         glUseProgram(id);
+    }
+
+    void Shader::setUniform4fv(const char* uniform, const glm::mat4& value) const{
+        auto location = glGetUniformLocation(id, uniform); 
+        glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(value));
     }
 
     void Shader::unbind() const {

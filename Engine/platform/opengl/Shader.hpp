@@ -2,6 +2,8 @@
 #pragma once
 
 #include <string>
+#include <glm/mat4x4.hpp>
+
 
 namespace eng {
 
@@ -99,7 +101,14 @@ namespace eng {
          */
         void unbind() const;
 
-    };
+        /**
+         * @brief Sets a uniform matrix variable in the shader program.
+         * 
+         * @param uniform The name of the uniform variable in the shader source.
+         * @param value The glm::mat4 value to pass to the uniform variable.
+         */
+        void setUniform4fv(const char* uniform, const glm::mat4& value) const; 
+    }; 
 
 }
 
