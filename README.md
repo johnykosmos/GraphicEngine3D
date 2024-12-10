@@ -19,7 +19,7 @@ Simple 3D graphics engine designed for purposes of Basics of Computer Graphics c
     ```
 
 ## Project Requirements
-- Keyboard and mouse support
+- Keyboard and mouse support **DONE**
 - Variable refresh rate
 - Drawing primitives (3D)
 - Camera support
