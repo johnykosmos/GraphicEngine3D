@@ -2,7 +2,7 @@
 
 #include <glm/vec3.hpp>
 
-typedef glm::vec3 Vec3;
+using Vec3 = glm::vec3;
 
 namespace eng{
 

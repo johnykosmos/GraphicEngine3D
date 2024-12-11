@@ -22,7 +22,7 @@ Simple 3D graphics engine designed for purposes of Basics of Computer Graphics c
 - Keyboard and mouse support **DONE**
 - Variable refresh rate
 - Drawing primitives (3D)
-- Camera support
+- Camera support **DONE**
 - Class hierarchy
 - Support for geometric transformations on primitives
 - Lighting (can add support for a button that turns lighting off and on)

@@ -6,6 +6,8 @@ add_library(
     Engine STATIC
     core/Engine.cpp
     core/Application.cpp
+    graphics/Renderer.cpp
+    graphics/Camera.cpp
     platform/io/Window.cpp
     platform/io/Keys.cpp
     platform/io/Input.cpp
@@ -18,6 +20,7 @@ add_library(
 target_include_directories(
     Engine PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/core
+    ${CMAKE_CURRENT_SOURCE_DIR}/graphics
     ${CMAKE_CURRENT_SOURCE_DIR}/platform/io
     ${CMAKE_CURRENT_SOURCE_DIR}/platform/opengl
 )

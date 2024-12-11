@@ -5,7 +5,7 @@
 
 namespace eng{
     
-    Camera::Camera(Vec3 startPosition, float startYaw, float startPitch) 
+    PerspectiveCamera::PerspectiveCamera(Vec3 startPosition, float startYaw, float startPitch)  
         : position(startPosition), yaw(startYaw), pitch(startPitch) {
 
         fov = 45.0f;
@@ -15,7 +15,7 @@ namespace eng{
         updateViewProjection();
     }
 
-    void Camera::updateCameraVectors(){
+    void PerspectiveCamera::updateCameraVectors(){
         Vec3 front;
         front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
         front.y = sin(glm::radians(pitch));
@@ -25,7 +25,7 @@ namespace eng{
         this->right = glm::normalize(glm::cross(front, up));
     }
 
-    void Camera::updateViewProjection(){
+    void PerspectiveCamera::updateViewProjection(){
         auto view = glm::lookAt(position, position + front, up);
         auto projection = glm::perspective(glm::radians(fov), 
                 aspectRatio, 0.1f, 100.0f);
@@ -33,42 +33,42 @@ namespace eng{
     }
 
 
-    Vec3 Camera::getPosition() const {
+    Vec3 PerspectiveCamera::getPosition() const {
         return position;
     }
 
-    float Camera::getYaw() const {
+    float PerspectiveCamera::getYaw() const {
         return yaw;
     }
 
-    float Camera::getPitch() const {
+    float PerspectiveCamera::getPitch() const {
         return pitch;
     }
 
-    const Vec3 Camera::getFront() const {
+    const Vec3 PerspectiveCamera::getFront() const {
         return front;
     }
 
-    const Vec3 Camera::getRight() const {
+    const Vec3 PerspectiveCamera::getRight() const {
         return right;
     }
 
-    glm::mat4 Camera::getViewProjection() const{
+    glm::mat4 PerspectiveCamera::getViewProjection() const{
         return viewProjection;
     }
 
-    void Camera::setPosition(const Vec3& newPosition) {
+    void PerspectiveCamera::setPosition(const Vec3& newPosition) {
         position = newPosition;
         updateViewProjection();
     }
 
-    void Camera::setYaw(float newYaw) {
+    void PerspectiveCamera::setYaw(float newYaw) {
         yaw = newYaw;
         updateCameraVectors();
         updateViewProjection();
     }
 
-    void Camera::setPitch(float newPitch) {
+    void PerspectiveCamera::setPitch(float newPitch) {
         pitch = newPitch;
         updateCameraVectors();
         updateViewProjection();
