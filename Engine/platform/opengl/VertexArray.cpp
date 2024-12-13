@@ -18,25 +18,22 @@ namespace  eng{
     }
 
     void VertexArray::addVertexBuffer(const VertexBuffer& vb, const VertexBufferLayout& layout){
-        this->vb = &vb;
-        this->layout = &layout;
         bind();
         vb.bind();
 
-        int index = 0;
         GLuint offset = 0;
         auto elements = layout.getElements();
         for (auto element : elements){
-            glVertexAttribPointer(index, 
+            glVertexAttribPointer(attributesCount, 
                     element.count, 
                     element.type,
                     element.normalized, 
                     layout.getStride(), 
                     (void*)(uintptr_t)offset
                 ); 
-            glEnableVertexAttribArray(index);
+            glEnableVertexAttribArray(attributesCount);
             offset += element.count * element.size;
-            index++;
+            attributesCount++;
         }
     }
     

@@ -17,9 +17,8 @@ namespace eng{
     class VertexArray{
         private:
             unsigned int id;
-            const VertexBuffer* vb;
+            unsigned int attributesCount = 0;
             const IndexBuffer* ib;
-            const VertexBufferLayout* layout;
 
         public:
         /**
