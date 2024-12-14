@@ -8,11 +8,11 @@ namespace eng {
             layout.push<float>(3);
             layout.push<float>(3);
 
-            va.addVertexBuffer(vb, layout);
+            va.configureAttributes(vb, layout, false);
             va.addIndexBuffer(ib);    
         }
 
-    const VertexArray& Mesh::getVertexArray() const {
+    VertexArray& Mesh::getVertexArray() {
         return va;
     }
 

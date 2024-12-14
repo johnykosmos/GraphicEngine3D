@@ -29,6 +29,8 @@ namespace eng{
             unsigned int id;
 
         public:
+            VertexBuffer() = default;
+
             /**
              * @brief Constructs a VertexBuffer and generates an OpenGL buffer ID 
              *

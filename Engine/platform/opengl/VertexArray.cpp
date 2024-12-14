@@ -4,6 +4,7 @@
 #include "glad/glad.h"
 #include <cstdint>
 
+
 namespace  eng{
     VertexArray::VertexArray(){
         glGenVertexArrays(1, &id);
@@ -13,35 +14,41 @@ namespace  eng{
             const VertexBufferLayout& layout, 
             const IndexBuffer& ib
             ) : VertexArray(){
-        addVertexBuffer(vb, layout);
+        configureAttributes(vb, layout, false);
         addIndexBuffer(ib);
     }
-
-    void VertexArray::addVertexBuffer(const VertexBuffer& vb, const VertexBufferLayout& layout){
+    
+    void VertexArray::configureAttributes(const VertexBuffer& vb, const VertexBufferLayout& layout, bool isInstanced) {
         bind();
         vb.bind();
 
         GLuint offset = 0;
         auto elements = layout.getElements();
-        for (auto element : elements){
-            glVertexAttribPointer(attributesCount, 
-                    element.count, 
-                    element.type,
-                    element.normalized, 
-                    layout.getStride(), 
-                    (void*)(uintptr_t)offset
-                ); 
+        for (auto element : elements) {
+            glVertexAttribPointer(attributesCount,
+                                  element.count,
+                                  element.type,
+                                  element.normalized,
+                                  layout.getStride(),
+                                  (void*)(uintptr_t)offset);
             glEnableVertexAttribArray(attributesCount);
+
+            if (isInstanced) {
+                glVertexAttribDivisor(attributesCount, 1);
+            }
+
             offset += element.count * element.size;
             attributesCount++;
         }
     }
-    
+
+
     void VertexArray::addIndexBuffer(const IndexBuffer& ib) {
         this->ib = &ib;
         bind();
         ib.bind();
     }
+
 
     void VertexArray::bind() const{
         glBindVertexArray(id);

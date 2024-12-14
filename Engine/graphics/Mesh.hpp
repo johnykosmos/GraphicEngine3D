@@ -65,9 +65,9 @@ namespace eng {
              * This function provides access to the VAO, which is used to bind the
              * mesh's vertex and index buffers for rendering.
              * 
-             * @return const VertexArray& The reference to the vertex array object.
+             * @return VertexArray& The reference to the vertex array object.
              */
-            const VertexArray& getVertexArray() const;
+            VertexArray& getVertexArray();
 
     };
 } 

@@ -8,6 +8,7 @@ add_library(
     core/Application.cpp
     graphics/Renderer.cpp
     graphics/Camera.cpp
+    graphics/Mesh.cpp
     platform/io/Window.cpp
     platform/io/Keys.cpp
     platform/io/Input.cpp

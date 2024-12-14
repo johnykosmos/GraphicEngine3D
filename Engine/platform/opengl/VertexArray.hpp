@@ -47,8 +47,9 @@ namespace eng{
          *
          * @param vb The Vertex Buffer to add.
          * @param layout The Vertex Buffer Layout describing the structure of the vertex data.
+         * @param isInstanced Bool value describing if the buffer is instanced
          */
-        void addVertexBuffer(const VertexBuffer& vb, const VertexBufferLayout& layout);
+        void configureAttributes(const VertexBuffer& vb, const VertexBufferLayout& layout, bool isInstanced);
 
         /**
          * @brief Adds an Index Buffer to the VAO.
@@ -66,7 +67,6 @@ namespace eng{
          * @brief Unbinds the Vertex Array Object, making no VAO active.
          */
         void unbind() const;
-
         
         /**
          * @brief Returns a const reference to the Index Buffer 
