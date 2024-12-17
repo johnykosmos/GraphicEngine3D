@@ -74,10 +74,11 @@ namespace eng {
         /**
          * @brief Constructs a PerspectiveCamera with a given position, yaw, and pitch.
          * @param startPosition The starting position of the camera.
+         * @param aspectRatio The propotion between screen width and height
          * @param startYaw The initial yaw angle in degrees.
          * @param startPitch The initial pitch angle in degrees.
          */
-        PerspectiveCamera(Vec3 startPosition, float startYaw, float startPitch);
+        PerspectiveCamera(Vec3 startPosition, float aspectRatio, float startYaw, float startPitch);
 
         /**
          * @brief Retrieves the combined view and projection matrix.

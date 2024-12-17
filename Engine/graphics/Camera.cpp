@@ -5,11 +5,10 @@
 
 namespace eng{
     
-    PerspectiveCamera::PerspectiveCamera(Vec3 startPosition, float startYaw, float startPitch)  
-        : position(startPosition), yaw(startYaw), pitch(startPitch) {
+    PerspectiveCamera::PerspectiveCamera(Vec3 startPosition, float aspectRatio, float startYaw, float startPitch)  
+        : position(startPosition), aspectRatio(aspectRatio), yaw(startYaw), pitch(startPitch) {
 
         fov = 45.0f;
-        aspectRatio = 4.0f/3.0f;
         up = glm::vec3(0.0f, 1.0f, 0.0f); // Common up vector
         updateCameraVectors();
         updateViewProjection();

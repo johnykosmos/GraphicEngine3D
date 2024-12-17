@@ -11,7 +11,7 @@ namespace eng {
             const Camera* camera;
 
         public:
-            Renderer(const Camera* camera) : camera(camera) {};
+            Renderer(const Camera* camera);
             void draw(const VertexArray& va, const Shader& shader);
             void drawInstanced(const VertexArray& vao, const Shader& shader, unsigned int instancesCount);
     };

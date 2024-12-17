@@ -3,6 +3,11 @@
 #include "glad/glad.h"
 
 namespace eng {
+    
+    Renderer::Renderer(const Camera* camera) : camera(camera) {
+        glEnable(GL_DEPTH_TEST);
+    }; 
+
     void Renderer::draw(const VertexArray& vao, const Shader& shader){
         shader.bind(); 
         shader.setUniform4fv("projection", camera->getViewProjection());

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <GLFW/glfw3.h>
+#include <utility>
 
 
 namespace eng {
@@ -9,8 +10,10 @@ namespace eng {
      * @brief Window specification.
      */
     struct WindowSpec{
-        int height = 600;
-        int width = 600;
+        int height = 800;
+        int width = 800;
+        bool fullscreen = false;
+        bool vsync = true;
         const char* title = "Engine Window";
     };
 
@@ -37,6 +40,18 @@ namespace eng {
              */
             ~Window();
             
+            /**
+             * @brief Enables/disables the vsync
+             * @param value A bool value representing vsync state
+             */
+            void setVsync(bool value);
+
+            /**
+             * @brief Gets window resolution
+             * @return Pair of ints representing the resolution
+             */
+            std::pair<int, int> getResolution();
+
             /*
              * @brief Checks if window should close.
              * @return true if the window should close, false otherwise

@@ -1,5 +1,6 @@
 #include <glad/glad.h>
 #include "Engine.hpp"
+#include "GLFW/glfw3.h"
 #include "Keys.hpp"
 #include <iostream>
 
@@ -26,28 +27,47 @@ namespace eng{
         if(!glfwInit())
             throw std::runtime_error("Failed to initialize GLFW");
 
-        window = glfwCreateWindow(spec.width, spec.height, spec.title, NULL, NULL);
+        GLFWmonitor* primaryMonitor = NULL; 
+
+        if (spec.fullscreen) {
+            primaryMonitor = glfwGetPrimaryMonitor();
+        }
+
+        window = glfwCreateWindow(spec.width, spec.height, spec.title, primaryMonitor, NULL);
         if(!window){
             glfwTerminate();
             throw std::runtime_error("Failed to create a window!");
         }
 
         glfwMakeContextCurrent(window);
+        setVsync(spec.vsync); 
 
          if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
             throw std::runtime_error("Failed to initialize GLAD");
 
-
         glfwSetFramebufferSizeCallback(window, framebufferSizeCallback);
 
         glfwSetKeyCallback(window, keyCallback);
-        glEnable(GL_DEPTH_TEST);
     }
 
     Window::~Window(){
         if(window)
             glfwDestroyWindow(window);
         glfwTerminate();
+    }
+
+    void Window::setVsync(bool value){
+        int interval = 0;
+        if (value) {
+            interval = 1;
+        }
+        glfwSwapInterval(interval);
+    }
+    
+    std::pair<int, int> Window::getResolution() {
+        int width, height;
+        glfwGetWindowSize(window, &width, &height);
+        return std::make_pair(width, height);
     }
 
     bool Window::shouldWindowClose(){
