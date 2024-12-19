@@ -1,8 +1,10 @@
 #pragma once
 
 #include <glm/vec3.hpp>
+#include <glm/vec2.hpp>
 
 using Vec3 = glm::vec3;
+using Vec2 = glm::vec2;
 
 namespace eng{
 
@@ -13,6 +15,7 @@ namespace eng{
     struct Vertex {
         Vec3 vertices;
         Vec3 color;
+        Vec2 texturePos;
     };
 
     /**

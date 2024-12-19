@@ -117,6 +117,11 @@ namespace eng {
         glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(value));
     }
 
+    void Shader::setUniform1i(const char* uniform, const int value) const{
+        auto location = glGetUniformLocation(id, uniform); 
+        glUniform1i(location, value);
+    }
+
     void Shader::unbind() const {
         glUseProgram(0);
     }

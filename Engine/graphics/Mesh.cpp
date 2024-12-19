@@ -7,6 +7,7 @@ namespace eng {
         ib(IndexBuffer(indices, indexCount * sizeof(unsigned int))){
             layout.push<float>(3);
             layout.push<float>(3);
+            layout.push<float>(2);
 
             va.configureAttributes(vb, layout, false);
             va.addIndexBuffer(ib);    

@@ -16,6 +16,7 @@ add_library(
     platform/opengl/VertexLayout.cpp
     platform/opengl/VertexArray.cpp
     platform/opengl/Shader.cpp
+    platform/opengl/Texture.cpp
 )
 
 target_include_directories(
@@ -29,6 +30,7 @@ target_include_directories(
 
 target_link_libraries(Engine PUBLIC glfw)
 target_link_libraries(Engine PUBLIC glad)
+target_link_libraries(Engine PUBLIC stb_image)
 
 find_package(OpenGL REQUIRED)
 target_link_libraries(Engine PUBLIC OpenGL::GL)

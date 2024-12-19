@@ -108,6 +108,14 @@ namespace eng {
          * @param value The glm::mat4 value to pass to the uniform variable.
          */
         void setUniform4fv(const char* uniform, const glm::mat4& value) const; 
+
+        /**
+         * @brief Sets a uniform 1i variable in the shader program.
+         * 
+         * @param uniform The name of the uniform variable in the shader source.
+         * @param value The int value to pass to the uniform variable.
+         */
+        void setUniform1i(const char* uniform, const int value) const;
     }; 
 
 }
