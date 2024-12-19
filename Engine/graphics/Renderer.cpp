@@ -11,19 +11,23 @@ namespace eng {
         glEnable(GL_CULL_FACE);
     }; 
 
-    void Renderer::draw(const VertexArray& vao, const Shader& shader){
-        shader.bind(); 
-        shader.setUniform4fv("projection", camera->getViewProjection());
+    void Renderer::bindMaterial(const Material& material){
+        material.shader->bind();
+        material.shader->setUniform4fv("projection", camera->getViewProjection());
+        material.shader->setUniform1i("tex", 0);
+        material.texture->bind();
+
+    }
+
+    void Renderer::drawIndexed(const VertexArray& vao, const Material& material){
+        bindMaterial(material);
         vao.bind();
         glDrawElements(GL_TRIANGLES, vao.getIndexBuffer()->getCount(), GL_UNSIGNED_INT, 0);
         vao.unbind();
     }
 
-    void Renderer::drawInstanced(const VertexArray& vao, const Shader& shader, const Texture& texture, unsigned int instancesCount){
-        shader.bind(); 
-        shader.setUniform4fv("projection", camera->getViewProjection());
-        shader.setUniform1i("tex", 0);
-        texture.bind();
+    void Renderer::drawInstanced(const VertexArray& vao, const Material& material, unsigned int instancesCount){
+        bindMaterial(material);
         vao.bind();
         glDrawElementsInstanced(GL_TRIANGLES, vao.getIndexBuffer()->getCount(), GL_UNSIGNED_INT, 0, instancesCount);
         vao.unbind();

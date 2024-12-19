@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Shader.hpp"
+#include "Texture.hpp"
 
 
 namespace eng {
@@ -11,8 +12,7 @@ namespace eng {
      */
     struct Material {
         Shader* shader;
-
-        void bind();
+        Texture* texture;
     };
 
 
