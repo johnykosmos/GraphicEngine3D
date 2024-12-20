@@ -23,22 +23,23 @@ namespace  eng{
         vb.bind();
 
         GLuint offset = 0;
+        unsigned int index = (!isInstanced) ? 0 : 3;
         auto elements = layout.getElements();
-        for (auto element : elements) {
-            glVertexAttribPointer(attributesCount,
+        for (const auto& element : elements) {
+            glVertexAttribPointer(index,
                                   element.count,
                                   element.type,
                                   element.normalized,
                                   layout.getStride(),
                                   (void*)(uintptr_t)offset);
-            glEnableVertexAttribArray(attributesCount);
+            glEnableVertexAttribArray(index);
 
             if (isInstanced) {
-                glVertexAttribDivisor(attributesCount, 1);
+                glVertexAttribDivisor(index, 1);
             }
 
             offset += element.count * element.size;
-            attributesCount++;
+            index++;
         }
     }
 

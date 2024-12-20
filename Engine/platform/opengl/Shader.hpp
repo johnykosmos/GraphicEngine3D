@@ -3,6 +3,7 @@
 
 #include <string>
 #include <glm/mat4x4.hpp>
+#include "Typedefs.hpp"
 
 
 namespace eng {
@@ -105,9 +106,17 @@ namespace eng {
          * @brief Sets a uniform matrix variable in the shader program.
          * 
          * @param uniform The name of the uniform variable in the shader source.
-         * @param value The glm::mat4 value to pass to the uniform variable.
+         * @param value The Mat4 value to pass to the uniform variable.
          */
-        void setUniform4fv(const char* uniform, const glm::mat4& value) const; 
+        void setUniformMat4(const char* uniform, const glm::mat4& value) const; 
+
+        /**
+         * @brief Sets a uniform vector variable in the shader program.
+         * 
+         * @param uniform The name of the uniform variable in the shader source.
+         * @param value The Vec3 value to pass to the uniform variable.
+         */
+        void setUniformVec3(const char* uniform, const Vec3& value) const;
 
         /**
          * @brief Sets a uniform 1i variable in the shader program.

@@ -14,7 +14,8 @@ namespace eng {
             void bindMaterial(const Material& material);
 
         public:
-            Renderer(const Camera* camera);
+            Renderer();
+            void setCamera(const Camera& camera);
             void drawIndexed(const VertexArray& va, const Material& material);
             void drawInstanced(const VertexArray& vao, const Material& material, unsigned int instancesCount);
     };

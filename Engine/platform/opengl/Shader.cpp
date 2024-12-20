@@ -112,9 +112,14 @@ namespace eng {
         glUseProgram(id);
     }
 
-    void Shader::setUniform4fv(const char* uniform, const glm::mat4& value) const{
+    void Shader::setUniformMat4(const char* uniform, const Mat4& value) const{
         auto location = glGetUniformLocation(id, uniform); 
         glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(value));
+    }
+
+    void Shader::setUniformVec3(const char* uniform, const Vec3& value) const {
+        auto location = glGetUniformLocation(id, uniform);
+        glUniform3f(location, value.x, value.y, value.z);
     }
 
     void Shader::setUniform1i(const char* uniform, const int value) const{

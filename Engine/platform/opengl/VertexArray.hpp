@@ -17,7 +17,6 @@ namespace eng{
     class VertexArray{
         private:
             unsigned int id;
-            unsigned int attributesCount = 0;
             const IndexBuffer* ib;
 
         public:

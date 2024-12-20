@@ -6,17 +6,20 @@
 
 namespace eng {
     
-    Renderer::Renderer(const Camera* camera) : camera(camera) {
+    Renderer::Renderer() {
         glEnable(GL_DEPTH_TEST);
         glEnable(GL_CULL_FACE);
     }; 
 
-    void Renderer::bindMaterial(const Material& material){
+    void Renderer::setCamera(const Camera& camera) {
+        this->camera = &camera;
+    }
+
+    void Renderer::bindMaterial(const Material& material) {
         material.shader->bind();
         material.shader->setUniform4fv("projection", camera->getViewProjection());
         material.shader->setUniform1i("tex", 0);
         material.texture->bind();
-
     }
 
     void Renderer::drawIndexed(const VertexArray& vao, const Material& material){
