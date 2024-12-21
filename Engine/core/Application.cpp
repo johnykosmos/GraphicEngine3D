@@ -22,6 +22,7 @@ namespace eng{
     void Application::run(){
         Engine& eng = Engine::getInstance(); 
         Window& window = eng.getWindow();
+        Renderer& renderer = eng.getRenderer();
         
         glEnable(GL_DEBUG_OUTPUT);
         glDebugMessageCallback(DebugCallback, nullptr);

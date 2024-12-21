@@ -9,7 +9,7 @@ namespace eng{
         : position(startPosition), aspectRatio(aspectRatio), yaw(startYaw), pitch(startPitch) {
 
         fov = 45.0f;
-        up = glm::vec3(0.0f, 1.0f, 0.0f); // Common up vector
+        up = Vec3(0.0f, 1.0f, 0.0f); // Common up vector
         updateCameraVectors();
         updateViewProjection();
     }
@@ -52,7 +52,7 @@ namespace eng{
         return right;
     }
 
-    glm::mat4 PerspectiveCamera::getViewProjection() const{
+    Mat4 PerspectiveCamera::getViewProjection() const{
         return viewProjection;
     }
 

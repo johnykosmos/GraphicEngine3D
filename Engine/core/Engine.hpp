@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Input.hpp" 
+#include "Renderer.hpp"
 #include "Window.hpp"
 #include <memory>
 
@@ -17,6 +18,7 @@ namespace eng{
         private:
             Window window;
             Input inputHandler;
+            Renderer renderer;
             static std::unique_ptr<Engine> eInstance; 
 
         private:
@@ -47,5 +49,11 @@ namespace eng{
              * @return inputHandler reference
              */
             Input& getInputHandler();
+
+            /**
+             * @brief Gets the renderer reference
+             * @return renderer reference
+             */
+            Renderer& getRenderer();
     };
 }

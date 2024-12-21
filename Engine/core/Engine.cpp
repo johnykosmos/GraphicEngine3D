@@ -23,4 +23,8 @@ namespace eng{
     Input& Engine::getInputHandler(){
         return inputHandler;
     }
+
+    Renderer& Engine::getRenderer() {
+        return renderer;
+    }
 }

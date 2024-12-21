@@ -2,7 +2,7 @@
 #pragma once
 
 #include <glm/mat4x4.hpp>
-#include "GLBuffers.hpp"
+#include "Typedefs.hpp"
 
 namespace eng {
 
@@ -29,7 +29,7 @@ namespace eng {
          * This pure virtual method must be implemented by derived classes.
          * @return The view-projection matrix as a glm::mat4.
          */
-        virtual glm::mat4 getViewProjection() const = 0;
+        virtual Mat4 getViewProjection() const = 0;
     };
 
     /**
@@ -54,7 +54,7 @@ namespace eng {
         Vec3 up;             ///< The up vector representing the camera's upward direction.
         Vec3 right;          ///< The right vector perpendicular to front and up vectors.
 
-        glm::mat4 viewProjection; ///< Combined view and projection matrix.
+        Mat4 viewProjection; ///< Combined view and projection matrix.
 
         /**
          * @brief Updates the camera's front, right, and up vectors.
@@ -82,9 +82,9 @@ namespace eng {
 
         /**
          * @brief Retrieves the combined view and projection matrix.
-         * @return The view-projection matrix as a glm::mat4.
+         * @return The view-projection matrix as a Mat4.
          */
-        glm::mat4 getViewProjection() const override;
+        Mat4 getViewProjection() const override;
 
         /**
          * @brief Retrieves the camera's current position.
