@@ -48,7 +48,7 @@ namespace eng{
          * @param layout The Vertex Buffer Layout describing the structure of the vertex data.
          * @param isInstanced Bool value describing if the buffer is instanced
          */
-        void configureAttributes(const VertexBuffer& vb, const VertexBufferLayout& layout, bool isInstanced);
+        void configureAttributes(const VertexBuffer& vb, const VertexBufferLayout& layout, bool isInstanced) const;
 
         /**
          * @brief Adds an Index Buffer to the VAO.

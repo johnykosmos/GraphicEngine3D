@@ -28,10 +28,14 @@ namespace eng{
             unsigned int id;
 
         public:
-            VertexBuffer() = default;
-
             /**
              * @brief Constructs a VertexBuffer and generates an OpenGL buffer ID 
+             */
+            VertexBuffer();
+
+            /**
+             * @brief Constructs a VertexBuffer, generates an OpenGL buffer ID and
+             * uploads data to the buffer
              *
              * @param data Void pointer to the data to be uploaded
              * @param size Size of the data in bytes
@@ -42,6 +46,7 @@ namespace eng{
              * @brief Destroys the VertexBuffer and deletes the OpenGL buffer.
              */
             ~VertexBuffer();
+
             /**
              * @brief binds the vertex buffer
              */
@@ -51,6 +56,14 @@ namespace eng{
              * @brief Unbinds the vertex buffer
              */
             void unbind() const;
+
+            /**
+             * @brief Updates the buffer data 
+             *
+             * @param data Void pointer to the data to be uploaded
+             * @param size Size of the data in bytes
+             */
+            void updateData(const void* data, unsigned int size);
     };
 
     /**

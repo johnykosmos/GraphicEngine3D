@@ -18,7 +18,7 @@ namespace  eng{
         addIndexBuffer(ib);
     }
     
-    void VertexArray::configureAttributes(const VertexBuffer& vb, const VertexBufferLayout& layout, bool isInstanced) {
+    void VertexArray::configureAttributes(const VertexBuffer& vb, const VertexBufferLayout& layout, bool isInstanced) const {
         bind();
         vb.bind();
 

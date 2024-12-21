@@ -2,10 +2,13 @@
 #include <glad/glad.h>
 
 namespace eng{
+    VertexBuffer::VertexBuffer() {
+        glGenBuffers(1, &id);
+    }
+
     VertexBuffer::VertexBuffer(const void* data, unsigned int size){
         glGenBuffers(1, &id); 
-        bind();
-        glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW);
+        updateData(data, size);
     }
 
     void VertexBuffer::bind() const{
@@ -14,6 +17,11 @@ namespace eng{
     
     void VertexBuffer::unbind() const{
         glBindBuffer(GL_ARRAY_BUFFER, 0);
+    }
+
+    void VertexBuffer::updateData(const void* data, unsigned int size) {
+        bind();
+        glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW);
     }
 
     VertexBuffer::~VertexBuffer(){
