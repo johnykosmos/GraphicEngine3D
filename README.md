@@ -24,7 +24,7 @@ Simple 3D graphics engine designed for purposes of Basics of Computer Graphics c
 - Drawing primitives (3D)
 - Camera support **DONE**
 - Class hierarchy
-- Support for geometric transformations on primitives
+- Support for geometric transformations on primitives **DONE**
 - Lighting (can add support for a button that turns lighting off and on)
 - Shading (can add support for a button that turns shading off and on)
 - Object texturing **DONE**
