@@ -8,7 +8,7 @@ namespace eng{
     PerspectiveCamera::PerspectiveCamera(Vec3 startPosition, float aspectRatio, float startYaw, float startPitch)  
         : position(startPosition), aspectRatio(aspectRatio), yaw(startYaw), pitch(startPitch) {
 
-        fov = 45.0f;
+        fov = 75.0f;
         up = Vec3(0.0f, 1.0f, 0.0f); // Common up vector
         updateCameraVectors();
         updateViewProjection();

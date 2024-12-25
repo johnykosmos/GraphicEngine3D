@@ -1,7 +1,6 @@
 #include "Typedefs.hpp"
 #include "glad/glad.h"
 #include <GL/gl.h>
-#include <iostream>
 #include "Renderer.hpp"
 
 
@@ -34,6 +33,14 @@ namespace eng {
                 camera->getViewProjection());
         material.shader->setUniform1i("tex", 0);
         material.texture->bind();
+    }
+
+    void Renderer::clear() const {
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    }
+
+    void Renderer::clearToColor(const Vec3& color) const {
+         glClearColor(color.x, color.y, color.z, 1.0f);
     }
 
     void Renderer::drawShape(const Shape& shape, const Material& material) {

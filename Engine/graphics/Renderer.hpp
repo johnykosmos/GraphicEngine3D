@@ -79,6 +79,17 @@ namespace eng {
             void setCamera(const Camera& camera);
 
             /**
+             * @brief Clears the frame.
+             */
+            void clear() const;
+
+            /**
+             * @brief Clears the frame to the given color.
+             * @param color The color to set.
+             */
+            void clearToColor(const Vec3& color) const;
+
+            /**
              * @brief Draws a shape using the specified material.
              * @param shape The shape to render.
              * @param material The material to use for rendering the shape.
