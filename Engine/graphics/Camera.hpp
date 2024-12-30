@@ -30,6 +30,14 @@ namespace eng {
          * @return The view-projection matrix as a glm::mat4.
          */
         virtual Mat4 getViewProjection() const = 0;
+
+        /**
+         * @brief Retrieves the position vector.
+         *
+         * This pure virtual method must be implemented by derived classes.
+         * @return The position as a glm::vec3.
+         */
+        virtual Vec3 getPosition() const = 0;
     };
 
     /**
@@ -90,7 +98,7 @@ namespace eng {
          * @brief Retrieves the camera's current position.
          * @return The camera's position as a Vec3.
          */
-        Vec3 getPosition() const;
+        Vec3 getPosition() const override;
 
         /**
          * @brief Retrieves the camera's current yaw angle.

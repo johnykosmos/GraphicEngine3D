@@ -10,7 +10,7 @@ namespace eng{
      */
     struct Vertex {
         Vec3 vertices;
-        Vec3 color;
+        Vec3 normal;
         Vec2 texturePos;
     };
 

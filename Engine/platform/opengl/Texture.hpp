@@ -86,6 +86,13 @@ namespace eng {
          * By default, it binds to `GL_TEXTURE0`.
          */
         void bind() const;
+
+        /**
+         * @brief Unbinds the texture.
+         * 
+         * This method makes the texture unactive for rendering operations. 
+         */
+        void unbind() const;
     };
 
 } // namespace eng

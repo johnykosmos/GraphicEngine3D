@@ -12,7 +12,9 @@ namespace eng {
      */
     struct Material {
         Shader* shader;
-        Texture* texture;
+        Texture* texture = nullptr;
+        const Vec3 albedo;
+        const float shininess;
     };
 
 

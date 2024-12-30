@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Camera.hpp"
 #include "Material.hpp"
+#include "Scene.hpp"
 #include "Shape.hpp"
 #include "Typedefs.hpp"
 #include "VertexArray.hpp"
@@ -32,7 +32,6 @@ namespace eng {
          */
         class Renderer {
         private:
-            const Camera* camera;                        /**< Pointer to the active camera used for rendering. */
             static std::vector<DrawCall> drawCallList;   /**< List of draw calls to be rendered in the scene. */
             VertexBuffer instanceBuffer;                 /**< Vertex buffer used for instanced rendering data. */
             VertexBufferLayout instanceLayout;           /**< Layout description for the instanced data. */
@@ -40,8 +39,10 @@ namespace eng {
             /**
              * @brief Binds a material for rendering.
              * @param material The material to bind.
+             * @param scene The scene elements to bind.
              */
-            void bindMaterial(const Material& material);
+            void bindMaterial(const Material& material, 
+                const Scene& scene);
 
             /**
              * @brief Batches multiple draw calls for efficiency.
@@ -55,9 +56,10 @@ namespace eng {
              * @brief Performs instanced rendering.
              * @param vao The vertex array to use for rendering instances.
              * @param material The material to apply to the instances.
+             * @param scene The scene to draw
              * @param instancesCount The number of instances to render.
              */
-            void drawInstanced(const VertexArray& vao, const Material& material, unsigned int instancesCount);
+            void drawInstanced(const VertexArray& vao, const Material& material, const Scene& scene, unsigned int instancesCount);
 
             /**
              * @brief Draws indexed geometry using a specified material.
@@ -71,12 +73,6 @@ namespace eng {
              * @brief Default constructor for the Renderer.
              */
             Renderer();
-
-            /**
-             * @brief Sets the active camera for rendering.
-             * @param camera The camera to set as active.
-             */
-            void setCamera(const Camera& camera);
 
             /**
              * @brief Clears the frame.
@@ -98,8 +94,9 @@ namespace eng {
 
             /**
              * @brief Executes all the queued draw calls.
+             * @param scene The scene to render.
              */
-            void render();
+            void render(const Scene& scene);
         };
 
 } // namespace eng
