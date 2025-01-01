@@ -3,7 +3,6 @@
 
 #include "Camera.hpp"
 #include "Light.hpp"
-#include <memory>
 #include <vector>
 
 
@@ -21,7 +20,7 @@ namespace eng {
             /**
              * @brief List of lights in the scene.
              */
-            std::vector<Light> lightList;
+            std::vector<Light*> lightList;
 
             /**
              * @brief Pointer to the active camera.
@@ -37,7 +36,7 @@ namespace eng {
              * 
              * @param light The light source to be added.
              */
-            void addLight(const Light& light);
+            void addLight(Light* light);
 
             /**
              * @brief Clears the light list.
@@ -56,7 +55,7 @@ namespace eng {
              * 
              * @return A constant reference to the vector containing pointers to all the light sources.
              */
-            const std::vector<Light>& getLightList() const;
+            const std::vector<Light*>& getLightList() const;
 
             /**
              * @brief Sets the active camera for the scene.

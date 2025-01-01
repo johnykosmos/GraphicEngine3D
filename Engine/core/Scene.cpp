@@ -1,7 +1,7 @@
 #include "Scene.hpp"
 
 namespace eng {
-    void Scene::addLight(const Light& light) {
+    void Scene::addLight(Light* light) {
         lightList.push_back(light);
     }
     
@@ -9,7 +9,7 @@ namespace eng {
         lightList.clear();
     }
 
-    const std::vector<Light>& Scene::getLightList() const {
+    const std::vector<Light*>& Scene::getLightList() const {
         return lightList;
     }
 

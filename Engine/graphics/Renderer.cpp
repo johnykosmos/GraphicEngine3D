@@ -30,15 +30,15 @@ namespace eng {
         material.shader->setUniform1i("numberOfLights", lights.size());
         for (int i = 0; i < lights.size(); i++) {
             material.shader->setUniformVec3(("lights[" + std::to_string(i) + 
-                    "].position").c_str(), lights[i].position);
+                    "].position").c_str(), lights[i]->position);
             material.shader->setUniformVec3(("lights[" + std::to_string(i) + 
-                    "].color").c_str(), lights[i].color);
+                    "].color").c_str(), lights[i]->color);
             material.shader->setUniform1f(("lights[" + std::to_string(i) + 
-                                "].constant").c_str(), lights[i].constant);
+                                "].constant").c_str(), lights[i]->constant);
             material.shader->setUniform1f(("lights[" + std::to_string(i) + 
-                                "].linear").c_str(), lights[i].linear);
+                                "].linear").c_str(), lights[i]->linear);
             material.shader->setUniform1f(("lights[" + std::to_string(i) + 
-                    "].quadratic").c_str(), lights[i].quadratic);
+                    "].quadratic").c_str(), lights[i]->quadratic);
         }
         material.shader->setUniformVec3("cameraPos",
                 scene.getActiveCamera()->getPosition());
