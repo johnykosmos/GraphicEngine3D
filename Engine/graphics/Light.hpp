@@ -12,6 +12,10 @@ namespace eng {
     struct Light {
         const Vec3 color;
         const Vec3 position;
+
+        const float constant;
+        const float linear;
+        const float quadratic;
     };
 
 }

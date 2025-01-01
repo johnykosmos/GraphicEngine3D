@@ -26,14 +26,28 @@ namespace eng {
         material.shader->setUniformMat4("projection", 
                 scene.getActiveCamera()->getViewProjection());
 
-
-        auto light = scene.getLightList()[0];
-        material.shader->setUniformVec3("lightPos", light.position);
-        material.shader->setUniformVec3("lightColor", light.color);
+        auto lights = scene.getLightList();
+        material.shader->setUniform1i("numberOfLights", lights.size());
+        for (int i = 0; i < lights.size(); i++) {
+            material.shader->setUniformVec3(("lights[" + std::to_string(i) + 
+                    "].position").c_str(), lights[i].position);
+            material.shader->setUniformVec3(("lights[" + std::to_string(i) + 
+                    "].color").c_str(), lights[i].color);
+            material.shader->setUniform1f(("lights[" + std::to_string(i) + 
+                                "].constant").c_str(), lights[i].constant);
+            material.shader->setUniform1f(("lights[" + std::to_string(i) + 
+                                "].linear").c_str(), lights[i].linear);
+            material.shader->setUniform1f(("lights[" + std::to_string(i) + 
+                    "].quadratic").c_str(), lights[i].quadratic);
+        }
         material.shader->setUniformVec3("cameraPos",
                 scene.getActiveCamera()->getPosition());
-        material.shader->setUniformVec3("objectColor", material.albedo);
-        material.shader->setUniform1f("shininess", material.shininess);
+
+        material.shader->setUniformVec3("material.albedo", material.albedo);
+        material.shader->setUniformVec3("material.ambient", material.ambient);
+        material.shader->setUniformVec3("material.diffuse", material.diffuse);
+        material.shader->setUniformVec3("material.specular", material.specular);
+        material.shader->setUniform1f("material.shininess", material.shininess);
 
         material.shader->setUniform1i("tex", 0);
         if (material.texture) {
