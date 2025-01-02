@@ -10,12 +10,12 @@ namespace eng {
      * @brief Represents the light.
      */
     struct Light {
-        const Vec3 color;
-        const Vec3 position;
+        Vec3 color;
+        Vec3 position;
 
-        const float constant;
-        const float linear;
-        const float quadratic;
+        float constant;
+        float linear;
+        float quadratic;
     };
 
 }

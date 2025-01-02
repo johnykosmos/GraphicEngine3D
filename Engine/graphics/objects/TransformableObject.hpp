@@ -3,7 +3,7 @@
 #include "Typedefs.hpp"
 
 namespace eng {
-    
+     
     
     /**
      * @class TransformableObject
@@ -16,8 +16,11 @@ namespace eng {
      */
     class TransformableObject {
         private:
+            Vec3 rotation = {0, 0, 0}; ///< The object's rotation.
+            float rotationAngle = 0.0f; ///< The object's rotation angle.
+            Vec3 scaling = {0, 0, 0}; ///< The object's  scaling.
             Mat4 transform; ///< The transformation matrix representing the object's position, rotation, and scale.
-
+        
         public:
             /**
              * @brief Default constructor.
@@ -74,6 +77,18 @@ namespace eng {
              * @return TransformableObject& A reference to the current object for method chaining.
              */
             TransformableObject& scale(const Vec3& scaleVector);
+
+            /**
+            * @brief Sets the object's position directly.
+            *
+            * This method replaces the current translation component of the transformation
+            * matrix with the provided position. This is useful for directly positioning 
+            * the object in 3D space without considering its current transform.
+            *
+            * @param position The new position to set for the object representing X, Y, and Z coordinates.
+            * @return TransformableObject& A reference to the current object for method chaining.
+            */
+            TransformableObject& setPosition(const Vec3& position);
     };
 
 
