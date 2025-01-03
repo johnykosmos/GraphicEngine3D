@@ -6,6 +6,7 @@ add_library(
     Engine STATIC
     core/Engine.cpp
     core/Application.cpp
+    core/Scene.cpp
     graphics/Renderer.cpp
     graphics/Camera.cpp
     graphics/Mesh.cpp

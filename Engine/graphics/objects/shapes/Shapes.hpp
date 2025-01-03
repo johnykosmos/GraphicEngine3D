@@ -8,111 +8,112 @@ namespace eng {
 
     const Vertex cubeVertices[24] = {
         Vertex{ 
- 	.vertices = Vec3{-0.5f, -0.5f, -0.5f},
- 	.color = Vec3{1.0f, 0.0f, 0.0f},
- 	.texturePos = Vec2{0.0f, 0.0f}},
+            .vertices = Vec3{-0.5f, -0.5f, -0.5f},
+            .normal = Vec3{0.0f, 0.0f, -1.0f},
+            .texturePos = Vec2{0.0f, 0.0f}},
         Vertex{ 
- 	.vertices = Vec3{ 0.5f, -0.5f, -0.5f},
- 	.color = Vec3{1.0f, 0.0f, 0.0f},
- 	.texturePos = Vec2{1.0f, 0.0f}},
+            .vertices = Vec3{ 0.5f, -0.5f, -0.5f},
+            .normal = Vec3{0.0f, 0.0f, -1.0f},
+            .texturePos = Vec2{1.0f, 0.0f}},
         Vertex{ 
- 	.vertices = Vec3{ 0.5f,  0.5f, -0.5f},
- 	.color = Vec3{1.0f, 0.0f, 0.0f},
- 	.texturePos = Vec2{1.0f, 1.0f}},
+            .vertices = Vec3{ 0.5f,  0.5f, -0.5f},
+            .normal = Vec3{0.0f, 0.0f, -1.0f},
+            .texturePos = Vec2{1.0f, 1.0f}},
         Vertex{ 
- 	.vertices = Vec3{-0.5f,  0.5f, -0.5f},
- 	.color = Vec3{1.0f, 0.0f, 0.0f},
- 	.texturePos = Vec2{0.0f, 1.0f}},
+            .vertices = Vec3{-0.5f,  0.5f, -0.5f},
+            .normal = Vec3{0.0f, 0.0f, -1.0f},
+            .texturePos = Vec2{0.0f, 1.0f}},
 
-        // Front Face (Green)
+        // Front Face
         Vertex{ 
- 	.vertices = Vec3{-0.5f, -0.5f,  0.5f},
- 	.color = Vec3{0.0f, 1.0f, 0.0f},
- 	.texturePos = Vec2{0.0f, 0.0f}},
+            .vertices = Vec3{-0.5f, -0.5f,  0.5f},
+            .normal = Vec3{0.0f, 0.0f, 1.0f},
+            .texturePos = Vec2{0.0f, 0.0f}},
         Vertex{ 
- 	.vertices = Vec3{ 0.5f, -0.5f,  0.5f},
- 	.color = Vec3{0.0f, 1.0f, 0.0f},
- 	.texturePos = Vec2{1.0f, 0.0f}},
+            .vertices = Vec3{ 0.5f, -0.5f,  0.5f},
+            .normal = Vec3{0.0f, 0.0f, 1.0f},
+            .texturePos = Vec2{1.0f, 0.0f}},
         Vertex{ 
- 	.vertices = Vec3{ 0.5f,  0.5f,  0.5f},
- 	.color = Vec3{0.0f, 1.0f, 0.0f},
- 	.texturePos = Vec2{1.0f, 1.0f}},
+            .vertices = Vec3{ 0.5f,  0.5f,  0.5f},
+            .normal = Vec3{0.0f, 0.0f, 1.0f},
+            .texturePos = Vec2{1.0f, 1.0f}},
         Vertex{ 
- 	.vertices = Vec3{-0.5f,  0.5f,  0.5f},
- 	.color = Vec3{0.0f, 1.0f, 0.0f},
- 	.texturePos = Vec2{0.0f, 1.0f}},
+            .vertices = Vec3{-0.5f,  0.5f,  0.5f},
+            .normal = Vec3{0.0f, 0.0f, 1.0f},
+            .texturePos = Vec2{0.0f, 1.0f}},
 
-        // Left Face (Blue)
+        // Left Face
         Vertex{ 
- 	.vertices = Vec3{ 0.5f, -0.5f, -0.5f},
- 	.color = Vec3{1.0f, 1.0f, 0.0f},
- 	.texturePos = Vec2{0.0f, 0.0f}},
+            .vertices = Vec3{ 0.5f, -0.5f, -0.5f},
+            .normal = Vec3{1.0f, 0.0f, 0.0f},
+            .texturePos = Vec2{0.0f, 0.0f}},
         Vertex{ 
- 	.vertices = Vec3{ 0.5f, -0.5f,  0.5f},
- 	.color = Vec3{1.0f, 1.0f, 0.0f},
- 	.texturePos = Vec2{1.0f, 0.0f}},
+            .vertices = Vec3{ 0.5f, -0.5f,  0.5f},
+            .normal = Vec3{1.0f, 0.0f, 0.0f},
+            .texturePos = Vec2{1.0f, 0.0f}},
         Vertex{ 
- 	.vertices = Vec3{ 0.5f,  0.5f,  0.5f},
- 	.color = Vec3{1.0f, 1.0f, 0.0f},
- 	.texturePos = Vec2{1.0f, 1.0f}},
+            .vertices = Vec3{ 0.5f,  0.5f,  0.5f},
+            .normal = Vec3{1.0f, 0.0f, 0.0f},
+            .texturePos = Vec2{1.0f, 1.0f}},
         Vertex{ 
- 	.vertices = Vec3{ 0.5f,  0.5f, -0.5f},
- 	.color = Vec3{1.0f, 1.0f, 0.0f},
- 	.texturePos = Vec2{0.0f, 1.0f}},    
+            .vertices = Vec3{ 0.5f,  0.5f, -0.5f},
+            .normal = Vec3{1.0f, 0.0f, 0.0f},
+            .texturePos = Vec2{0.0f, 1.0f}},
 
-        // Right Face (Yellow)
+        // Right Face
         Vertex{ 
- 	.vertices = Vec3{-0.5f, -0.5f, -0.5f},
- 	.color = Vec3{0.0f, 0.0f, 1.0f},
- 	.texturePos = Vec2{0.0f, 0.0f}},
+            .vertices = Vec3{-0.5f, -0.5f, -0.5f},
+            .normal = Vec3{-1.0f, 0.0f, 0.0f},
+            .texturePos = Vec2{0.0f, 0.0f}},
         Vertex{ 
- 	.vertices = Vec3{-0.5f, -0.5f,  0.5f},
- 	.color = Vec3{0.0f, 0.0f, 1.0f},
- 	.texturePos = Vec2{1.0f, 0.0f}},
+            .vertices = Vec3{-0.5f, -0.5f,  0.5f},
+            .normal = Vec3{-1.0f, 0.0f, 0.0f},
+            .texturePos = Vec2{1.0f, 0.0f}},
         Vertex{ 
- 	.vertices = Vec3{-0.5f,  0.5f,  0.5f},
- 	.color = Vec3{0.0f, 0.0f, 1.0f},
- 	.texturePos = Vec2{1.0f, 1.0f}},
+            .vertices = Vec3{-0.5f,  0.5f,  0.5f},
+            .normal = Vec3{-1.0f, 0.0f, 0.0f},
+            .texturePos = Vec2{1.0f, 1.0f}},
         Vertex{ 
- 	.vertices = Vec3{-0.5f,  0.5f, -0.5f},
- 	.color = Vec3{0.0f, 0.0f, 1.0f},
- 	.texturePos = Vec2{0.0f, 1.0f}},
+            .vertices = Vec3{-0.5f,  0.5f, -0.5f},
+            .normal = Vec3{-1.0f, 0.0f, 0.0f},
+            .texturePos = Vec2{0.0f, 1.0f}},
 
-        // Bottom Face (Magenta)
+        // Bottom Face
         Vertex{ 
- 	.vertices = Vec3{-0.5f,  0.5f, -0.5f},
- 	.color = Vec3{0.0f, 1.0f, 1.0f},
- 	.texturePos = Vec2{0.0f, 0.0f}},
+            .vertices = Vec3{-0.5f,  0.5f, -0.5f},
+            .normal = Vec3{0.0f, 1.0f, 0.0f},
+            .texturePos = Vec2{0.0f, 0.0f}},
         Vertex{ 
- 	.vertices = Vec3{ 0.5f,  0.5f, -0.5f},
- 	.color = Vec3{0.0f, 1.0f, 1.0f},
- 	.texturePos = Vec2{1.0f, 0.0f}},
+            .vertices = Vec3{ 0.5f,  0.5f, -0.5f},
+            .normal = Vec3{0.0f, 1.0f, 0.0f},
+            .texturePos = Vec2{1.0f, 0.0f}},
         Vertex{ 
- 	.vertices = Vec3{ 0.5f,  0.5f,  0.5f},
- 	.color = Vec3{0.0f, 1.0f, 1.0f},
- 	.texturePos = Vec2{1.0f, 1.0f}},
+            .vertices = Vec3{ 0.5f,  0.5f,  0.5f},
+            .normal = Vec3{0.0f, 1.0f, 0.0f},
+            .texturePos = Vec2{1.0f, 1.0f}},
         Vertex{ 
- 	.vertices = Vec3{-0.5f,  0.5f,  0.5f},
- 	.color = Vec3{0.0f, 1.0f, 1.0f},
- 	.texturePos = Vec2{0.0f, 1.0f}},
+            .vertices = Vec3{-0.5f,  0.5f,  0.5f},
+            .normal = Vec3{0.0f, 1.0f, 0.0f},
+            .texturePos = Vec2{0.0f, 1.0f}},
 
-        // Top Face (Cyan)
+        // Top Face 
         Vertex{ 
- 	.vertices = Vec3{-0.5f, -0.5f, -0.5f},
- 	.color = Vec3{1.0f, 0.0f, 1.0f},
- 	.texturePos = Vec2{0.0f, 0.0f}},
-     Vertex{ 
- 	.vertices = Vec3{ 0.5f, -0.5f, -0.5f},
- 	.color = Vec3{1.0f, 0.0f, 1.0f},
- 	.texturePos = Vec2{1.0f, 0.0f}},
-     Vertex{ 
- 	.vertices = Vec3{ 0.5f, -0.5f,  0.5f},
- 	.color = Vec3{1.0f, 0.0f, 1.0f},
- 	.texturePos = Vec2{1.0f, 1.0f}},
-     Vertex{ 
- 	.vertices = Vec3{-0.5f, -0.5f,  0.5f},
- 	.color = Vec3{1.0f, 0.0f, 1.0f},
- 	.texturePos = Vec2{0.0f, 1.0f}},
+            .vertices = Vec3{-0.5f, -0.5f, -0.5f},
+            .normal = Vec3{0.0f, -1.0f, 0.0f},
+            .texturePos = Vec2{0.0f, 0.0f}},
+        Vertex{ 
+            .vertices = Vec3{ 0.5f, -0.5f, -0.5f},
+            .normal = Vec3{0.0f, -1.0f, 0.0f},
+            .texturePos = Vec2{1.0f, 0.0f}},
+        Vertex{ 
+            .vertices = Vec3{ 0.5f, -0.5f,  0.5f},
+            .normal = Vec3{0.0f, -1.0f, 0.0f},
+            .texturePos = Vec2{1.0f, 1.0f}},
+        Vertex{ 
+            .vertices = Vec3{-0.5f, -0.5f,  0.5f},
+            .normal = Vec3{0.0f, -1.0f, 0.0f},
+            .texturePos = Vec2{0.0f, 1.0f}},
+
     };
  
     const unsigned int cubeIndices[36] = {

@@ -127,6 +127,12 @@ namespace eng {
         glUniform1i(location, value);
     }
 
+    void Shader::setUniform1f(const char* uniform, const float value) const{
+        auto location = glGetUniformLocation(id, uniform); 
+        glUniform1f(location, value);
+    }
+
+
     void Shader::unbind() const {
         glUseProgram(0);
     }

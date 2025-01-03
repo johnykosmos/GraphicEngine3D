@@ -12,7 +12,14 @@ namespace eng {
      */
     struct Material {
         Shader* shader;
-        Texture* texture;
+        Texture* texture = nullptr;
+
+        const Vec3 albedo;
+        const Vec3 ambient;
+        const Vec3 diffuse;
+        const Vec3 specular;
+
+        const float shininess;
     };
 
 

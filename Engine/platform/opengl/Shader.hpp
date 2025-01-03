@@ -125,6 +125,14 @@ namespace eng {
          * @param value The int value to pass to the uniform variable.
          */
         void setUniform1i(const char* uniform, const int value) const;
+
+        /**
+         * @brief Sets a uniform 1f variable in the shader program.
+         * 
+         * @param uniform The name of the uniform variable in the shader source.
+         * @param value The float value to pass to the uniform variable.
+         */
+        void setUniform1f(const char* uniform, const float value) const;
     }; 
 
 }
