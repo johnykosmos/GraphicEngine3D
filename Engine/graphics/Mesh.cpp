@@ -11,6 +11,7 @@ namespace eng {
 
             va.configureAttributes(vb, layout, false);
             va.addIndexBuffer(ib);    
+            va.unbind();
         }
 
     VertexArray& Mesh::getVertexArray() {

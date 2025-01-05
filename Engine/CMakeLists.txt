@@ -11,7 +11,7 @@ add_library(
     graphics/Camera.cpp
     graphics/Mesh.cpp
     graphics/objects/TransformableObject.cpp
-    graphics/objects/shapes/CubeShape.cpp
+    graphics/objects/shapes/Shapes.cpp
     platform/io/Window.cpp
     platform/io/Keys.cpp
     platform/io/Input.cpp
@@ -35,6 +35,7 @@ target_include_directories(
 
 target_link_libraries(Engine PUBLIC glfw)
 target_link_libraries(Engine PUBLIC glad)
+target_link_libraries(Engine PUBLIC glm)
 target_link_libraries(Engine PUBLIC stb_image)
 
 find_package(OpenGL REQUIRED)

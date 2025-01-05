@@ -33,6 +33,11 @@ namespace eng{
             primaryMonitor = glfwGetPrimaryMonitor();
         }
 
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+        glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, true);
+
         window = glfwCreateWindow(spec.width, spec.height, spec.title, primaryMonitor, NULL);
         if(!window){
             glfwTerminate();
