@@ -21,11 +21,11 @@ Simple 3D graphics engine designed for purposes of Basics of Computer Graphics c
 ## Project Requirements
 - Keyboard and mouse support **DONE**
 - Variable refresh rate **DONE**
-- Drawing primitives (3D)
+- Drawing primitives (3D) **DONE**
 - Camera support **DONE**
-- Class hierarchy
+- Class hierarchy **DONE**
 - Support for geometric transformations on primitives **DONE**
-- Lighting (can add support for a button that turns lighting off and on)
+- Lighting (can add support for a button that turns lighting off and on) **DONE**
 - Shading (can add support for a button that turns shading off and on)
 - Object texturing **DONE**
 - Tech demo (for defense)
