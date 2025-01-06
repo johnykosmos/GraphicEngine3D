@@ -28,8 +28,16 @@ namespace eng{
         glDeleteBuffers(1, &id);
     }
 
+    IndexBuffer::IndexBuffer() {
+        glGenBuffers(1, &id);
+    }
+
     IndexBuffer::IndexBuffer(const unsigned int* data, unsigned int count){
         glGenBuffers(1, &id); 
+        updateData(data, count);
+    }
+
+    void IndexBuffer::updateData(const void* data, unsigned int count) {
         bind();
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(unsigned int), data, GL_STATIC_DRAW);
         this->count = count;
