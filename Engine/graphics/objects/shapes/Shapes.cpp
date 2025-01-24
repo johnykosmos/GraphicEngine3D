@@ -1,5 +1,6 @@
 #include "Mesh.hpp"
 #include "Shapes.hpp"
+#include "ModelLoader.hpp"
 
 
 namespace eng {

@@ -12,6 +12,8 @@ namespace eng {
             return;
         }
 
+        stbi_set_flip_vertically_on_load(true);
+
         glGenTextures(1, &id); 
         bind();
 

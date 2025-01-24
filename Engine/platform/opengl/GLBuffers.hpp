@@ -81,6 +81,11 @@ namespace eng{
 
         public:
             /**
+             * @brief Constructs an IndexBuffer and generates an OpenGL buffer ID 
+             */
+            IndexBuffer();
+
+            /**
              * @brief Constructs a IndexBuffer and generates an OpenGL buffer ID 
              *
              * @param data Unsigned int pointer to the indices data
@@ -102,7 +107,20 @@ namespace eng{
              * @brief Unbinds the index buffer
              */
             void unbind() const;
+
+            /**
+             * @brief Updates the buffer data 
+             *
+             * @param data Void pointer to the data to be uploaded
+             * @param size Size of the data in bytes
+             */
+            void updateData(const void* data, unsigned int count);
             
+            /**
+             * @brief Gets the index buffer count.
+             *
+             * @return unsigned int Count of indices.
+             */
             unsigned int getCount() const;
     };
 }

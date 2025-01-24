@@ -10,6 +10,8 @@ add_library(
     graphics/Renderer.cpp
     graphics/Camera.cpp
     graphics/Mesh.cpp
+    graphics/objects/ModelLoader.cpp
+    graphics/objects/ModelParser.cpp
     graphics/objects/TransformableObject.cpp
     graphics/objects/shapes/Shapes.cpp
     platform/io/Window.cpp

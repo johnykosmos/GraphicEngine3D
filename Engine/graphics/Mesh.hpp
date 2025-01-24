@@ -36,8 +36,14 @@ namespace eng {
              * @brief The vertex array object (VAO) that binds the vertex and index buffers.
              */
             VertexArray va;
-        
+
         public:
+            
+            /**
+             * @brief Constructs an uninitialized mesh.
+             */
+            Mesh();
+
             /**
              * @brief Constructs a Mesh with the provided vertex and index data.
              * 
@@ -68,6 +74,16 @@ namespace eng {
              * @return VertexArray& The reference to the vertex array object.
              */
             VertexArray& getVertexArray();
+
+            /**
+             * @brief Updates all the mesh data with the provided vertex and index data.
+             *
+             * @param vertices Array of vertices that represent the mesh.
+             * @param vertexCount The number of vertices in the array.
+             * @param indices Array of indices that define how the vertices are connected.
+             * @param indexCount The number of indices in the array.
+             */
+            void updateData(const Vertex vertices[], size_t vertexCount, const unsigned int indices[], size_t indexCount);
 
     };
 } 
