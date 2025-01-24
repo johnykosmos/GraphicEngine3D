@@ -21,7 +21,7 @@ namespace eng {
         storage.push_back(vec);
     }
 
-    void ModelParser::readVertex(const std::string& vertexString) {
+    void ModelParser::readVertex(std::string& vertexString) {
             std::istringstream vertexStream(vertexString);
             std::array<int, 3> indicesArray = {0, 0, 0};
             char slash;

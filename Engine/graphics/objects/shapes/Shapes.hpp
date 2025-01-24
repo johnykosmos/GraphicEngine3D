@@ -1,6 +1,6 @@
 #pragma once
 
-#include "objects/Shape.hpp"
+#include "objects/Entity.hpp"
 #include "Mesh.hpp"
 #include <memory>
 
@@ -2029,15 +2029,7 @@ const unsigned int pyramidIndices[18] = {
     12, 13, 14, 12, 14, 15
 };
 
-
-    
-
-
-
-
-
-
-    class CubeShape : public Shape {
+    class CubeShape : public Entity {
         private:
             static std::unique_ptr<Mesh> mesh;
         public:
@@ -2045,7 +2037,7 @@ const unsigned int pyramidIndices[18] = {
             Mesh& getMesh() const override;
     };
 
-    class SphereShape : public Shape {
+    class SphereShape : public Entity {
         private:
             static std::unique_ptr<Mesh> mesh;
         public:
@@ -2053,7 +2045,7 @@ const unsigned int pyramidIndices[18] = {
             Mesh& getMesh() const override;
     };
 
-    class PyramidShape : public Shape {
+    class PyramidShape : public Entity {
         private:
             static std::unique_ptr<Mesh> mesh;
         public:

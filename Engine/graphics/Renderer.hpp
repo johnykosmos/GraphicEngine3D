@@ -2,7 +2,7 @@
 
 #include "Material.hpp"
 #include "Scene.hpp"
-#include "Shape.hpp"
+#include "Entity.hpp"
 #include "Typedefs.hpp"
 #include "VertexArray.hpp"
 #include <vector>
@@ -28,7 +28,7 @@ namespace eng {
 
         /**
          * @class Renderer
-         * @brief Handles rendering of shapes and objects in the scene, managing draw calls and instanced rendering.
+         * @brief Handles rendering of objects in the scene, managing draw calls and instanced rendering.
          */
         class Renderer {
         private:
@@ -86,11 +86,11 @@ namespace eng {
             void clearToColor(const Vec3& color) const;
 
             /**
-             * @brief Draws a shape using the specified material.
-             * @param shape The shape to render.
-             * @param material The material to use for rendering the shape.
+             * @brief Draws a entity using the specified material.
+             * @param entity The entity to render.
+             * @param material The material to use for rendering the entity.
              */
-            void drawShape(const Shape& shape, const Material& material);
+            void drawEntity(const Entity& entity, const Material& material);
 
             /**
              * @brief Executes all the queued draw calls.

@@ -67,9 +67,9 @@ namespace eng {
          glClearColor(color.x,color.y, color.z, 1.0f);
     }
 
-    void Renderer::drawShape(const Shape& shape, const Material& material) {
-        batchCalls(shape.getMesh().getVertexArray(),
-                material, shape.getTransform());        
+    void Renderer::drawEntity(const Entity& entity, const Material& material) {
+        batchCalls(entity.getMesh().getVertexArray(),
+                material, entity.getTransform());        
     }
 
     void Renderer::batchCalls(const VertexArray& va, const Material& material,
