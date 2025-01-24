@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Scene.hpp"
 
 namespace eng{
     /**
@@ -11,6 +12,9 @@ namespace eng{
      * loop.
      */
     class Application{
+        private:
+            Scene* currentScene = nullptr;
+
         public:
             explicit Application();
 
@@ -18,6 +22,11 @@ namespace eng{
              * @brief Is called on every main loop iteration
              */
             virtual void onUpdate() = 0;
+
+            /**
+             * @brief Sets the scene that will be rendered. 
+             */
+            void setScene(Scene& scene);
 
             /**
              * @brief Starts the main application loop 

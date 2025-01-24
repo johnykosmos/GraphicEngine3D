@@ -19,6 +19,10 @@ namespace eng{
         Engine::init(WindowSpec());
     }
 
+    void Application::setScene(Scene& scene) {
+        currentScene = &scene;
+    }
+
     void Application::run(){
         Engine& eng = Engine::getInstance(); 
         Window& window = eng.getWindow();
@@ -31,6 +35,11 @@ namespace eng{
             window.pollEvents();
 
             onUpdate();
+
+            if (currentScene) { 
+                currentScene->onUpdate();
+                renderer.render(*currentScene);
+            }
 
             window.display();
                 
