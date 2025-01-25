@@ -90,6 +90,10 @@ namespace eng {
     }
 
     void Renderer::render(const Scene& scene) {
+        for (auto& drawable : scene.getDrawables()) {
+            drawEntity(*drawable.entity, *drawable.material);
+        }
+
         for (auto& call : drawCallList) {
             instanceBuffer.updateData(call.transforms.data(), 
                     call.transforms.size() * sizeof(Mat4));
