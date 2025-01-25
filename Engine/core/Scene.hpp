@@ -32,9 +32,14 @@ namespace eng {
     class Scene {
         private:
             /**
-             * @brief List of lights in the scene.
+            * @brief List of point lights in the scene.
+            */
+            std::vector<PointLight*> pointLightList;        
+
+            /**
+             * @brief List of point lights in the scene.
              */
-            std::vector<Light*> lightList;
+            std::vector<DirectionalLight*> directionalLightList;
 
             /**
              * @brief List of drawables in the scene.
@@ -48,28 +53,58 @@ namespace eng {
 
         protected:
             /**
-             * @brief Adds a new light to the scene.
+             * @brief Adds a new directional light to the scene.
              * 
-             * This method inserts a light source into the scene's light list.
+             * This method inserts a directional light source into the scene's light list.
              * It allows the renderer to access and use this light during rendering.
              * 
              * @param light The light source to be added.
              */
-            void addLight(Light* light);
+            void addLight(DirectionalLight& light);
 
             /**
-             * @brief Removes a light from the scene.
+             * @overload
+             * @brief Adds a new point light to the scene.
+             * 
+             * This method inserts a point light source into the scene's light list.
+             * It allows the renderer to access and use this light during rendering.
+             * 
+             * @param light The light source to be added.
+             */
+            void addLight(PointLight& light);
+
+            /**
+             * @brief Removes a point light from the scene.
+             * 
+             * This method removes a point light source from the scene's light list.
+             * It ensures that the renderer no longer uses this light during rendering.
              * 
              * @param light The light source to be removed.
              */
-            void removeLight(Light* light);
+            void removeLight(PointLight& light);
 
             /**
-             * @brief Clears the light list.
+             * @overload
+             * @brief Removes a directional light from the scene.
              * 
-             * This method removes all light sources from the scene's light list.
-             * It effectively resets the collection of lights in the scene.
+             * This method removes a directional light source from the scene's light list.
+             * It ensures that the renderer no longer uses this light during rendering.
+             * 
+             * @param light The light source to be removed.
              */
+            void removeLight(DirectionalLight& light);
+
+
+            /**
+             * @brief Clears the list of lights of a specified type in the scene.
+             * 
+             * This templated method removes all light sources of the specified
+             * type from the scene's light list,
+             * effectively resetting the collection of that particular light type.
+             * 
+             * @tparam T The type of light to clear (e.g., PointLight, DirectionalLight).
+             */
+            template<typename T>
             void clearLightList();
 
             /**
@@ -113,15 +148,17 @@ namespace eng {
             virtual void onUpdate() = 0;
 
             /**
-             * @brief Retrieves the list of lights in the scene.
+             * @brief Retrieves the list of lights of a specified type in the scene.
              * 
-             * This method returns a constant reference to the vector containing all 
-             * the light sources in the scene. It can be used for querying the lights 
-             * without modifying the list.
+             * This templated method returns a constant reference to the vector containing 
+             * all light sources of the specified type in the scene. It can be used for 
+             * querying the lights without modifying the list.
              * 
-             * @return A constant reference to the vector containing pointers to all the light sources.
+             * @tparam T The type of light to retrieve (e.g., PointLight, DirectionalLight).
+             * @return A constant reference to the vector containing pointers to all light sources of type T.
              */
-            const std::vector<Light*>& getLightList() const;
+            template<typename T>
+            const std::vector<T*>& getLightList() const;
 
             /**
              * @brief Retrieves the list of drawables in the scene.

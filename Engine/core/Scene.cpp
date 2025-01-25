@@ -2,23 +2,49 @@
 #include <algorithm>
 
 namespace eng {
-    void Scene::addLight(Light* light) {
-        lightList.push_back(light);
-    }
     
-    void Scene::removeLight(Light* light) {
-        auto it = std::find(lightList.begin(), lightList.end(), light);
-        if (it != lightList.end()) {
-            lightList.erase(it);
+    void Scene::addLight(PointLight& light) {
+        pointLightList.push_back(&light);
+    }
+
+    void Scene::addLight(DirectionalLight& light) {
+        directionalLightList.push_back(&light);
+    }
+
+    void Scene::removeLight(PointLight& light) {
+        auto it = std::find(pointLightList.begin(), pointLightList.end(), 
+                &light);
+        if (it != pointLightList.end()) {
+            pointLightList.erase(it);
         }
     }
 
-    void Scene::clearLightList() {
-        lightList.clear();
+    void Scene::removeLight(DirectionalLight& light) {
+        auto it = std::find(directionalLightList.begin(), 
+                directionalLightList.end(), &light);
+        if (it != directionalLightList.end()) {
+            directionalLightList.erase(it);
+        }
     }
 
-    const std::vector<Light*>& Scene::getLightList() const {
-        return lightList;
+    template<>
+    void Scene::clearLightList<PointLight>() {
+        pointLightList.clear();
+    }
+
+    template<>
+    void Scene::clearLightList<DirectionalLight>() {
+        directionalLightList.clear();
+    }
+
+    template<>
+    const std::vector<PointLight*>& Scene::getLightList<PointLight>() const {
+        return pointLightList;
+    }
+
+    template<>
+    const std::vector<DirectionalLight*>& Scene::getLightList<DirectionalLight>() const {
+        return directionalLightList;
     }
 
     void Scene::addDrawable(const Entity& entity, const Material& material) {
