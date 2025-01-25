@@ -58,6 +58,13 @@ namespace eng {
             void addLight(Light* light);
 
             /**
+             * @brief Removes a light from the scene.
+             * 
+             * @param light The light source to be removed.
+             */
+            void removeLight(Light* light);
+
+            /**
              * @brief Clears the light list.
              * 
              * This method removes all light sources from the scene's light list.
@@ -75,6 +82,13 @@ namespace eng {
              * @param material The material of the entity
              */
             void addDrawable(const Entity& entity, const Material& material);
+
+            /**
+             * @brief Removes a drawable entity from the scene.
+             * 
+             * @param entity The entity to be removed.
+             */
+            void removeDrawable(const Entity& entity);
 
             /**
              * @brief Clears the drawables list.

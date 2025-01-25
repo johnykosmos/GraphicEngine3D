@@ -1,11 +1,18 @@
 #include "Scene.hpp"
-#include <X11/X.h>
+#include <algorithm>
 
 namespace eng {
     void Scene::addLight(Light* light) {
         lightList.push_back(light);
     }
     
+    void Scene::removeLight(Light* light) {
+        auto it = std::find(lightList.begin(), lightList.end(), light);
+        if (it != lightList.end()) {
+            lightList.erase(it);
+        }
+    }
+
     void Scene::clearLightList() {
         lightList.clear();
     }
@@ -21,6 +28,16 @@ namespace eng {
                 });
     }
     
+    void Scene::removeDrawable(const Entity& entity) {
+        auto it = std::remove_if(drawables.begin(), drawables.end(),
+                [&entity](const Drawable& drawable) -> bool {
+                    return drawable.entity == &entity;
+                });
+        if (it != drawables.end()) {
+            drawables.erase(it);
+        }
+    }
+
     void Scene::clearDrawables() {
         drawables.clear();
     }
