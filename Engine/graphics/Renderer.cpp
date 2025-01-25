@@ -1,3 +1,4 @@
+#include "Light.hpp"
 #include "glad/glad.h"
 #include <GL/gl.h>
 #include "Renderer.hpp"
@@ -26,22 +27,41 @@ namespace eng {
         material.shader->setUniformMat4("projection", 
                 scene.getActiveCamera()->getViewProjection());
 
-        auto lights = scene.getLightList();
-        material.shader->setUniform1i("numberOfLights", lights.size());
-        for (int i = 0; i < lights.size(); i++) {
-            material.shader->setUniformVec3(("lights[" + std::to_string(i) + 
-                    "].position").c_str(), lights[i]->position);
-            material.shader->setUniformVec3(("lights[" + std::to_string(i) + 
-                    "].color").c_str(), lights[i]->color);
-            material.shader->setUniform1f(("lights[" + std::to_string(i) + 
-                                "].constant").c_str(), lights[i]->constant);
-            material.shader->setUniform1f(("lights[" + std::to_string(i) + 
-                                "].linear").c_str(), lights[i]->linear);
-            material.shader->setUniform1f(("lights[" + std::to_string(i) + 
-                    "].quadratic").c_str(), lights[i]->quadratic);
+        auto& pointLights = scene.getLightList<PointLight>();
+        if (!pointLights.empty()) {
+            material.shader->setUniform1i("enablePointLights", 1);
+            material.shader->setUniform1i("numberOfPointLights", pointLights.size());
+            for (int i = 0; i < pointLights.size(); i++) {
+                material.shader->setUniformVec3(("pointLights[" + std::to_string(i) + 
+                        "].position").c_str(), pointLights[i]->position);
+                material.shader->setUniformVec3(("pointLights[" + std::to_string(i) + 
+                        "].color").c_str(), pointLights[i]->color);
+                material.shader->setUniform1f(("pointLights[" + std::to_string(i) + 
+                                    "].constant").c_str(), pointLights[i]->constant);
+                material.shader->setUniform1f(("pointLights[" + std::to_string(i) + 
+                                    "].linear").c_str(), pointLights[i]->linear);
+                material.shader->setUniform1f(("pointLights[" + std::to_string(i) + 
+                        "].quadratic").c_str(), pointLights[i]->quadratic);
+            }
+        } else {
+            material.shader->setUniform1i("enablePointLights", 0);
         }
-        material.shader->setUniformVec3("cameraPos",
-                scene.getActiveCamera()->getPosition());
+
+        auto& directionalLights = scene.getLightList<DirectionalLight>();
+        if (!directionalLights.empty()) {
+            material.shader->setUniform1i("enableDirectionalLights", 1);
+            material.shader->setUniform1i("numberOfDirectionalLights", directionalLights.size());
+            for (int i = 0; i < directionalLights.size(); i++) {
+                material.shader->setUniformVec3(("directionalLights[" + std::to_string(i) + 
+                        "].direction").c_str(), directionalLights[i]->direction);
+                material.shader->setUniformVec3(("directionalLights[" + std::to_string(i) + 
+                        "].color").c_str(), directionalLights[i]->color);
+            }
+        } else {
+            material.shader->setUniform1i("enableDirectionalLights", 0);
+        }
+        
+        material.shader->setUniformVec3("cameraPos", scene.getActiveCamera()->getPosition());
 
         material.shader->setUniformVec3("material.albedo", material.albedo);
         material.shader->setUniformVec3("material.ambient", material.ambient);
