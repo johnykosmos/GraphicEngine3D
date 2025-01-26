@@ -64,6 +64,8 @@ namespace eng::DataUBO {
      * @note The data is aligned to meet GPU uniform buffer layout requirements.
      */
     struct alignas(16) LightData {
+        int isLightingEnabled; ///< Flag to control lighting in the scene..
+        int padding; ///< Padding to align the next member to 16 bytes.
         int numberOfPointLights; ///< The number of active point lights in the scene.
         int numberOfDirectionalLights; ///< The number of active directional lights in the scene.
         PointLightData pointLights[MAX_POINT_LIGHTS]; ///< Array of point lights.

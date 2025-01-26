@@ -13,6 +13,8 @@ namespace eng {
 
     std::vector<DrawCall> Renderer::drawCallList;
 
+    bool Renderer::isLightingEnabled = true;
+
     Renderer::Renderer() {
         glEnable(GL_DEPTH_TEST);
         glEnable(GL_CULL_FACE);
@@ -56,24 +58,31 @@ namespace eng {
     void Renderer::uploadLightUBO(const std::vector<PointLight*>& pointLights,
                         const std::vector<DirectionalLight*>& dirLights) {
         DataUBO::LightData data;
-        data.numberOfPointLights = pointLights.size();
-        data.numberOfDirectionalLights = dirLights.size();
+        
+        if (isLightingEnabled) {
 
-        for (int i = 0; i < pointLights.size(); i++) {
-            data.pointLights[i] = {
-                .color = pointLights[i]->color,
-                .constant = pointLights[i]->constant,
-                .position = pointLights[i]->position,
-                .linear = pointLights[i]->linear,
-                .quadratic = pointLights[i]->quadratic
-            };
-        }
+            data.isLightingEnabled = 1;
+            data.numberOfPointLights = pointLights.size();
+            data.numberOfDirectionalLights = dirLights.size();
 
-        for (int i = 0; i < dirLights.size(); i++) {
-            data.directionalLights[i] = {
-                .color = dirLights[i]->color,
-                .direction = dirLights[i]->direction
-            };
+            for (int i = 0; i < pointLights.size(); i++) {
+                data.pointLights[i] = {
+                    .color = pointLights[i]->color,
+                    .constant = pointLights[i]->constant,
+                    .position = pointLights[i]->position,
+                    .linear = pointLights[i]->linear,
+                    .quadratic = pointLights[i]->quadratic
+                };
+            }
+
+            for (int i = 0; i < dirLights.size(); i++) {
+                data.directionalLights[i] = {
+                    .color = dirLights[i]->color,
+                    .direction = dirLights[i]->direction
+                };
+            }
+        } else {
+            data.isLightingEnabled = 0;
         }
 
         lightUBO.bindToPoint(1);
@@ -110,15 +119,17 @@ namespace eng {
             drawEntity(*drawable.entity, *drawable.material);
         }
 
-         uploadCameraUBO(
+        uploadCameraUBO(
                 scene.getActiveCamera()->getViewProjection(), 
                 scene.getActiveCamera()->getPosition()
                 );
-
+        
+          
         uploadLightUBO(
                 scene.getLightList<PointLight>(), 
                 scene.getLightList<DirectionalLight>()
                 );
+        
 
         for (auto& call : drawCallList) {
             instanceBuffer.updateData(call.transforms.data(), 
@@ -147,4 +158,9 @@ namespace eng {
         glDrawElementsInstanced(GL_TRIANGLES, vao.getIndexBuffer()->getCount(), GL_UNSIGNED_INT, 0, instancesCount);
         vao.unbind();
     }
+
+    void Renderer::enableLighting(bool value) {
+        isLightingEnabled = value;
+    }
+
 }

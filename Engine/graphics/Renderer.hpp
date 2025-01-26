@@ -45,6 +45,7 @@ namespace eng {
             VertexBufferLayout instanceLayout;           /**< Layout description for the instanced data. */
             UniformBuffer cameraUBO;                     /**< Uniform buffer for storing camera data. */
             UniformBuffer lightUBO;                      /**< Uniform buffer for storing light data. */
+            static bool isLightingEnabled;               /**< Boolean flag to control lighting in the scene. */
 
         private:
             /**
@@ -158,6 +159,16 @@ namespace eng {
              * @param scene The scene to render.
              */
             void render(const Scene& scene);
+
+            /**
+             * @brief Enables or disables lighting in the scene.
+             * 
+             * This method allows you to toggle the lighting system on or off.
+             * Lighting calculations will be performed when enabled.
+             * 
+             * @param value A boolean flag to enable (`true`) or disable (`false`) lighting.
+             */
+            void enableLighting(bool value);
     };
 } // namespace eng
 
