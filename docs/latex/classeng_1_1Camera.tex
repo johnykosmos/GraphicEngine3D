@@ -1,0 +1,86 @@
+\doxysection{eng\+::Camera Class Reference}
+\hypertarget{classeng_1_1Camera}{}\label{classeng_1_1Camera}\index{eng::Camera@{eng::Camera}}
+
+
+Abstract base class for cameras in a 3D graphics system.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+hpp$>$}
+
+Inheritance diagram for eng\+::Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classeng_1_1Camera}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classeng_1_1Camera_a081afba5aa8444b03bca162bfbfe0b06}{\texorpdfstring{$\sim$}{\string~}\+Camera}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classeng_1_1Camera}{Camera}. \end{DoxyCompactList}\item 
+virtual Mat4 \mbox{\hyperlink{classeng_1_1Camera_a80e49fa9c4aacc6d24f22ab38061e9ce}{get\+View\+Projection}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the combined view and projection matrix. \end{DoxyCompactList}\item 
+virtual Vec3 \mbox{\hyperlink{classeng_1_1Camera_a16a3c7ec98883e50b226b14db5e4f916}{get\+Position}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the position vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for cameras in a 3D graphics system. 
+
+The \doxylink{classeng_1_1Camera}{Camera} class provides an interface for deriving different types of cameras. It includes a virtual destructor and a pure virtual method for retrieving the view-\/projection matrix. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classeng_1_1Camera_a081afba5aa8444b03bca162bfbfe0b06}\index{eng::Camera@{eng::Camera}!````~Camera@{\texorpdfstring{$\sim$}{\string~}Camera}}
+\index{````~Camera@{\texorpdfstring{$\sim$}{\string~}Camera}!eng::Camera@{eng::Camera}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Camera()}{\string~Camera()}}
+{\footnotesize\ttfamily \label{classeng_1_1Camera_a081afba5aa8444b03bca162bfbfe0b06} 
+virtual eng\+::\+Camera\+::\texorpdfstring{$\sim$}{\string~}\+Camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor for \doxylink{classeng_1_1Camera}{Camera}. 
+
+Ensures proper cleanup of derived classes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1Camera_a16a3c7ec98883e50b226b14db5e4f916}\index{eng::Camera@{eng::Camera}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!eng::Camera@{eng::Camera}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \label{classeng_1_1Camera_a16a3c7ec98883e50b226b14db5e4f916} 
+virtual Vec3 eng\+::\+Camera\+::get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieves the position vector. 
+
+This pure virtual method must be implemented by derived classes. \begin{DoxyReturn}{Returns}
+The position as a glm\+::vec3. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a10395ad6bcf1bbc887a945ab58a2d762}{eng\+::\+Perspective\+Camera}}.
+
+\Hypertarget{classeng_1_1Camera_a80e49fa9c4aacc6d24f22ab38061e9ce}\index{eng::Camera@{eng::Camera}!getViewProjection@{getViewProjection}}
+\index{getViewProjection@{getViewProjection}!eng::Camera@{eng::Camera}}
+\doxysubsubsection{\texorpdfstring{getViewProjection()}{getViewProjection()}}
+{\footnotesize\ttfamily \label{classeng_1_1Camera_a80e49fa9c4aacc6d24f22ab38061e9ce} 
+virtual Mat4 eng\+::\+Camera\+::get\+View\+Projection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieves the combined view and projection matrix. 
+
+This pure virtual method must be implemented by derived classes. \begin{DoxyReturn}{Returns}
+The view-\/projection matrix as a glm\+::mat4. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a8fb504806832c2a67c77f71fe8a8d068}{eng\+::\+Perspective\+Camera}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Engine/graphics/Camera.\+hpp\end{DoxyCompactItemize}

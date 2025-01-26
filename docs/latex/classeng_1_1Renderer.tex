@@ -1,0 +1,133 @@
+\doxysection{eng\+::Renderer Class Reference}
+\hypertarget{classeng_1_1Renderer}{}\label{classeng_1_1Renderer}\index{eng::Renderer@{eng::Renderer}}
+
+
+Handles rendering of objects in the scene, managing draw calls and instanced rendering.  
+
+
+
+
+{\ttfamily \#include $<$Renderer.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classeng_1_1Renderer_a06f50b28d242893bef89d1aa8d41be37}{Renderer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{classeng_1_1Renderer}{Renderer}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Renderer_ad970dca8df2de129bb5ac5d99ee2f3d4}{clear}} () const
+\begin{DoxyCompactList}\small\item\em Clears the frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Renderer_a27faf9a5b877f3c8044e7bd388c91bea}{clear\+To\+Color}} (const Vec3 \&color) const
+\begin{DoxyCompactList}\small\item\em Clears the frame to the given color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Renderer_aedbc800441b38c3642eac9df739942fc}{draw\+Entity}} (const \mbox{\hyperlink{classeng_1_1Entity}{Entity}} \&entity, const \mbox{\hyperlink{structeng_1_1Material}{Material}} \&material)
+\begin{DoxyCompactList}\small\item\em Draws an entity using the specified material. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Renderer_a6e5132d3eb4008d04c7e7abd46605a24}{render}} (const \mbox{\hyperlink{classeng_1_1Scene}{Scene}} \&scene)
+\begin{DoxyCompactList}\small\item\em Executes all the queued draw calls. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Renderer_a65e23f1dcadd2486d6fad1080b0ee020}{enable\+Lighting}} (bool value)
+\begin{DoxyCompactList}\small\item\em Enables or disables lighting in the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles rendering of objects in the scene, managing draw calls and instanced rendering. 
+
+The {\ttfamily \doxylink{classeng_1_1Renderer}{Renderer}} class provides functionality for batching, instanced rendering, and managing materials, lights and camera data for efficient rendering of scenes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classeng_1_1Renderer_a06f50b28d242893bef89d1aa8d41be37}\index{eng::Renderer@{eng::Renderer}!Renderer@{Renderer}}
+\index{Renderer@{Renderer}!eng::Renderer@{eng::Renderer}}
+\doxysubsubsection{\texorpdfstring{Renderer()}{Renderer()}}
+{\footnotesize\ttfamily \label{classeng_1_1Renderer_a06f50b28d242893bef89d1aa8d41be37} 
+eng\+::\+Renderer\+::\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \doxylink{classeng_1_1Renderer}{Renderer}. 
+
+Initializes the \doxylink{classeng_1_1Renderer}{Renderer} and its associated resources. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1Renderer_ad970dca8df2de129bb5ac5d99ee2f3d4}\index{eng::Renderer@{eng::Renderer}!clear@{clear}}
+\index{clear@{clear}!eng::Renderer@{eng::Renderer}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{classeng_1_1Renderer_ad970dca8df2de129bb5ac5d99ee2f3d4} 
+void eng\+::\+Renderer\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Clears the frame. 
+
+This method clears the color, depth, and stencil buffers to prepare for a new frame. \Hypertarget{classeng_1_1Renderer_a27faf9a5b877f3c8044e7bd388c91bea}\index{eng::Renderer@{eng::Renderer}!clearToColor@{clearToColor}}
+\index{clearToColor@{clearToColor}!eng::Renderer@{eng::Renderer}}
+\doxysubsubsection{\texorpdfstring{clearToColor()}{clearToColor()}}
+{\footnotesize\ttfamily \label{classeng_1_1Renderer_a27faf9a5b877f3c8044e7bd388c91bea} 
+void eng\+::\+Renderer\+::clear\+To\+Color (\begin{DoxyParamCaption}\item[{const Vec3 \&}]{color}{}\end{DoxyParamCaption}) const}
+
+
+
+Clears the frame to the given color. 
+
+This method clears the frame with the specified color, setting it as the background for the new frame.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color to set (RGB). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1Renderer_aedbc800441b38c3642eac9df739942fc}\index{eng::Renderer@{eng::Renderer}!drawEntity@{drawEntity}}
+\index{drawEntity@{drawEntity}!eng::Renderer@{eng::Renderer}}
+\doxysubsubsection{\texorpdfstring{drawEntity()}{drawEntity()}}
+{\footnotesize\ttfamily \label{classeng_1_1Renderer_aedbc800441b38c3642eac9df739942fc} 
+void eng\+::\+Renderer\+::draw\+Entity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classeng_1_1Entity}{Entity}} \&}]{entity}{, }\item[{const \mbox{\hyperlink{structeng_1_1Material}{Material}} \&}]{material}{}\end{DoxyParamCaption})}
+
+
+
+Draws an entity using the specified material. 
+
+This method renders a given entity using the provided material, applying all necessary transformations and settings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to render. \\
+\hline
+{\em material} & The material to use for rendering the entity. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1Renderer_a65e23f1dcadd2486d6fad1080b0ee020}\index{eng::Renderer@{eng::Renderer}!enableLighting@{enableLighting}}
+\index{enableLighting@{enableLighting}!eng::Renderer@{eng::Renderer}}
+\doxysubsubsection{\texorpdfstring{enableLighting()}{enableLighting()}}
+{\footnotesize\ttfamily \label{classeng_1_1Renderer_a65e23f1dcadd2486d6fad1080b0ee020} 
+void eng\+::\+Renderer\+::enable\+Lighting (\begin{DoxyParamCaption}\item[{bool}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Enables or disables lighting in the scene. 
+
+This method allows you to toggle the lighting system on or off. Lighting calculations will be performed when enabled.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & A boolean flag to enable ({\ttfamily true}) or disable ({\ttfamily false}) lighting. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1Renderer_a6e5132d3eb4008d04c7e7abd46605a24}\index{eng::Renderer@{eng::Renderer}!render@{render}}
+\index{render@{render}!eng::Renderer@{eng::Renderer}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{classeng_1_1Renderer_a6e5132d3eb4008d04c7e7abd46605a24} 
+void eng\+::\+Renderer\+::render (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classeng_1_1Scene}{Scene}} \&}]{scene}{}\end{DoxyParamCaption})}
+
+
+
+Executes all the queued draw calls. 
+
+This method processes and executes all batched draw calls for the given scene, rendering it to the screen.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & The scene to render. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/graphics/Renderer.\+hpp\item 
+Engine/graphics/Renderer.\+cpp\end{DoxyCompactItemize}

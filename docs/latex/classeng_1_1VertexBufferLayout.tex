@@ -1,0 +1,84 @@
+\doxysection{eng\+::Vertex\+Buffer\+Layout Class Reference}
+\hypertarget{classeng_1_1VertexBufferLayout}{}\label{classeng_1_1VertexBufferLayout}\index{eng::VertexBufferLayout@{eng::VertexBufferLayout}}
+
+
+Manages the layout of attributes within a \doxylink{structeng_1_1Vertex}{Vertex} Buffer.  
+
+
+
+
+{\ttfamily \#include $<$Vertex\+Layout.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{classeng_1_1VertexBufferLayout_ab3c89c35a7aab511965a27c8686d41f4}{push}} (unsigned int count)
+\begin{DoxyCompactList}\small\item\em Adds an attribute to the layout. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{structeng_1_1VertexBufferElement}{Vertex\+Buffer\+Element}} $>$ \& \mbox{\hyperlink{classeng_1_1VertexBufferLayout_aa09bdd90ddd1940bfff714e04215d409}{get\+Elements}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the list of attributes in the buffer layout. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classeng_1_1VertexBufferLayout_a4264db6ad5a70c0911b4dd3657afca7a}{get\+Stride}} () const
+\begin{DoxyCompactList}\small\item\em Gets the total stride of the layout in bytes. \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1VertexBufferLayout_a6e71e0bf649d5421c784321df3100e7e}\label{classeng_1_1VertexBufferLayout_a6e71e0bf649d5421c784321df3100e7e} 
+template$<$$>$ void {\bfseries push} (unsigned int count)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the layout of attributes within a \doxylink{structeng_1_1Vertex}{Vertex} Buffer. 
+
+This class stores information about vertex attributes and calculates the total stride (the size in bytes of a single vertex). 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1VertexBufferLayout_aa09bdd90ddd1940bfff714e04215d409}\index{eng::VertexBufferLayout@{eng::VertexBufferLayout}!getElements@{getElements}}
+\index{getElements@{getElements}!eng::VertexBufferLayout@{eng::VertexBufferLayout}}
+\doxysubsubsection{\texorpdfstring{getElements()}{getElements()}}
+{\footnotesize\ttfamily \label{classeng_1_1VertexBufferLayout_aa09bdd90ddd1940bfff714e04215d409} 
+const std\+::vector$<$ \mbox{\hyperlink{structeng_1_1VertexBufferElement}{Vertex\+Buffer\+Element}} $>$ \& eng\+::\+Vertex\+Buffer\+Layout\+::get\+Elements (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the list of attributes in the buffer layout. 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to a vector of \doxylink{structeng_1_1VertexBufferElement}{Vertex\+Buffer\+Element}. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1VertexBufferLayout_a4264db6ad5a70c0911b4dd3657afca7a}\index{eng::VertexBufferLayout@{eng::VertexBufferLayout}!getStride@{getStride}}
+\index{getStride@{getStride}!eng::VertexBufferLayout@{eng::VertexBufferLayout}}
+\doxysubsubsection{\texorpdfstring{getStride()}{getStride()}}
+{\footnotesize\ttfamily \label{classeng_1_1VertexBufferLayout_a4264db6ad5a70c0911b4dd3657afca7a} 
+unsigned int eng\+::\+Vertex\+Buffer\+Layout\+::get\+Stride (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the total stride of the layout in bytes. 
+
+\begin{DoxyReturn}{Returns}
+The stride of the layout. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1VertexBufferLayout_ab3c89c35a7aab511965a27c8686d41f4}\index{eng::VertexBufferLayout@{eng::VertexBufferLayout}!push@{push}}
+\index{push@{push}!eng::VertexBufferLayout@{eng::VertexBufferLayout}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily \label{classeng_1_1VertexBufferLayout_ab3c89c35a7aab511965a27c8686d41f4} 
+template$<$typename T$>$ \\
+void eng\+::\+Vertex\+Buffer\+Layout\+::push (\begin{DoxyParamCaption}\item[{unsigned int}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Adds an attribute to the layout. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The data type of the attribute (e.\+g., float, int). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em count} & The number of components in the attribute (e.\+g., 3 for vec3). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/platform/opengl/Vertex\+Layout.\+hpp\item 
+Engine/platform/opengl/Vertex\+Layout.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,66 @@
+\doxysection{Scene.\+hpp}
+\hypertarget{Scene_8hpp_source}{}\label{Scene_8hpp_source}\index{Engine/core/Scene.hpp@{Engine/core/Scene.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Camera.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Entity.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Light.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Material.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }eng\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structeng_1_1Drawable}{Drawable}}\{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1Entity}{Entity}}*\ entity;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structeng_1_1Material}{Material}}*\ material;}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classeng_1_1Scene}{Scene}}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<PointLight*>\ pointLightList;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<DirectionalLight*>\ directionalLightList;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Drawable>\ drawables;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1Camera}{Camera}}*\ activeCamera;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Scene_aa1635c2c16c7d0eac22792253b263a97}{addLight}}(\mbox{\hyperlink{structeng_1_1DirectionalLight}{DirectionalLight}}\&\ light);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Scene_aa1635c2c16c7d0eac22792253b263a97}{addLight}}(\mbox{\hyperlink{structeng_1_1PointLight}{PointLight}}\&\ light);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Scene_a1330db24bce9b8ab0d7d7745c0105782}{removeLight}}(\mbox{\hyperlink{structeng_1_1PointLight}{PointLight}}\&\ light);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Scene_a1330db24bce9b8ab0d7d7745c0105782}{removeLight}}(\mbox{\hyperlink{structeng_1_1DirectionalLight}{DirectionalLight}}\&\ light);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Scene_a4ba80a712b2e4d4f56633b8f01fae2c8}{clearLightList}}();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Scene_afdcedaa2acea2a2a45301f3192cad3b5}{addDrawable}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1Entity}{Entity}}\&\ entity,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structeng_1_1Material}{Material}}\&\ material);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Scene_a4ee8aa6b173e9511043b3f3f353f372f}{removeDrawable}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1Entity}{Entity}}\&\ entity);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Scene_a8526ea1145c3c27f0c148e5bef822ab4}{clearDrawables}}();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Scene_a7fb8feaac6ccc2cb2eb116c9f50501ab}{setActiveCamera}}(\mbox{\hyperlink{classeng_1_1Camera}{Camera}}\&\ camera);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Scene_a7c9e9d526d55d668938ff8d452534a9a}{onUpdate}}()\ =\ 0;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<T*>\&\ \mbox{\hyperlink{classeng_1_1Scene_a9567253c0ac907386bea3ee52c1c56f9}{getLightList}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Drawable>\&\ \mbox{\hyperlink{classeng_1_1Scene_aad5139124a4ec4f1ef8a1a3d66a56d33}{getDrawables}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1Camera}{Camera}}*\ \mbox{\hyperlink{classeng_1_1Scene_aa37e60112ca0f14c566216c82ec4012f}{getActiveCamera}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00182\ \ \ \ \ \};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \}\ \textcolor{comment}{//\ namespace\ eng}}
+
+\end{DoxyCode}

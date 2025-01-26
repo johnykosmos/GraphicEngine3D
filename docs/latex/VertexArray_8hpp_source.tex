@@ -1,0 +1,40 @@
+\doxysection{Vertex\+Array.\+hpp}
+\hypertarget{VertexArray_8hpp_source}{}\label{VertexArray_8hpp_source}\index{Engine/platform/opengl/VertexArray.hpp@{Engine/platform/opengl/VertexArray.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GLBuffers.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}VertexLayout.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }eng\{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classeng_1_1VertexArray_ae76476ccb227ee25762498d446cd53dc}{VertexArray}}\{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1IndexBuffer}{IndexBuffer}}*\ ib;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1VertexArray_ae76476ccb227ee25762498d446cd53dc}{VertexArray}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1VertexArray_ae76476ccb227ee25762498d446cd53dc}{VertexArray}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1VertexBuffer}{VertexBuffer}}\&\ vb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1VertexBufferLayout}{VertexBufferLayout}}\&\ layout,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1IndexBuffer}{IndexBuffer}}\&\ ib);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1VertexArray_a37fdedb5fcab8bbfe68b18d396fd2029}{\string~VertexArray}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1VertexArray_ac47856378267099f22e83cb6ba20b04c}{configureAttributes}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1VertexBuffer}{VertexBuffer}}\&\ vb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1VertexBufferLayout}{VertexBufferLayout}}\&\ layout,\ \textcolor{keywordtype}{bool}\ isInstanced)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1VertexArray_acf6ec43ea4a92befaef2a4742eef0761}{addIndexBuffer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1IndexBuffer}{IndexBuffer}}\&\ ib);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1VertexArray_a9dd7db0fc396c36e9dfe63efb38e7634}{bind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1VertexArray_a68877bf1f626b5809e868f09dd269379}{unbind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1IndexBuffer}{IndexBuffer}}*\ \mbox{\hyperlink{classeng_1_1VertexArray_ae3b2a3937abaa5e66d6ed8e5a12a294c}{getIndexBuffer}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,76 @@
+\doxysection{eng\+::Draw\+Call Struct Reference}
+\hypertarget{structeng_1_1DrawCall}{}\label{structeng_1_1DrawCall}\index{eng::DrawCall@{eng::DrawCall}}
+
+
+Represents a single rendering call with associated vertex data, material, and transformations.  
+
+
+
+
+{\ttfamily \#include $<$Renderer.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structeng_1_1DrawCall_aa35d69e85f3ac5e1b496be8b4df4ab56}{operator==}} (const \mbox{\hyperlink{structeng_1_1DrawCall}{Draw\+Call}} \&other\+Call)
+\begin{DoxyCompactList}\small\item\em Compares this \doxylink{structeng_1_1DrawCall}{Draw\+Call} with another for equality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classeng_1_1VertexArray}{Vertex\+Array}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structeng_1_1DrawCall_a6cb4eafcfc355c3af7158eb9884f97d3}{va}}
+\item 
+const \mbox{\hyperlink{structeng_1_1Material}{Material}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structeng_1_1DrawCall_a20ab4bea7c33637a04e2a5f8830510c2}{material}}
+\item 
+std\+::vector$<$ Mat4 $>$ \mbox{\hyperlink{structeng_1_1DrawCall_a56efc8c78a2aae886cd95df1dabf0357}{transforms}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single rendering call with associated vertex data, material, and transformations. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structeng_1_1DrawCall_aa35d69e85f3ac5e1b496be8b4df4ab56}\index{eng::DrawCall@{eng::DrawCall}!operator==@{operator==}}
+\index{operator==@{operator==}!eng::DrawCall@{eng::DrawCall}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{structeng_1_1DrawCall_aa35d69e85f3ac5e1b496be8b4df4ab56} 
+bool eng\+::\+Draw\+Call\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structeng_1_1DrawCall}{Draw\+Call}} \&}]{other\+Call}{}\end{DoxyParamCaption})}
+
+
+
+Compares this \doxylink{structeng_1_1DrawCall}{Draw\+Call} with another for equality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other\+Call} & The other \doxylink{structeng_1_1DrawCall}{Draw\+Call} to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the Draw\+Calls are equal, false otherwise. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structeng_1_1DrawCall_a20ab4bea7c33637a04e2a5f8830510c2}\index{eng::DrawCall@{eng::DrawCall}!material@{material}}
+\index{material@{material}!eng::DrawCall@{eng::DrawCall}}
+\doxysubsubsection{\texorpdfstring{material}{material}}
+{\footnotesize\ttfamily \label{structeng_1_1DrawCall_a20ab4bea7c33637a04e2a5f8830510c2} 
+const \mbox{\hyperlink{structeng_1_1Material}{Material}}\texorpdfstring{$\ast$}{*} eng\+::\+Draw\+Call\+::material}
+
+Pointer to the material used in the draw call. \Hypertarget{structeng_1_1DrawCall_a56efc8c78a2aae886cd95df1dabf0357}\index{eng::DrawCall@{eng::DrawCall}!transforms@{transforms}}
+\index{transforms@{transforms}!eng::DrawCall@{eng::DrawCall}}
+\doxysubsubsection{\texorpdfstring{transforms}{transforms}}
+{\footnotesize\ttfamily \label{structeng_1_1DrawCall_a56efc8c78a2aae886cd95df1dabf0357} 
+std\+::vector$<$Mat4$>$ eng\+::\+Draw\+Call\+::transforms}
+
+Transformations applied to the objects in the draw call. \Hypertarget{structeng_1_1DrawCall_a6cb4eafcfc355c3af7158eb9884f97d3}\index{eng::DrawCall@{eng::DrawCall}!va@{va}}
+\index{va@{va}!eng::DrawCall@{eng::DrawCall}}
+\doxysubsubsection{\texorpdfstring{va}{va}}
+{\footnotesize\ttfamily \label{structeng_1_1DrawCall_a6cb4eafcfc355c3af7158eb9884f97d3} 
+const \mbox{\hyperlink{classeng_1_1VertexArray}{Vertex\+Array}}\texorpdfstring{$\ast$}{*} eng\+::\+Draw\+Call\+::va}
+
+Pointer to the vertex array used in the draw call. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/graphics/Renderer.\+hpp\item 
+Engine/graphics/Renderer.\+cpp\end{DoxyCompactItemize}

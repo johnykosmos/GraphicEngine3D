@@ -1,0 +1,214 @@
+\doxysection{eng\+::Perspective\+Camera Class Reference}
+\hypertarget{classeng_1_1PerspectiveCamera}{}\label{classeng_1_1PerspectiveCamera}\index{eng::PerspectiveCamera@{eng::PerspectiveCamera}}
+
+
+Represents a perspective projection camera in a 3D graphics system.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+hpp$>$}
+
+Inheritance diagram for eng\+::Perspective\+Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classeng_1_1PerspectiveCamera}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classeng_1_1PerspectiveCamera_a710a13c685b26970c6c1dbd4f688daee}{Perspective\+Camera}} (Vec3 start\+Position, float aspect\+Ratio, float start\+Yaw, float start\+Pitch)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classeng_1_1PerspectiveCamera}{Perspective\+Camera} with a given position, yaw, and pitch. \end{DoxyCompactList}\item 
+Mat4 \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a8fb504806832c2a67c77f71fe8a8d068}{get\+View\+Projection}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieves the combined view and projection matrix. \end{DoxyCompactList}\item 
+Vec3 \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a10395ad6bcf1bbc887a945ab58a2d762}{get\+Position}} () const override
+\begin{DoxyCompactList}\small\item\em Retrieves the camera\textquotesingle{}s current position. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a6bb1be369055207890bc603830a67c51}{get\+Yaw}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the camera\textquotesingle{}s current yaw angle. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classeng_1_1PerspectiveCamera_aafc052cc13415cf7673942edf55f9544}{get\+Pitch}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the camera\textquotesingle{}s current pitch angle. \end{DoxyCompactList}\item 
+const Vec3 \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a6c4cf049fd89f685259f342ae61c2474}{get\+Front}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the camera\textquotesingle{}s front vector (forward direction). \end{DoxyCompactList}\item 
+const Vec3 \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a95ca03bd3769e8a546885670ab98ad37}{get\+Right}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the camera\textquotesingle{}s right vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a99875c9cf2335b426e53bd904c01d2fa}{set\+Yaw}} (float new\+Yaw)
+\begin{DoxyCompactList}\small\item\em Sets the camera\textquotesingle{}s yaw angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1PerspectiveCamera_af2835e9473b6ecb6c40ed4a3c3b45cee}{set\+Pitch}} (float new\+Pitch)
+\begin{DoxyCompactList}\small\item\em Sets the camera\textquotesingle{}s pitch angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a9d91c96e251c64b89baf3ecc39b5694a}{set\+Position}} (const Vec3 \&new\+Position)
+\begin{DoxyCompactList}\small\item\em Sets the camera\textquotesingle{}s position in 3D space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classeng_1_1Camera}{eng\+::\+Camera}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classeng_1_1Camera_a081afba5aa8444b03bca162bfbfe0b06}{\texorpdfstring{$\sim$}{\string~}\+Camera}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classeng_1_1Camera}{Camera}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a perspective projection camera in a 3D graphics system. 
+
+\doxylink{classeng_1_1PerspectiveCamera}{Perspective\+Camera} manages the position, orientation, and perspective projection parameters of a camera in 3D space. It calculates view and projection matrices to enable 3D scene rendering. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classeng_1_1PerspectiveCamera_a710a13c685b26970c6c1dbd4f688daee}\index{eng::PerspectiveCamera@{eng::PerspectiveCamera}!PerspectiveCamera@{PerspectiveCamera}}
+\index{PerspectiveCamera@{PerspectiveCamera}!eng::PerspectiveCamera@{eng::PerspectiveCamera}}
+\doxysubsubsection{\texorpdfstring{PerspectiveCamera()}{PerspectiveCamera()}}
+{\footnotesize\ttfamily \label{classeng_1_1PerspectiveCamera_a710a13c685b26970c6c1dbd4f688daee} 
+eng\+::\+Perspective\+Camera\+::\+Perspective\+Camera (\begin{DoxyParamCaption}\item[{Vec3}]{start\+Position}{, }\item[{float}]{aspect\+Ratio}{, }\item[{float}]{start\+Yaw}{, }\item[{float}]{start\+Pitch}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classeng_1_1PerspectiveCamera}{Perspective\+Camera} with a given position, yaw, and pitch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Position} & The starting position of the camera. \\
+\hline
+{\em aspect\+Ratio} & The propotion between screen width and height \\
+\hline
+{\em start\+Yaw} & The initial yaw angle in degrees. \\
+\hline
+{\em start\+Pitch} & The initial pitch angle in degrees. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1PerspectiveCamera_a6c4cf049fd89f685259f342ae61c2474}\index{eng::PerspectiveCamera@{eng::PerspectiveCamera}!getFront@{getFront}}
+\index{getFront@{getFront}!eng::PerspectiveCamera@{eng::PerspectiveCamera}}
+\doxysubsubsection{\texorpdfstring{getFront()}{getFront()}}
+{\footnotesize\ttfamily \label{classeng_1_1PerspectiveCamera_a6c4cf049fd89f685259f342ae61c2474} 
+const Vec3 eng\+::\+Perspective\+Camera\+::get\+Front (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the camera\textquotesingle{}s front vector (forward direction). 
+
+\begin{DoxyReturn}{Returns}
+The front vector as a Vec3. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1PerspectiveCamera_aafc052cc13415cf7673942edf55f9544}\index{eng::PerspectiveCamera@{eng::PerspectiveCamera}!getPitch@{getPitch}}
+\index{getPitch@{getPitch}!eng::PerspectiveCamera@{eng::PerspectiveCamera}}
+\doxysubsubsection{\texorpdfstring{getPitch()}{getPitch()}}
+{\footnotesize\ttfamily \label{classeng_1_1PerspectiveCamera_aafc052cc13415cf7673942edf55f9544} 
+float eng\+::\+Perspective\+Camera\+::get\+Pitch (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the camera\textquotesingle{}s current pitch angle. 
+
+\begin{DoxyReturn}{Returns}
+The pitch angle in degrees. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1PerspectiveCamera_a10395ad6bcf1bbc887a945ab58a2d762}\index{eng::PerspectiveCamera@{eng::PerspectiveCamera}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!eng::PerspectiveCamera@{eng::PerspectiveCamera}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \label{classeng_1_1PerspectiveCamera_a10395ad6bcf1bbc887a945ab58a2d762} 
+Vec3 eng\+::\+Perspective\+Camera\+::get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the camera\textquotesingle{}s current position. 
+
+\begin{DoxyReturn}{Returns}
+The camera\textquotesingle{}s position as a Vec3. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classeng_1_1Camera_a16a3c7ec98883e50b226b14db5e4f916}{eng\+::\+Camera}}.
+
+\Hypertarget{classeng_1_1PerspectiveCamera_a95ca03bd3769e8a546885670ab98ad37}\index{eng::PerspectiveCamera@{eng::PerspectiveCamera}!getRight@{getRight}}
+\index{getRight@{getRight}!eng::PerspectiveCamera@{eng::PerspectiveCamera}}
+\doxysubsubsection{\texorpdfstring{getRight()}{getRight()}}
+{\footnotesize\ttfamily \label{classeng_1_1PerspectiveCamera_a95ca03bd3769e8a546885670ab98ad37} 
+const Vec3 eng\+::\+Perspective\+Camera\+::get\+Right (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the camera\textquotesingle{}s right vector. 
+
+\begin{DoxyReturn}{Returns}
+The right vector as a Vec3. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1PerspectiveCamera_a8fb504806832c2a67c77f71fe8a8d068}\index{eng::PerspectiveCamera@{eng::PerspectiveCamera}!getViewProjection@{getViewProjection}}
+\index{getViewProjection@{getViewProjection}!eng::PerspectiveCamera@{eng::PerspectiveCamera}}
+\doxysubsubsection{\texorpdfstring{getViewProjection()}{getViewProjection()}}
+{\footnotesize\ttfamily \label{classeng_1_1PerspectiveCamera_a8fb504806832c2a67c77f71fe8a8d068} 
+Mat4 eng\+::\+Perspective\+Camera\+::get\+View\+Projection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Retrieves the combined view and projection matrix. 
+
+\begin{DoxyReturn}{Returns}
+The view-\/projection matrix as a Mat4. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classeng_1_1Camera_a80e49fa9c4aacc6d24f22ab38061e9ce}{eng\+::\+Camera}}.
+
+\Hypertarget{classeng_1_1PerspectiveCamera_a6bb1be369055207890bc603830a67c51}\index{eng::PerspectiveCamera@{eng::PerspectiveCamera}!getYaw@{getYaw}}
+\index{getYaw@{getYaw}!eng::PerspectiveCamera@{eng::PerspectiveCamera}}
+\doxysubsubsection{\texorpdfstring{getYaw()}{getYaw()}}
+{\footnotesize\ttfamily \label{classeng_1_1PerspectiveCamera_a6bb1be369055207890bc603830a67c51} 
+float eng\+::\+Perspective\+Camera\+::get\+Yaw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the camera\textquotesingle{}s current yaw angle. 
+
+\begin{DoxyReturn}{Returns}
+The yaw angle in degrees. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1PerspectiveCamera_af2835e9473b6ecb6c40ed4a3c3b45cee}\index{eng::PerspectiveCamera@{eng::PerspectiveCamera}!setPitch@{setPitch}}
+\index{setPitch@{setPitch}!eng::PerspectiveCamera@{eng::PerspectiveCamera}}
+\doxysubsubsection{\texorpdfstring{setPitch()}{setPitch()}}
+{\footnotesize\ttfamily \label{classeng_1_1PerspectiveCamera_af2835e9473b6ecb6c40ed4a3c3b45cee} 
+void eng\+::\+Perspective\+Camera\+::set\+Pitch (\begin{DoxyParamCaption}\item[{float}]{new\+Pitch}{}\end{DoxyParamCaption})}
+
+
+
+Sets the camera\textquotesingle{}s pitch angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Pitch} & The new pitch angle in degrees. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1PerspectiveCamera_a9d91c96e251c64b89baf3ecc39b5694a}\index{eng::PerspectiveCamera@{eng::PerspectiveCamera}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!eng::PerspectiveCamera@{eng::PerspectiveCamera}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily \label{classeng_1_1PerspectiveCamera_a9d91c96e251c64b89baf3ecc39b5694a} 
+void eng\+::\+Perspective\+Camera\+::set\+Position (\begin{DoxyParamCaption}\item[{const Vec3 \&}]{new\+Position}{}\end{DoxyParamCaption})}
+
+
+
+Sets the camera\textquotesingle{}s position in 3D space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Position} & The new position as a Vec3. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1PerspectiveCamera_a99875c9cf2335b426e53bd904c01d2fa}\index{eng::PerspectiveCamera@{eng::PerspectiveCamera}!setYaw@{setYaw}}
+\index{setYaw@{setYaw}!eng::PerspectiveCamera@{eng::PerspectiveCamera}}
+\doxysubsubsection{\texorpdfstring{setYaw()}{setYaw()}}
+{\footnotesize\ttfamily \label{classeng_1_1PerspectiveCamera_a99875c9cf2335b426e53bd904c01d2fa} 
+void eng\+::\+Perspective\+Camera\+::set\+Yaw (\begin{DoxyParamCaption}\item[{float}]{new\+Yaw}{}\end{DoxyParamCaption})}
+
+
+
+Sets the camera\textquotesingle{}s yaw angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Yaw} & The new yaw angle in degrees. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/graphics/Camera.\+hpp\item 
+Engine/graphics/Camera.\+cpp\end{DoxyCompactItemize}

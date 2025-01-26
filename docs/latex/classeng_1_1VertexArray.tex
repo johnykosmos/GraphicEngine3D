@@ -1,0 +1,126 @@
+\doxysection{eng\+::Vertex\+Array Class Reference}
+\hypertarget{classeng_1_1VertexArray}{}\label{classeng_1_1VertexArray}\index{eng::VertexArray@{eng::VertexArray}}
+
+
+Represents an Open\+GL \doxylink{classeng_1_1VertexArray}{Vertex\+Array}.  
+
+
+
+
+{\ttfamily \#include $<$Vertex\+Array.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classeng_1_1VertexArray_ae76476ccb227ee25762498d446cd53dc}{Vertex\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new, empty \doxylink{structeng_1_1Vertex}{Vertex} Array Object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1VertexArray_ac8d798e7b0baa111aee0958eb453cb95}{Vertex\+Array}} (const \mbox{\hyperlink{classeng_1_1VertexBuffer}{Vertex\+Buffer}} \&vb, const \mbox{\hyperlink{classeng_1_1VertexBufferLayout}{Vertex\+Buffer\+Layout}} \&layout, const \mbox{\hyperlink{classeng_1_1IndexBuffer}{Index\+Buffer}} \&ib)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{structeng_1_1Vertex}{Vertex} Array Object with the given \doxylink{structeng_1_1Vertex}{Vertex} Buffer, Layout, and Index Buffer. \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1VertexArray_a37fdedb5fcab8bbfe68b18d396fd2029}\label{classeng_1_1VertexArray_a37fdedb5fcab8bbfe68b18d396fd2029} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Vertex\+Array} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{structeng_1_1Vertex}{Vertex} Array Object, releasing its resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1VertexArray_ac47856378267099f22e83cb6ba20b04c}{configure\+Attributes}} (const \mbox{\hyperlink{classeng_1_1VertexBuffer}{Vertex\+Buffer}} \&vb, const \mbox{\hyperlink{classeng_1_1VertexBufferLayout}{Vertex\+Buffer\+Layout}} \&layout, bool is\+Instanced) const
+\begin{DoxyCompactList}\small\item\em Adds a \doxylink{structeng_1_1Vertex}{Vertex} Buffer and its associated Layout to the VAO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1VertexArray_acf6ec43ea4a92befaef2a4742eef0761}{add\+Index\+Buffer}} (const \mbox{\hyperlink{classeng_1_1IndexBuffer}{Index\+Buffer}} \&ib)
+\begin{DoxyCompactList}\small\item\em Adds an Index Buffer to the VAO. \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1VertexArray_a9dd7db0fc396c36e9dfe63efb38e7634}\label{classeng_1_1VertexArray_a9dd7db0fc396c36e9dfe63efb38e7634} 
+void {\bfseries bind} () const
+\begin{DoxyCompactList}\small\item\em Binds the \doxylink{structeng_1_1Vertex}{Vertex} Array Object, making it the active VAO. \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1VertexArray_a68877bf1f626b5809e868f09dd269379}\label{classeng_1_1VertexArray_a68877bf1f626b5809e868f09dd269379} 
+void {\bfseries unbind} () const
+\begin{DoxyCompactList}\small\item\em Unbinds the \doxylink{structeng_1_1Vertex}{Vertex} Array Object, making no VAO active. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classeng_1_1IndexBuffer}{Index\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classeng_1_1VertexArray_ae3b2a3937abaa5e66d6ed8e5a12a294c}{get\+Index\+Buffer}} () const
+\begin{DoxyCompactList}\small\item\em Returns a const reference to the Index Buffer associated with this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an Open\+GL \doxylink{classeng_1_1VertexArray}{Vertex\+Array}. 
+
+This class provides an abstraction for managing Open\+GL \doxylink{structeng_1_1Vertex}{Vertex} Array Objects (VAOs). A VAO stores the state of vertex attributes and the associated vertex buffer bindings, allowing efficient configuration and rendering of vertex data. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classeng_1_1VertexArray_ae76476ccb227ee25762498d446cd53dc}\index{eng::VertexArray@{eng::VertexArray}!VertexArray@{VertexArray}}
+\index{VertexArray@{VertexArray}!eng::VertexArray@{eng::VertexArray}}
+\doxysubsubsection{\texorpdfstring{VertexArray()}{VertexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classeng_1_1VertexArray_ae76476ccb227ee25762498d446cd53dc} 
+eng\+::\+Vertex\+Array\+::\+Vertex\+Array (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a new, empty \doxylink{structeng_1_1Vertex}{Vertex} Array Object. 
+
+Initializes the VAO by generating a unique identifier. \Hypertarget{classeng_1_1VertexArray_ac8d798e7b0baa111aee0958eb453cb95}\index{eng::VertexArray@{eng::VertexArray}!VertexArray@{VertexArray}}
+\index{VertexArray@{VertexArray}!eng::VertexArray@{eng::VertexArray}}
+\doxysubsubsection{\texorpdfstring{VertexArray()}{VertexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classeng_1_1VertexArray_ac8d798e7b0baa111aee0958eb453cb95} 
+eng\+::\+Vertex\+Array\+::\+Vertex\+Array (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classeng_1_1VertexBuffer}{Vertex\+Buffer}} \&}]{vb}{, }\item[{const \mbox{\hyperlink{classeng_1_1VertexBufferLayout}{Vertex\+Buffer\+Layout}} \&}]{layout}{, }\item[{const \mbox{\hyperlink{classeng_1_1IndexBuffer}{Index\+Buffer}} \&}]{ib}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{structeng_1_1Vertex}{Vertex} Array Object with the given \doxylink{structeng_1_1Vertex}{Vertex} Buffer, Layout, and Index Buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vb} & The \doxylink{structeng_1_1Vertex}{Vertex} Buffer to associate with the VAO. \\
+\hline
+{\em layout} & The \doxylink{structeng_1_1Vertex}{Vertex} Buffer Layout describing the structure of the vertex data. \\
+\hline
+{\em ib} & The Index Buffer to associate with the VAO. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1VertexArray_acf6ec43ea4a92befaef2a4742eef0761}\index{eng::VertexArray@{eng::VertexArray}!addIndexBuffer@{addIndexBuffer}}
+\index{addIndexBuffer@{addIndexBuffer}!eng::VertexArray@{eng::VertexArray}}
+\doxysubsubsection{\texorpdfstring{addIndexBuffer()}{addIndexBuffer()}}
+{\footnotesize\ttfamily \label{classeng_1_1VertexArray_acf6ec43ea4a92befaef2a4742eef0761} 
+void eng\+::\+Vertex\+Array\+::add\+Index\+Buffer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classeng_1_1IndexBuffer}{Index\+Buffer}} \&}]{ib}{}\end{DoxyParamCaption})}
+
+
+
+Adds an Index Buffer to the VAO. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ib} & The Index Buffer to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1VertexArray_ac47856378267099f22e83cb6ba20b04c}\index{eng::VertexArray@{eng::VertexArray}!configureAttributes@{configureAttributes}}
+\index{configureAttributes@{configureAttributes}!eng::VertexArray@{eng::VertexArray}}
+\doxysubsubsection{\texorpdfstring{configureAttributes()}{configureAttributes()}}
+{\footnotesize\ttfamily \label{classeng_1_1VertexArray_ac47856378267099f22e83cb6ba20b04c} 
+void eng\+::\+Vertex\+Array\+::configure\+Attributes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classeng_1_1VertexBuffer}{Vertex\+Buffer}} \&}]{vb}{, }\item[{const \mbox{\hyperlink{classeng_1_1VertexBufferLayout}{Vertex\+Buffer\+Layout}} \&}]{layout}{, }\item[{bool}]{is\+Instanced}{}\end{DoxyParamCaption}) const}
+
+
+
+Adds a \doxylink{structeng_1_1Vertex}{Vertex} Buffer and its associated Layout to the VAO. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vb} & The \doxylink{structeng_1_1Vertex}{Vertex} Buffer to add. \\
+\hline
+{\em layout} & The \doxylink{structeng_1_1Vertex}{Vertex} Buffer Layout describing the structure of the vertex data. \\
+\hline
+{\em is\+Instanced} & Bool value describing if the buffer is instanced \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1VertexArray_ae3b2a3937abaa5e66d6ed8e5a12a294c}\index{eng::VertexArray@{eng::VertexArray}!getIndexBuffer@{getIndexBuffer}}
+\index{getIndexBuffer@{getIndexBuffer}!eng::VertexArray@{eng::VertexArray}}
+\doxysubsubsection{\texorpdfstring{getIndexBuffer()}{getIndexBuffer()}}
+{\footnotesize\ttfamily \label{classeng_1_1VertexArray_ae3b2a3937abaa5e66d6ed8e5a12a294c} 
+const \mbox{\hyperlink{classeng_1_1IndexBuffer}{Index\+Buffer}} \texorpdfstring{$\ast$}{*} eng\+::\+Vertex\+Array\+::get\+Index\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a const reference to the Index Buffer associated with this object. 
+
+\begin{DoxyReturn}{Returns}
+const \doxylink{classeng_1_1IndexBuffer}{Index\+Buffer}\& Reference to the \doxylink{classeng_1_1IndexBuffer}{Index\+Buffer}. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/platform/opengl/Vertex\+Array.\+hpp\item 
+Engine/platform/opengl/Vertex\+Array.\+cpp\end{DoxyCompactItemize}

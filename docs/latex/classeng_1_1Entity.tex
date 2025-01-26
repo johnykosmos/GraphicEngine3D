@@ -1,0 +1,67 @@
+\doxysection{eng\+::Entity Class Reference}
+\hypertarget{classeng_1_1Entity}{}\label{classeng_1_1Entity}\index{eng::Entity@{eng::Entity}}
+
+
+Abstract class representing a entity.  
+
+
+
+
+{\ttfamily \#include $<$Entity.\+hpp$>$}
+
+Inheritance diagram for eng\+::Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classeng_1_1Entity}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classeng_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{classeng_1_1Entity_a8c0fd49ee599924abd8a37e9d5abab0a}{get\+Mesh}} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the mesh transformation matrix of the entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classeng_1_1TransformableObject}{eng\+::\+Transformable\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classeng_1_1TransformableObject_aff37747658185f3f66fd81822a8234fb}{Transformable\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+const Mat4 \& \mbox{\hyperlink{classeng_1_1TransformableObject_a5b276a98cf4daf735de44258ede4490c}{get\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the transformation matrix of the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1TransformableObject}{Transformable\+Object}} \& \mbox{\hyperlink{classeng_1_1TransformableObject_a905004a33dae2bc64e6ffd0f831827c6}{rotate}} (float angle, const Vec3 \&vector)
+\begin{DoxyCompactList}\small\item\em Applies a rotation to the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1TransformableObject}{Transformable\+Object}} \& \mbox{\hyperlink{classeng_1_1TransformableObject_a2b31c8be3edbde8db229151611e72ce0}{translate}} (const Vec3 \&vector)
+\begin{DoxyCompactList}\small\item\em Applies a translation to the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1TransformableObject}{Transformable\+Object}} \& \mbox{\hyperlink{classeng_1_1TransformableObject_a845354d76786585b052d4aecd204306f}{scale}} (const Vec3 \&scale\+Vector)
+\begin{DoxyCompactList}\small\item\em Applies a scaling to the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1TransformableObject}{Transformable\+Object}} \& \mbox{\hyperlink{classeng_1_1TransformableObject_a4bfaf5253c5982a064110a523bcf4386}{set\+Position}} (const Vec3 \&position)
+\begin{DoxyCompactList}\small\item\em Sets the object\textquotesingle{}s position directly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class representing a entity. 
+
+This class serves as a base class for all entity objects in the application. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1Entity_a8c0fd49ee599924abd8a37e9d5abab0a}\index{eng::Entity@{eng::Entity}!getMesh@{getMesh}}
+\index{getMesh@{getMesh}!eng::Entity@{eng::Entity}}
+\doxysubsubsection{\texorpdfstring{getMesh()}{getMesh()}}
+{\footnotesize\ttfamily \label{classeng_1_1Entity_a8c0fd49ee599924abd8a37e9d5abab0a} 
+virtual \mbox{\hyperlink{classeng_1_1Mesh}{Mesh}} \& eng\+::\+Entity\+::get\+Mesh (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieves the mesh transformation matrix of the entity. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classeng_1_1Mesh}{Mesh}\& A reference to the mesh of the entity. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classeng_1_1CubeShape_a7ba24c1060de14ce5bbe68c672236128}{eng\+::\+Cube\+Shape}}, \mbox{\hyperlink{classeng_1_1PyramidShape_ab4e658f8960ece7f9d748eafc0d4fa70}{eng\+::\+Pyramid\+Shape}}, and \mbox{\hyperlink{classeng_1_1SphereShape_ad1c7995ae7ef8f53974ba4321ffe2144}{eng\+::\+Sphere\+Shape}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Engine/graphics/objects/Entity.\+hpp\end{DoxyCompactItemize}

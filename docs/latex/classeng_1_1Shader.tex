@@ -1,0 +1,153 @@
+\doxysection{eng\+::Shader Class Reference}
+\hypertarget{classeng_1_1Shader}{}\label{classeng_1_1Shader}\index{eng::Shader@{eng::Shader}}
+
+
+A class for loading, compiling, and using Open\+GL shaders.  
+
+
+
+
+{\ttfamily \#include $<$Shader.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classeng_1_1Shader_a05389beac8d9591f4d73738916bd50f1}{Shader}} (const std\+::string \&source)
+\begin{DoxyCompactList}\small\item\em Constructs a shader program from the given source file. \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1Shader_a63ca5bad6cd55fca02e4427a6f7f32f4}\label{classeng_1_1Shader_a63ca5bad6cd55fca02e4427a6f7f32f4} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Shader} ()
+\begin{DoxyCompactList}\small\item\em Destructor that deletes the Open\+GL shader program. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Shader_a26a5761009f04881cefda61bed19f501}{bind}} () const
+\begin{DoxyCompactList}\small\item\em Binds the shader program for use in Open\+GL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Shader_abdea900296ddafb0d725504a3084f734}{unbind}} () const
+\begin{DoxyCompactList}\small\item\em Unbinds the current shader program. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Shader_ab0c4736f8177f95fdc546ef3941d5654}{set\+Uniform\+Mat4}} (const char \texorpdfstring{$\ast$}{*}uniform, const glm\+::mat4 \&value) const
+\begin{DoxyCompactList}\small\item\em Sets a uniform matrix variable in the shader program. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Shader_a0742740f5284856cc5104242eaaba551}{set\+Uniform\+Vec3}} (const char \texorpdfstring{$\ast$}{*}uniform, const Vec3 \&value) const
+\begin{DoxyCompactList}\small\item\em Sets a uniform vector variable in the shader program. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Shader_a10429a0fd4f035420b4582ad969b3a86}{set\+Uniform1i}} (const char \texorpdfstring{$\ast$}{*}uniform, const int value) const
+\begin{DoxyCompactList}\small\item\em Sets a uniform 1i variable in the shader program. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Shader_a7335977552d5b1867f44d281d191f557}{set\+Uniform1f}} (const char \texorpdfstring{$\ast$}{*}uniform, const float value) const
+\begin{DoxyCompactList}\small\item\em Sets a uniform 1f variable in the shader program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for loading, compiling, and using Open\+GL shaders. 
+
+This class is used to load and compile shaders from source files, create an Open\+GL shader program, and bind/unbind the shader program for rendering. It handles both vertex and fragment shaders. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classeng_1_1Shader_a05389beac8d9591f4d73738916bd50f1}\index{eng::Shader@{eng::Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!eng::Shader@{eng::Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}}
+{\footnotesize\ttfamily \label{classeng_1_1Shader_a05389beac8d9591f4d73738916bd50f1} 
+eng\+::\+Shader\+::\+Shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{source}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a shader program from the given source file. 
+
+This constructor loads the shader source, compiles the shaders, and creates an Open\+GL shader program. The program is automatically bound to the {\ttfamily id} member.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The path to the shader source file. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1Shader_a26a5761009f04881cefda61bed19f501}\index{eng::Shader@{eng::Shader}!bind@{bind}}
+\index{bind@{bind}!eng::Shader@{eng::Shader}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily \label{classeng_1_1Shader_a26a5761009f04881cefda61bed19f501} 
+void eng\+::\+Shader\+::bind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Binds the shader program for use in Open\+GL. 
+
+This function binds the shader program to the Open\+GL context, making it active for rendering operations. \Hypertarget{classeng_1_1Shader_a7335977552d5b1867f44d281d191f557}\index{eng::Shader@{eng::Shader}!setUniform1f@{setUniform1f}}
+\index{setUniform1f@{setUniform1f}!eng::Shader@{eng::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform1f()}{setUniform1f()}}
+{\footnotesize\ttfamily \label{classeng_1_1Shader_a7335977552d5b1867f44d281d191f557} 
+void eng\+::\+Shader\+::set\+Uniform1f (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{uniform}{, }\item[{const float}]{value}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets a uniform 1f variable in the shader program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uniform} & The name of the uniform variable in the shader source. \\
+\hline
+{\em value} & The float value to pass to the uniform variable. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1Shader_a10429a0fd4f035420b4582ad969b3a86}\index{eng::Shader@{eng::Shader}!setUniform1i@{setUniform1i}}
+\index{setUniform1i@{setUniform1i}!eng::Shader@{eng::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniform1i()}{setUniform1i()}}
+{\footnotesize\ttfamily \label{classeng_1_1Shader_a10429a0fd4f035420b4582ad969b3a86} 
+void eng\+::\+Shader\+::set\+Uniform1i (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{uniform}{, }\item[{const int}]{value}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets a uniform 1i variable in the shader program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uniform} & The name of the uniform variable in the shader source. \\
+\hline
+{\em value} & The int value to pass to the uniform variable. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1Shader_ab0c4736f8177f95fdc546ef3941d5654}\index{eng::Shader@{eng::Shader}!setUniformMat4@{setUniformMat4}}
+\index{setUniformMat4@{setUniformMat4}!eng::Shader@{eng::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniformMat4()}{setUniformMat4()}}
+{\footnotesize\ttfamily \label{classeng_1_1Shader_ab0c4736f8177f95fdc546ef3941d5654} 
+void eng\+::\+Shader\+::set\+Uniform\+Mat4 (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{uniform}{, }\item[{const glm\+::mat4 \&}]{value}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets a uniform matrix variable in the shader program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uniform} & The name of the uniform variable in the shader source. \\
+\hline
+{\em value} & The Mat4 value to pass to the uniform variable. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1Shader_a0742740f5284856cc5104242eaaba551}\index{eng::Shader@{eng::Shader}!setUniformVec3@{setUniformVec3}}
+\index{setUniformVec3@{setUniformVec3}!eng::Shader@{eng::Shader}}
+\doxysubsubsection{\texorpdfstring{setUniformVec3()}{setUniformVec3()}}
+{\footnotesize\ttfamily \label{classeng_1_1Shader_a0742740f5284856cc5104242eaaba551} 
+void eng\+::\+Shader\+::set\+Uniform\+Vec3 (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{uniform}{, }\item[{const Vec3 \&}]{value}{}\end{DoxyParamCaption}) const}
+
+
+
+Sets a uniform vector variable in the shader program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uniform} & The name of the uniform variable in the shader source. \\
+\hline
+{\em value} & The Vec3 value to pass to the uniform variable. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1Shader_abdea900296ddafb0d725504a3084f734}\index{eng::Shader@{eng::Shader}!unbind@{unbind}}
+\index{unbind@{unbind}!eng::Shader@{eng::Shader}}
+\doxysubsubsection{\texorpdfstring{unbind()}{unbind()}}
+{\footnotesize\ttfamily \label{classeng_1_1Shader_abdea900296ddafb0d725504a3084f734} 
+void eng\+::\+Shader\+::unbind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Unbinds the current shader program. 
+
+This function unbinds the shader program, effectively disabling it in the Open\+GL context. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/platform/opengl/Shader.\+hpp\item 
+Engine/platform/opengl/Shader.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,67 @@
+\doxysection{Renderer.\+hpp}
+\hypertarget{Renderer_8hpp_source}{}\label{Renderer_8hpp_source}\index{Engine/graphics/Renderer.hpp@{Engine/graphics/Renderer.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}GLBuffers.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Material.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Scene.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Entity.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Typedefs.hpp"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}VertexArray.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }eng\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structeng_1_1DrawCall}{DrawCall}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1VertexArray}{VertexArray}}*\ \mbox{\hyperlink{structeng_1_1DrawCall_a6cb4eafcfc355c3af7158eb9884f97d3}{va}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structeng_1_1Material}{Material}}*\ \mbox{\hyperlink{structeng_1_1DrawCall_a20ab4bea7c33637a04e2a5f8830510c2}{material}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Mat4>\ \mbox{\hyperlink{structeng_1_1DrawCall_a56efc8c78a2aae886cd95df1dabf0357}{transforms}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structeng_1_1DrawCall_aa35d69e85f3ac5e1b496be8b4df4ab56}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structeng_1_1DrawCall}{DrawCall}}\&\ otherCall);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classeng_1_1Renderer_a06f50b28d242893bef89d1aa8d41be37}{Renderer}}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::vector<DrawCall>\ drawCallList;\ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1VertexBuffer}{VertexBuffer}}\ instanceBuffer;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1VertexBufferLayout}{VertexBufferLayout}}\ instanceLayout;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1UniformBuffer}{UniformBuffer}}\ cameraUBO;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1UniformBuffer}{UniformBuffer}}\ lightUBO;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ isLightingEnabled;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ bindMaterial(\textcolor{keyword}{const}\ \mbox{\hyperlink{structeng_1_1Material}{Material}}\&\ material);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ uploadCameraUBO(\textcolor{keyword}{const}\ Mat4\&\ projection,\ \textcolor{keyword}{const}\ Vec3\&\ position);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ uploadLightUBO(}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<PointLight*>\&\ pointLights,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<DirectionalLight*>\&\ dirLights);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ batchCalls(\textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1VertexArray}{VertexArray}}\&\ va,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structeng_1_1Material}{Material}}\&\ material,\ \textcolor{keyword}{const}\ Mat4\&\ transform);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ drawInstanced(\textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1VertexArray}{VertexArray}}\&\ vao,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ instancesCount);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ drawIndexed(\textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1VertexArray}{VertexArray}}\&\ va);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1Renderer_a06f50b28d242893bef89d1aa8d41be37}{Renderer}}();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Renderer_ad970dca8df2de129bb5ac5d99ee2f3d4}{clear}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Renderer_a27faf9a5b877f3c8044e7bd388c91bea}{clearToColor}}(\textcolor{keyword}{const}\ Vec3\&\ color)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Renderer_aedbc800441b38c3642eac9df739942fc}{drawEntity}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1Entity}{Entity}}\&\ entity,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structeng_1_1Material}{Material}}\&\ material);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Renderer_a6e5132d3eb4008d04c7e7abd46605a24}{render}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classeng_1_1Scene}{Scene}}\&\ scene);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Renderer_a65e23f1dcadd2486d6fad1080b0ee020}{enableLighting}}(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00172\ \ \ \ \ \};}
+\DoxyCodeLine{00173\ \}\ \textcolor{comment}{//\ namespace\ eng}}
+\DoxyCodeLine{00174\ }
+
+\end{DoxyCode}

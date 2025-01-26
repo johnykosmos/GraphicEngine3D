@@ -1,0 +1,56 @@
+\doxysection{Shader.\+hpp}
+\hypertarget{Shader_8hpp_source}{}\label{Shader_8hpp_source}\index{Engine/platform/opengl/Shader.hpp@{Engine/platform/opengl/Shader.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <glm/mat4x4.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Typedefs.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }eng\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{enum}\ ShaderType\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ NONE\ =\ -\/1,\ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ VERTEX\ =\ 0,\ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ FRAGMENT\ =\ 1\ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \};}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classeng_1_1Shader_a05389beac8d9591f4d73738916bd50f1}{Shader}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ id;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ std::string\ vertexSource;\ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::string\ fragmentSource;\ \ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ getShaderContent(\textcolor{keyword}{const}\ std::string\&\ source);\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ compileShader(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ type,\ \textcolor{keyword}{const}\ std::string\&\ source);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ createShaderProgram(\textcolor{keyword}{const}\ std::string\&\ source);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classeng_1_1Shader_a05389beac8d9591f4d73738916bd50f1}{Shader}}(\textcolor{keyword}{const}\ std::string\&\ source);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1Shader_a63ca5bad6cd55fca02e4427a6f7f32f4}{\string~Shader}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Shader_a26a5761009f04881cefda61bed19f501}{bind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Shader_abdea900296ddafb0d725504a3084f734}{unbind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Shader_ab0c4736f8177f95fdc546ef3941d5654}{setUniformMat4}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ uniform,\ \textcolor{keyword}{const}\ glm::mat4\&\ value)\ \textcolor{keyword}{const};\ }
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Shader_a0742740f5284856cc5104242eaaba551}{setUniformVec3}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ uniform,\ \textcolor{keyword}{const}\ Vec3\&\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Shader_a10429a0fd4f035420b4582ad969b3a86}{setUniform1i}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ uniform,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Shader_a7335977552d5b1867f44d281d191f557}{setUniform1f}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ uniform,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ \ \ \ \ \};\ }
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+
+\end{DoxyCode}

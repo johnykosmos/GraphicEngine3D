@@ -1,0 +1,41 @@
+\doxysection{eng\+::Data\+UBO\+::Dir\+Light\+Data Struct Reference}
+\hypertarget{structeng_1_1DataUBO_1_1DirLightData}{}\label{structeng_1_1DataUBO_1_1DirLightData}\index{eng::DataUBO::DirLightData@{eng::DataUBO::DirLightData}}
+
+
+Represents a directional light in the scene.  
+
+
+
+
+{\ttfamily \#include $<$Data\+UBO.\+hpp$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structeng_1_1DataUBO_1_1DirLightData_ad37a28b2d21d35753c27b416d6dca768}\label{structeng_1_1DataUBO_1_1DirLightData_ad37a28b2d21d35753c27b416d6dca768} 
+Vec3 {\bfseries color}
+\begin{DoxyCompactList}\small\item\em The color of the light (RGB). \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1DataUBO_1_1DirLightData_af455a77563900aea96ab4e905eac07c2}\label{structeng_1_1DataUBO_1_1DirLightData_af455a77563900aea96ab4e905eac07c2} 
+float {\bfseries padding1}
+\begin{DoxyCompactList}\small\item\em Padding to align the next member to 16 bytes. \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1DataUBO_1_1DirLightData_aa575ffe9e759bcdb53fadee218fde611}\label{structeng_1_1DataUBO_1_1DirLightData_aa575ffe9e759bcdb53fadee218fde611} 
+Vec3 {\bfseries direction}
+\begin{DoxyCompactList}\small\item\em The direction of the light rays. \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1DataUBO_1_1DirLightData_a1ecf2ea8567152b9d8466ea3fb7165ff}\label{structeng_1_1DataUBO_1_1DirLightData_a1ecf2ea8567152b9d8466ea3fb7165ff} 
+float {\bfseries padding2}
+\begin{DoxyCompactList}\small\item\em Padding to ensure 16-\/byte alignment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a directional light in the scene. 
+
+A directional light simulates light coming from an infinitely distant source, such as sunlight, and has a specific color and direction.
+
+\begin{DoxyNote}{Note}
+The data is aligned to meet GPU uniform buffer layout requirements. 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Engine/platform/opengl/Data\+UBO.\+hpp\end{DoxyCompactItemize}

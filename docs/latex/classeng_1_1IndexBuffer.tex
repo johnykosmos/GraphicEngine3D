@@ -1,0 +1,96 @@
+\doxysection{eng\+::Index\+Buffer Class Reference}
+\hypertarget{classeng_1_1IndexBuffer}{}\label{classeng_1_1IndexBuffer}\index{eng::IndexBuffer@{eng::IndexBuffer}}
+
+
+Represents an Open\+GL \doxylink{classeng_1_1IndexBuffer}{Index\+Buffer}.  
+
+
+
+
+{\ttfamily \#include $<$GLBuffers.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classeng_1_1IndexBuffer_a8ae9430338c461decd295e3f246e079f}\label{classeng_1_1IndexBuffer_a8ae9430338c461decd295e3f246e079f} 
+{\bfseries Index\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classeng_1_1IndexBuffer}{Index\+Buffer} and generates an Open\+GL buffer ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1IndexBuffer_a1d773da26bfe2587231970f5faada624}{Index\+Buffer}} (const unsigned int \texorpdfstring{$\ast$}{*}data, unsigned int count)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classeng_1_1IndexBuffer}{Index\+Buffer} and generates an Open\+GL buffer ID. \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1IndexBuffer_a887bb6043be3622e253e974ad0e379f1}\label{classeng_1_1IndexBuffer_a887bb6043be3622e253e974ad0e379f1} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Index\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classeng_1_1IndexBuffer}{Index\+Buffer} and deletes the Open\+GL buffer. \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1IndexBuffer_a492e03400a5c63b7f566cc3413b8cb64}\label{classeng_1_1IndexBuffer_a492e03400a5c63b7f566cc3413b8cb64} 
+void {\bfseries bind} () const
+\begin{DoxyCompactList}\small\item\em Binds the index buffer. \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1IndexBuffer_a70a2dab89548494e0ef2e1ae0b64b98b}\label{classeng_1_1IndexBuffer_a70a2dab89548494e0ef2e1ae0b64b98b} 
+void {\bfseries unbind} () const
+\begin{DoxyCompactList}\small\item\em Unbinds the index buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1IndexBuffer_a3a594ab28df2a6a0e5974e290f4daee5}{update\+Data}} (const void \texorpdfstring{$\ast$}{*}data, unsigned int count)
+\begin{DoxyCompactList}\small\item\em Updates the buffer data. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classeng_1_1IndexBuffer_a5d261a5d93be3f7f0bdc6ba4788e120b}{get\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Gets the index buffer count. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an Open\+GL \doxylink{classeng_1_1IndexBuffer}{Index\+Buffer}. 
+
+This class provides an abstraction for managing Open\+GL IBOs, which store indices that define the order in which vertices are rendered. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classeng_1_1IndexBuffer_a1d773da26bfe2587231970f5faada624}\index{eng::IndexBuffer@{eng::IndexBuffer}!IndexBuffer@{IndexBuffer}}
+\index{IndexBuffer@{IndexBuffer}!eng::IndexBuffer@{eng::IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{IndexBuffer()}{IndexBuffer()}}
+{\footnotesize\ttfamily \label{classeng_1_1IndexBuffer_a1d773da26bfe2587231970f5faada624} 
+eng\+::\+Index\+Buffer\+::\+Index\+Buffer (\begin{DoxyParamCaption}\item[{const unsigned int \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{unsigned int}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classeng_1_1IndexBuffer}{Index\+Buffer} and generates an Open\+GL buffer ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Unsigned int pointer to the indices data \\
+\hline
+{\em count} & Count of the indices \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1IndexBuffer_a5d261a5d93be3f7f0bdc6ba4788e120b}\index{eng::IndexBuffer@{eng::IndexBuffer}!getCount@{getCount}}
+\index{getCount@{getCount}!eng::IndexBuffer@{eng::IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{getCount()}{getCount()}}
+{\footnotesize\ttfamily \label{classeng_1_1IndexBuffer_a5d261a5d93be3f7f0bdc6ba4788e120b} 
+unsigned int eng\+::\+Index\+Buffer\+::get\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the index buffer count. 
+
+\begin{DoxyReturn}{Returns}
+unsigned int Count of indices. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1IndexBuffer_a3a594ab28df2a6a0e5974e290f4daee5}\index{eng::IndexBuffer@{eng::IndexBuffer}!updateData@{updateData}}
+\index{updateData@{updateData}!eng::IndexBuffer@{eng::IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{updateData()}{updateData()}}
+{\footnotesize\ttfamily \label{classeng_1_1IndexBuffer_a3a594ab28df2a6a0e5974e290f4daee5} 
+void eng\+::\+Index\+Buffer\+::update\+Data (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{unsigned int}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Updates the buffer data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Void pointer to the data to be uploaded \\
+\hline
+{\em size} & Size of the data in bytes \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/platform/opengl/GLBuffers.\+hpp\item 
+Engine/platform/opengl/GLBuffers.\+cpp\end{DoxyCompactItemize}

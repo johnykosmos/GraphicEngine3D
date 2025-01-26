@@ -1,0 +1,50 @@
+\doxysection{eng\+::Model\+Loader Class Reference}
+\hypertarget{classeng_1_1ModelLoader}{}\label{classeng_1_1ModelLoader}\index{eng::ModelLoader@{eng::ModelLoader}}
+
+
+A utility class for loading 3D model data from an OBJ file.  
+
+
+
+
+{\ttfamily \#include $<$Model\+Loader.\+hpp$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classeng_1_1ModelLoader_af3031501a62cc9a561e2fbba652550e3}{load\+Model}} (const std\+::string \&filename, \mbox{\hyperlink{classeng_1_1Mesh}{Mesh}} \&model\+Mesh)
+\begin{DoxyCompactList}\small\item\em Loads a 3D model from an OBJ file and updates the given \doxylink{classeng_1_1Mesh}{Mesh} with the parsed data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A utility class for loading 3D model data from an OBJ file. 
+
+The \doxylink{classeng_1_1ModelLoader}{Model\+Loader} class is responsible for loading and parsing OBJ files, extracting the vertex positions, normals, texture coordinates, and face indices, and storing them into a \doxylink{classeng_1_1Mesh}{Mesh} object. It uses the \doxylink{classeng_1_1ModelParser}{Model\+Parser} class to handle the parsing process and converts the parsed data into a format suitable for rendering. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1ModelLoader_af3031501a62cc9a561e2fbba652550e3}\index{eng::ModelLoader@{eng::ModelLoader}!loadModel@{loadModel}}
+\index{loadModel@{loadModel}!eng::ModelLoader@{eng::ModelLoader}}
+\doxysubsubsection{\texorpdfstring{loadModel()}{loadModel()}}
+{\footnotesize\ttfamily \label{classeng_1_1ModelLoader_af3031501a62cc9a561e2fbba652550e3} 
+bool eng\+::\+Model\+Loader\+::load\+Model (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{\mbox{\hyperlink{classeng_1_1Mesh}{Mesh}} \&}]{model\+Mesh}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Loads a 3D model from an OBJ file and updates the given \doxylink{classeng_1_1Mesh}{Mesh} with the parsed data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path to the OBJ file to be loaded. \\
+\hline
+{\em model\+Mesh} & The \doxylink{classeng_1_1Mesh}{Mesh} object that will be updated with the loaded model data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the model was successfully loaded and the \doxylink{classeng_1_1Mesh}{Mesh} was updated, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/graphics/objects/Model\+Loader.\+hpp\item 
+Engine/graphics/objects/Model\+Loader.\+cpp\end{DoxyCompactItemize}

@@ -29,4 +29,4 @@ Simple 3D graphics engine designed for purposes of Basics of Computer Graphics c
 - Shading (can add support for a button that turns shading off and on)
 - Object texturing **DONE**
 - Tech demo (for defense)
-- Report and documentation
+- Report and documentation **DONE**

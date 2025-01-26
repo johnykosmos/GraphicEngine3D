@@ -1,0 +1,92 @@
+\doxysection{eng\+::Window Class Reference}
+\hypertarget{classeng_1_1Window}{}\label{classeng_1_1Window}\index{eng::Window@{eng::Window}}
+
+
+\doxylink{classeng_1_1Window}{Window} related actions.  
+
+
+
+
+{\ttfamily \#include $<$Window.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classeng_1_1Window_a7a1993d69c0398f27db5780d1bf137ee}{Window}} (const \mbox{\hyperlink{structeng_1_1WindowSpec}{Window\+Spec}} \&spec)
+\begin{DoxyCompactList}\small\item\em Constructs a window with the given specification. \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1Window_a8279578ed5e5970503f48436b1e68ef6}\label{classeng_1_1Window_a8279578ed5e5970503f48436b1e68ef6} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Window} ()
+\begin{DoxyCompactList}\small\item\em Cleans up the window resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Window_a1034c2a8e3f6d8508b0761ac3d01d1ac}{set\+Vsync}} (bool value)
+\begin{DoxyCompactList}\small\item\em Enables/disables the vsync. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structeng_1_1WindowResolution}{Window\+Resolution}} \mbox{\hyperlink{classeng_1_1Window_a8547991b1a1b37c2f7dc032627ddbd1e}{get\+Resolution}} ()
+\begin{DoxyCompactList}\small\item\em Gets window resolution. \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1Window_af6882ecb938a6f15ed908c35cfd383b1}\label{classeng_1_1Window_af6882ecb938a6f15ed908c35cfd383b1} 
+bool {\bfseries should\+Window\+Close} ()
+\item 
+\Hypertarget{classeng_1_1Window_acffd27e88f6465cc7700dcd28edb73d1}\label{classeng_1_1Window_acffd27e88f6465cc7700dcd28edb73d1} 
+void {\bfseries display} ()
+\item 
+\Hypertarget{classeng_1_1Window_a6b876b9d3e9261e72df9c1665e6dfbdd}\label{classeng_1_1Window_a6b876b9d3e9261e72df9c1665e6dfbdd} 
+void {\bfseries poll\+Events} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classeng_1_1Window}{Window} related actions. 
+
+This class represents window and performs related actions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classeng_1_1Window_a7a1993d69c0398f27db5780d1bf137ee}\index{eng::Window@{eng::Window}!Window@{Window}}
+\index{Window@{Window}!eng::Window@{eng::Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}}
+{\footnotesize\ttfamily \label{classeng_1_1Window_a7a1993d69c0398f27db5780d1bf137ee} 
+eng\+::\+Window\+::\+Window (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structeng_1_1WindowSpec}{Window\+Spec}} \&}]{spec}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a window with the given specification. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spec} & A const reference to \doxylink{structeng_1_1WindowSpec}{Window\+Spec} struct containing the specification for the window. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1Window_a8547991b1a1b37c2f7dc032627ddbd1e}\index{eng::Window@{eng::Window}!getResolution@{getResolution}}
+\index{getResolution@{getResolution}!eng::Window@{eng::Window}}
+\doxysubsubsection{\texorpdfstring{getResolution()}{getResolution()}}
+{\footnotesize\ttfamily \label{classeng_1_1Window_a8547991b1a1b37c2f7dc032627ddbd1e} 
+\mbox{\hyperlink{structeng_1_1WindowResolution}{Window\+Resolution}} eng\+::\+Window\+::get\+Resolution (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets window resolution. 
+
+\begin{DoxyReturn}{Returns}
+Struct of two ints representing the resolution 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1Window_a1034c2a8e3f6d8508b0761ac3d01d1ac}\index{eng::Window@{eng::Window}!setVsync@{setVsync}}
+\index{setVsync@{setVsync}!eng::Window@{eng::Window}}
+\doxysubsubsection{\texorpdfstring{setVsync()}{setVsync()}}
+{\footnotesize\ttfamily \label{classeng_1_1Window_a1034c2a8e3f6d8508b0761ac3d01d1ac} 
+void eng\+::\+Window\+::set\+Vsync (\begin{DoxyParamCaption}\item[{bool}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Enables/disables the vsync. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & A bool value representing vsync state \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/platform/io/Window.\+hpp\item 
+Engine/platform/io/Window.\+cpp\end{DoxyCompactItemize}

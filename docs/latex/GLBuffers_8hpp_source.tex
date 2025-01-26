@@ -1,0 +1,78 @@
+\doxysection{GLBuffers.\+hpp}
+\hypertarget{GLBuffers_8hpp_source}{}\label{GLBuffers_8hpp_source}\index{Engine/platform/opengl/GLBuffers.hpp@{Engine/platform/opengl/GLBuffers.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Typedefs.hpp"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }eng\{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structeng_1_1Vertex}{Vertex}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ Vec3\ vertices;}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ Vec3\ normal;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ Vec2\ texturePos;}
+\DoxyCodeLine{00015\ \ \ \ \ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classeng_1_1VertexBuffer_afafc466af6bfba87ae4847541a6f2443}{VertexBuffer}}\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1VertexBuffer_afafc466af6bfba87ae4847541a6f2443}{VertexBuffer}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1VertexBuffer_afafc466af6bfba87ae4847541a6f2443}{VertexBuffer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1VertexBuffer_a16bc5521b196ede5879a499e0e51de3f}{\string~VertexBuffer}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1VertexBuffer_a9a84147ef4b621210824788064b66ff4}{bind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1VertexBuffer_ac7a17f41e4cc34c08d7c9e72036d9691}{unbind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1VertexBuffer_adbc26e6807e5cae9fc7936ae3d889e35}{updateData}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00067\ \ \ \ \ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classeng_1_1IndexBuffer_a8ae9430338c461decd295e3f246e079f}{IndexBuffer}}\{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ count;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1IndexBuffer_a8ae9430338c461decd295e3f246e079f}{IndexBuffer}}();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1IndexBuffer_a8ae9430338c461decd295e3f246e079f}{IndexBuffer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}*\ data,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1IndexBuffer_a887bb6043be3622e253e974ad0e379f1}{\string~IndexBuffer}}();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1IndexBuffer_a492e03400a5c63b7f566cc3413b8cb64}{bind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1IndexBuffer_a70a2dab89548494e0ef2e1ae0b64b98b}{unbind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1IndexBuffer_a3a594ab28df2a6a0e5974e290f4daee5}{updateData}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classeng_1_1IndexBuffer_a5d261a5d93be3f7f0bdc6ba4788e120b}{getCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00125\ \ \ \ \ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classeng_1_1UniformBuffer_a6403127e7f477e83d0aa983b5770fb05}{UniformBuffer}}\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ id;\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1UniformBuffer_a6403127e7f477e83d0aa983b5770fb05}{UniformBuffer}}();}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1UniformBuffer_a6403127e7f477e83d0aa983b5770fb05}{UniformBuffer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1UniformBuffer_a6f62c097ae98a30a9ce54e1a6d33bcda}{\string~UniformBuffer}}();}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1UniformBuffer_aff9384df88b1def8722f3c936aa4683c}{bindToPoint}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ bindingPoint)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1UniformBuffer_a6908f9b8fc1c9f758b2e3d4312c31728}{bind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1UniformBuffer_a79fbbd04f76e60f4cc90ed519b2be48a}{unbind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1UniformBuffer_a8cc7b758049566b59f1a2b6780672667}{updateData}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{00204\ \ \ \ \ \};}
+\DoxyCodeLine{00205\ \}\ \textcolor{comment}{//\ namespace\ eng}}
+
+\end{DoxyCode}

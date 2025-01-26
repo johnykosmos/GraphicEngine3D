@@ -1,0 +1,81 @@
+\doxysection{eng\+::Vertex\+Buffer Class Reference}
+\hypertarget{classeng_1_1VertexBuffer}{}\label{classeng_1_1VertexBuffer}\index{eng::VertexBuffer@{eng::VertexBuffer}}
+
+
+Represents an Open\+GL \doxylink{structeng_1_1Vertex}{Vertex} Buffer.  
+
+
+
+
+{\ttfamily \#include $<$GLBuffers.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classeng_1_1VertexBuffer_afafc466af6bfba87ae4847541a6f2443}\label{classeng_1_1VertexBuffer_afafc466af6bfba87ae4847541a6f2443} 
+{\bfseries Vertex\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classeng_1_1VertexBuffer}{Vertex\+Buffer} and generates an Open\+GL buffer ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1VertexBuffer_aa78b85e78de0f4f1349980abc9247856}{Vertex\+Buffer}} (const void \texorpdfstring{$\ast$}{*}data, unsigned int size)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classeng_1_1VertexBuffer}{Vertex\+Buffer}, generates an Open\+GL buffer ID and uploads data to the buffer. \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1VertexBuffer_a16bc5521b196ede5879a499e0e51de3f}\label{classeng_1_1VertexBuffer_a16bc5521b196ede5879a499e0e51de3f} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Vertex\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classeng_1_1VertexBuffer}{Vertex\+Buffer} and deletes the Open\+GL buffer. \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1VertexBuffer_a9a84147ef4b621210824788064b66ff4}\label{classeng_1_1VertexBuffer_a9a84147ef4b621210824788064b66ff4} 
+void {\bfseries bind} () const
+\begin{DoxyCompactList}\small\item\em binds the vertex buffer \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1VertexBuffer_ac7a17f41e4cc34c08d7c9e72036d9691}\label{classeng_1_1VertexBuffer_ac7a17f41e4cc34c08d7c9e72036d9691} 
+void {\bfseries unbind} () const
+\begin{DoxyCompactList}\small\item\em Unbinds the vertex buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1VertexBuffer_adbc26e6807e5cae9fc7936ae3d889e35}{update\+Data}} (const void \texorpdfstring{$\ast$}{*}data, unsigned int size)
+\begin{DoxyCompactList}\small\item\em Updates the buffer data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an Open\+GL \doxylink{structeng_1_1Vertex}{Vertex} Buffer. 
+
+This class provides an abstraction for managing Open\+GL VBOs, which store vertex data such as positions, normals, colors, and texture coordinates. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classeng_1_1VertexBuffer_aa78b85e78de0f4f1349980abc9247856}\index{eng::VertexBuffer@{eng::VertexBuffer}!VertexBuffer@{VertexBuffer}}
+\index{VertexBuffer@{VertexBuffer}!eng::VertexBuffer@{eng::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{VertexBuffer()}{VertexBuffer()}}
+{\footnotesize\ttfamily \label{classeng_1_1VertexBuffer_aa78b85e78de0f4f1349980abc9247856} 
+eng\+::\+Vertex\+Buffer\+::\+Vertex\+Buffer (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{unsigned int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classeng_1_1VertexBuffer}{Vertex\+Buffer}, generates an Open\+GL buffer ID and uploads data to the buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Void pointer to the data to be uploaded \\
+\hline
+{\em size} & Size of the data in bytes \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1VertexBuffer_adbc26e6807e5cae9fc7936ae3d889e35}\index{eng::VertexBuffer@{eng::VertexBuffer}!updateData@{updateData}}
+\index{updateData@{updateData}!eng::VertexBuffer@{eng::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{updateData()}{updateData()}}
+{\footnotesize\ttfamily \label{classeng_1_1VertexBuffer_adbc26e6807e5cae9fc7936ae3d889e35} 
+void eng\+::\+Vertex\+Buffer\+::update\+Data (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{unsigned int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Updates the buffer data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Void pointer to the data to be uploaded \\
+\hline
+{\em size} & Size of the data in bytes \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/platform/opengl/GLBuffers.\+hpp\item 
+Engine/platform/opengl/GLBuffers.\+cpp\end{DoxyCompactItemize}

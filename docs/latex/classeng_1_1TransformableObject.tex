@@ -1,0 +1,156 @@
+\doxysection{eng\+::Transformable\+Object Class Reference}
+\hypertarget{classeng_1_1TransformableObject}{}\label{classeng_1_1TransformableObject}\index{eng::TransformableObject@{eng::TransformableObject}}
+
+
+A class representing an object that can be transformed.  
+
+
+
+
+{\ttfamily \#include $<$Transformable\+Object.\+hpp$>$}
+
+Inheritance diagram for eng\+::Transformable\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classeng_1_1TransformableObject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classeng_1_1TransformableObject_aff37747658185f3f66fd81822a8234fb}{Transformable\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+const Mat4 \& \mbox{\hyperlink{classeng_1_1TransformableObject_a5b276a98cf4daf735de44258ede4490c}{get\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the transformation matrix of the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1TransformableObject}{Transformable\+Object}} \& \mbox{\hyperlink{classeng_1_1TransformableObject_a905004a33dae2bc64e6ffd0f831827c6}{rotate}} (float angle, const Vec3 \&vector)
+\begin{DoxyCompactList}\small\item\em Applies a rotation to the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1TransformableObject}{Transformable\+Object}} \& \mbox{\hyperlink{classeng_1_1TransformableObject_a2b31c8be3edbde8db229151611e72ce0}{translate}} (const Vec3 \&vector)
+\begin{DoxyCompactList}\small\item\em Applies a translation to the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1TransformableObject}{Transformable\+Object}} \& \mbox{\hyperlink{classeng_1_1TransformableObject_a845354d76786585b052d4aecd204306f}{scale}} (const Vec3 \&scale\+Vector)
+\begin{DoxyCompactList}\small\item\em Applies a scaling to the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1TransformableObject}{Transformable\+Object}} \& \mbox{\hyperlink{classeng_1_1TransformableObject_a4bfaf5253c5982a064110a523bcf4386}{set\+Position}} (const Vec3 \&position)
+\begin{DoxyCompactList}\small\item\em Sets the object\textquotesingle{}s position directly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing an object that can be transformed. 
+
+This class provides functionality for applying transformations such as translation, rotation, and scaling to an object. These transformations are applied to the object\textquotesingle{}s internal transformation matrix ({\ttfamily Mat4}), and the transformations can be chained together for convenience. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classeng_1_1TransformableObject_aff37747658185f3f66fd81822a8234fb}\index{eng::TransformableObject@{eng::TransformableObject}!TransformableObject@{TransformableObject}}
+\index{TransformableObject@{TransformableObject}!eng::TransformableObject@{eng::TransformableObject}}
+\doxysubsubsection{\texorpdfstring{TransformableObject()}{TransformableObject()}}
+{\footnotesize\ttfamily \label{classeng_1_1TransformableObject_aff37747658185f3f66fd81822a8234fb} 
+eng\+::\+Transformable\+Object\+::\+Transformable\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Initializes the object with an identity transformation matrix, meaning no translation, rotation, or scaling is applied initially. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1TransformableObject_a5b276a98cf4daf735de44258ede4490c}\index{eng::TransformableObject@{eng::TransformableObject}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!eng::TransformableObject@{eng::TransformableObject}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily \label{classeng_1_1TransformableObject_a5b276a98cf4daf735de44258ede4490c} 
+const Mat4 \& eng\+::\+Transformable\+Object\+::get\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the transformation matrix of the object. 
+
+This method returns the current transformation matrix of the object. The matrix can be used to render the object after applying transformations.
+
+\begin{DoxyReturn}{Returns}
+const Mat4\& A constant reference to the transformation matrix. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1TransformableObject_a905004a33dae2bc64e6ffd0f831827c6}\index{eng::TransformableObject@{eng::TransformableObject}!rotate@{rotate}}
+\index{rotate@{rotate}!eng::TransformableObject@{eng::TransformableObject}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily \label{classeng_1_1TransformableObject_a905004a33dae2bc64e6ffd0f831827c6} 
+\mbox{\hyperlink{classeng_1_1TransformableObject}{Transformable\+Object}} \& eng\+::\+Transformable\+Object\+::rotate (\begin{DoxyParamCaption}\item[{float}]{angle}{, }\item[{const Vec3 \&}]{vector}{}\end{DoxyParamCaption})}
+
+
+
+Applies a rotation to the object. 
+
+This method applies a rotation to the object\textquotesingle{}s transformation matrix. The rotation is performed around the specified vector by the given angle in degrees. This method returns the object itself to allow method chaining.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle of rotation in degrees. \\
+\hline
+{\em vector} & The axis vector to rotate around (typically {\ttfamily Vec3(0,1,0)} for rotation around Y-\/axis). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classeng_1_1TransformableObject}{Transformable\+Object}\& A reference to the current object for method chaining. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1TransformableObject_a845354d76786585b052d4aecd204306f}\index{eng::TransformableObject@{eng::TransformableObject}!scale@{scale}}
+\index{scale@{scale}!eng::TransformableObject@{eng::TransformableObject}}
+\doxysubsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily \label{classeng_1_1TransformableObject_a845354d76786585b052d4aecd204306f} 
+\mbox{\hyperlink{classeng_1_1TransformableObject}{Transformable\+Object}} \& eng\+::\+Transformable\+Object\+::scale (\begin{DoxyParamCaption}\item[{const Vec3 \&}]{scale\+Vector}{}\end{DoxyParamCaption})}
+
+
+
+Applies a scaling to the object. 
+
+This method applies a scaling transformation to the object\textquotesingle{}s transformation matrix. The scaling is applied uniformly or non-\/uniformly along the X, Y, and Z axes. This method returns the object itself to allow method chaining.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale\+Vector} & A vector representing the scaling factor along the X, Y, and Z axes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classeng_1_1TransformableObject}{Transformable\+Object}\& A reference to the current object for method chaining. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1TransformableObject_a4bfaf5253c5982a064110a523bcf4386}\index{eng::TransformableObject@{eng::TransformableObject}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!eng::TransformableObject@{eng::TransformableObject}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily \label{classeng_1_1TransformableObject_a4bfaf5253c5982a064110a523bcf4386} 
+\mbox{\hyperlink{classeng_1_1TransformableObject}{Transformable\+Object}} \& eng\+::\+Transformable\+Object\+::set\+Position (\begin{DoxyParamCaption}\item[{const Vec3 \&}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Sets the object\textquotesingle{}s position directly. 
+
+This method replaces the current translation component of the transformation matrix with the provided position. This is useful for directly positioning the object in 3D space without considering its current transform.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The new position to set for the object representing X, Y, and Z coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classeng_1_1TransformableObject}{Transformable\+Object}\& A reference to the current object for method chaining. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1TransformableObject_a2b31c8be3edbde8db229151611e72ce0}\index{eng::TransformableObject@{eng::TransformableObject}!translate@{translate}}
+\index{translate@{translate}!eng::TransformableObject@{eng::TransformableObject}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily \label{classeng_1_1TransformableObject_a2b31c8be3edbde8db229151611e72ce0} 
+\mbox{\hyperlink{classeng_1_1TransformableObject}{Transformable\+Object}} \& eng\+::\+Transformable\+Object\+::translate (\begin{DoxyParamCaption}\item[{const Vec3 \&}]{vector}{}\end{DoxyParamCaption})}
+
+
+
+Applies a translation to the object. 
+
+This method applies a translation (movement) to the object\textquotesingle{}s transformation matrix. The object will be moved by the specified vector in 3D space. This method returns the object itself to allow method chaining.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & The translation vector, representing the movement in the X, Y, and Z directions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{classeng_1_1TransformableObject}{Transformable\+Object}\& A reference to the current object for method chaining. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/graphics/objects/Transformable\+Object.\+hpp\item 
+Engine/graphics/objects/Transformable\+Object.\+cpp\end{DoxyCompactItemize}

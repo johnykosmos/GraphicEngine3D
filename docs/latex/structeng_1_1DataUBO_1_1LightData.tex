@@ -1,0 +1,47 @@
+\doxysection{eng\+::Data\+UBO\+::Light\+Data Struct Reference}
+\hypertarget{structeng_1_1DataUBO_1_1LightData}{}\label{structeng_1_1DataUBO_1_1LightData}\index{eng::DataUBO::LightData@{eng::DataUBO::LightData}}
+
+
+Holds the lighting data for the scene.  
+
+
+
+
+{\ttfamily \#include $<$Data\+UBO.\+hpp$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structeng_1_1DataUBO_1_1LightData_a652db992a7d101dba7a55bf0f7bb4a0c}\label{structeng_1_1DataUBO_1_1LightData_a652db992a7d101dba7a55bf0f7bb4a0c} 
+int {\bfseries is\+Lighting\+Enabled}
+\begin{DoxyCompactList}\small\item\em Flag to control lighting in the scene.. \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1DataUBO_1_1LightData_a325fb5f1f619c8cca12617cc134af7a2}\label{structeng_1_1DataUBO_1_1LightData_a325fb5f1f619c8cca12617cc134af7a2} 
+int {\bfseries padding}
+\begin{DoxyCompactList}\small\item\em Padding to align the next member to 16 bytes. \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1DataUBO_1_1LightData_a0be5a9b0a07a25d0168847e7586bb21a}\label{structeng_1_1DataUBO_1_1LightData_a0be5a9b0a07a25d0168847e7586bb21a} 
+int {\bfseries number\+Of\+Point\+Lights}
+\begin{DoxyCompactList}\small\item\em The number of active point lights in the scene. \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1DataUBO_1_1LightData_af17591f6f2619accc7fb2b066b9512b8}\label{structeng_1_1DataUBO_1_1LightData_af17591f6f2619accc7fb2b066b9512b8} 
+int {\bfseries number\+Of\+Directional\+Lights}
+\begin{DoxyCompactList}\small\item\em The number of active directional lights in the scene. \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1DataUBO_1_1LightData_a942ecea2e762d7241d16432166a287ca}\label{structeng_1_1DataUBO_1_1LightData_a942ecea2e762d7241d16432166a287ca} 
+\mbox{\hyperlink{structeng_1_1DataUBO_1_1PointLightData}{Point\+Light\+Data}} {\bfseries point\+Lights} \mbox{[}MAX\+\_\+\+POINT\+\_\+\+LIGHTS\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of point lights. \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1DataUBO_1_1LightData_a5aacf361a1919d37805ef8fa9101752a}\label{structeng_1_1DataUBO_1_1LightData_a5aacf361a1919d37805ef8fa9101752a} 
+\mbox{\hyperlink{structeng_1_1DataUBO_1_1DirLightData}{Dir\+Light\+Data}} {\bfseries directional\+Lights} \mbox{[}MAX\+\_\+\+DIRECTIONAL\+\_\+\+LIGHTS\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of directional lights. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Holds the lighting data for the scene. 
+
+This struct contains arrays of point lights and directional lights, along with the number of lights in each category, for use in the lighting calculations.
+
+\begin{DoxyNote}{Note}
+The data is aligned to meet GPU uniform buffer layout requirements. 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Engine/platform/opengl/Data\+UBO.\+hpp\end{DoxyCompactItemize}

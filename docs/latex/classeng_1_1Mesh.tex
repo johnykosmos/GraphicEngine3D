@@ -1,0 +1,111 @@
+\doxysection{eng\+::Mesh Class Reference}
+\hypertarget{classeng_1_1Mesh}{}\label{classeng_1_1Mesh}\index{eng::Mesh@{eng::Mesh}}
+
+
+Represents a 3D mesh consisting of vertex and index data.  
+
+
+
+
+{\ttfamily \#include $<$Mesh.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classeng_1_1Mesh_ad4871032eda025e27f6ef0df58caf1ca}\label{classeng_1_1Mesh_ad4871032eda025e27f6ef0df58caf1ca} 
+{\bfseries Mesh} ()
+\begin{DoxyCompactList}\small\item\em Constructs an uninitialized mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1Mesh_a6f6c64e8bf23f82ea1f6f102fb0046d7}{Mesh}} (const \mbox{\hyperlink{structeng_1_1Vertex}{Vertex}} vertices\mbox{[}$\,$\mbox{]}, size\+\_\+t vertex\+Count, const unsigned int indices\mbox{[}$\,$\mbox{]}, size\+\_\+t index\+Count)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classeng_1_1Mesh}{Mesh} with the provided vertex and index data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1Mesh_ae70a420e926f9ec3c603076ad5f668b3}{\texorpdfstring{$\sim$}{\string~}\+Mesh}} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1VertexArray}{Vertex\+Array}} \& \mbox{\hyperlink{classeng_1_1Mesh_a21779641ad815a98124a613cb9fa0065}{get\+Vertex\+Array}} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the vertex array object (VAO). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Mesh_a82204cf4aa9754749c170822489a4410}{update\+Data}} (const \mbox{\hyperlink{structeng_1_1Vertex}{Vertex}} vertices\mbox{[}$\,$\mbox{]}, size\+\_\+t vertex\+Count, const unsigned int indices\mbox{[}$\,$\mbox{]}, size\+\_\+t index\+Count)
+\begin{DoxyCompactList}\small\item\em Updates all the mesh data with the provided vertex and index data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a 3D mesh consisting of vertex and index data. 
+
+This class encapsulates the vertex buffer, index buffer, vertex array, and layout, making it easier to manage and render 3D meshes in Open\+GL. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classeng_1_1Mesh_a6f6c64e8bf23f82ea1f6f102fb0046d7}\index{eng::Mesh@{eng::Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!eng::Mesh@{eng::Mesh}}
+\doxysubsubsection{\texorpdfstring{Mesh()}{Mesh()}}
+{\footnotesize\ttfamily \label{classeng_1_1Mesh_a6f6c64e8bf23f82ea1f6f102fb0046d7} 
+eng\+::\+Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structeng_1_1Vertex}{Vertex}}}]{vertices}{\mbox{[}$\,$\mbox{]}, }\item[{size\+\_\+t}]{vertex\+Count}{, }\item[{const unsigned int}]{indices}{\mbox{[}$\,$\mbox{]}, }\item[{size\+\_\+t}]{index\+Count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{classeng_1_1Mesh}{Mesh} with the provided vertex and index data. 
+
+This constructor creates the necessary buffers for storing the vertex and index data, and initializes the vertex array object (VAO).
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Array of vertices that represent the mesh. \\
+\hline
+{\em vertex\+Count} & The number of vertices in the array. \\
+\hline
+{\em indices} & Array of indices that define how the vertices are connected. \\
+\hline
+{\em index\+Count} & The number of indices in the array. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1Mesh_ae70a420e926f9ec3c603076ad5f668b3}\index{eng::Mesh@{eng::Mesh}!````~Mesh@{\texorpdfstring{$\sim$}{\string~}Mesh}}
+\index{````~Mesh@{\texorpdfstring{$\sim$}{\string~}Mesh}!eng::Mesh@{eng::Mesh}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Mesh()}{\string~Mesh()}}
+{\footnotesize\ttfamily \label{classeng_1_1Mesh_ae70a420e926f9ec3c603076ad5f668b3} 
+eng\+::\+Mesh\+::\texorpdfstring{$\sim$}{\string~}\+Mesh (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default destructor. 
+
+The destructor automatically handles resource cleanup for the buffers and the vertex array when the \doxylink{classeng_1_1Mesh}{Mesh} object is destroyed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1Mesh_a21779641ad815a98124a613cb9fa0065}\index{eng::Mesh@{eng::Mesh}!getVertexArray@{getVertexArray}}
+\index{getVertexArray@{getVertexArray}!eng::Mesh@{eng::Mesh}}
+\doxysubsubsection{\texorpdfstring{getVertexArray()}{getVertexArray()}}
+{\footnotesize\ttfamily \label{classeng_1_1Mesh_a21779641ad815a98124a613cb9fa0065} 
+\mbox{\hyperlink{classeng_1_1VertexArray}{Vertex\+Array}} \& eng\+::\+Mesh\+::get\+Vertex\+Array (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a reference to the vertex array object (VAO). 
+
+This function provides access to the VAO, which is used to bind the mesh\textquotesingle{}s vertex and index buffers for rendering.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classeng_1_1VertexArray}{Vertex\+Array}\& The reference to the vertex array object. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1Mesh_a82204cf4aa9754749c170822489a4410}\index{eng::Mesh@{eng::Mesh}!updateData@{updateData}}
+\index{updateData@{updateData}!eng::Mesh@{eng::Mesh}}
+\doxysubsubsection{\texorpdfstring{updateData()}{updateData()}}
+{\footnotesize\ttfamily \label{classeng_1_1Mesh_a82204cf4aa9754749c170822489a4410} 
+void eng\+::\+Mesh\+::update\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structeng_1_1Vertex}{Vertex}}}]{vertices}{\mbox{[}$\,$\mbox{]}, }\item[{size\+\_\+t}]{vertex\+Count}{, }\item[{const unsigned int}]{indices}{\mbox{[}$\,$\mbox{]}, }\item[{size\+\_\+t}]{index\+Count}{}\end{DoxyParamCaption})}
+
+
+
+Updates all the mesh data with the provided vertex and index data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Array of vertices that represent the mesh. \\
+\hline
+{\em vertex\+Count} & The number of vertices in the array. \\
+\hline
+{\em indices} & Array of indices that define how the vertices are connected. \\
+\hline
+{\em index\+Count} & The number of indices in the array. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/graphics/Mesh.\+hpp\item 
+Engine/graphics/Mesh.\+cpp\end{DoxyCompactItemize}

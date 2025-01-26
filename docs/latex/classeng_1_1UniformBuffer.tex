@@ -1,0 +1,140 @@
+\doxysection{eng\+::Uniform\+Buffer Class Reference}
+\hypertarget{classeng_1_1UniformBuffer}{}\label{classeng_1_1UniformBuffer}\index{eng::UniformBuffer@{eng::UniformBuffer}}
+
+
+Represents a Uniform Buffer Object (UBO) in Open\+GL.  
+
+
+
+
+{\ttfamily \#include $<$GLBuffers.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classeng_1_1UniformBuffer_a6403127e7f477e83d0aa983b5770fb05}{Uniform\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classeng_1_1UniformBuffer}{Uniform\+Buffer} and generates an Open\+GL buffer ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1UniformBuffer_af8774429a750b308db43f3abc1196f09}{Uniform\+Buffer}} (const void \texorpdfstring{$\ast$}{*}data, unsigned int size)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classeng_1_1UniformBuffer}{Uniform\+Buffer} and generates an Open\+GL buffer ID with initial data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1UniformBuffer_a6f62c097ae98a30a9ce54e1a6d33bcda}{\texorpdfstring{$\sim$}{\string~}\+Uniform\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classeng_1_1UniformBuffer}{Uniform\+Buffer} and deletes the Open\+GL buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1UniformBuffer_aff9384df88b1def8722f3c936aa4683c}{bind\+To\+Point}} (unsigned int binding\+Point) const
+\begin{DoxyCompactList}\small\item\em Binds the uniform buffer to a specific binding point in the shader. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1UniformBuffer_a6908f9b8fc1c9f758b2e3d4312c31728}{bind}} () const
+\begin{DoxyCompactList}\small\item\em Binds the uniform buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1UniformBuffer_a79fbbd04f76e60f4cc90ed519b2be48a}{unbind}} () const
+\begin{DoxyCompactList}\small\item\em Unbinds the uniform buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1UniformBuffer_a8cc7b758049566b59f1a2b6780672667}{update\+Data}} (const void \texorpdfstring{$\ast$}{*}data, unsigned int size)
+\begin{DoxyCompactList}\small\item\em Updates the buffer data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a Uniform Buffer Object (UBO) in Open\+GL. 
+
+This class provides an abstraction for managing uniform buffers in Open\+GL. It allows you to create, bind, update, and manage uniform buffer objects, which are used to share data between the CPU and shaders. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classeng_1_1UniformBuffer_a6403127e7f477e83d0aa983b5770fb05}\index{eng::UniformBuffer@{eng::UniformBuffer}!UniformBuffer@{UniformBuffer}}
+\index{UniformBuffer@{UniformBuffer}!eng::UniformBuffer@{eng::UniformBuffer}}
+\doxysubsubsection{\texorpdfstring{UniformBuffer()}{UniformBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classeng_1_1UniformBuffer_a6403127e7f477e83d0aa983b5770fb05} 
+eng\+::\+Uniform\+Buffer\+::\+Uniform\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classeng_1_1UniformBuffer}{Uniform\+Buffer} and generates an Open\+GL buffer ID. 
+
+This constructor initializes the \doxylink{classeng_1_1UniformBuffer}{Uniform\+Buffer} object and generates an Open\+GL buffer ID for use with UBOs. \Hypertarget{classeng_1_1UniformBuffer_af8774429a750b308db43f3abc1196f09}\index{eng::UniformBuffer@{eng::UniformBuffer}!UniformBuffer@{UniformBuffer}}
+\index{UniformBuffer@{UniformBuffer}!eng::UniformBuffer@{eng::UniformBuffer}}
+\doxysubsubsection{\texorpdfstring{UniformBuffer()}{UniformBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classeng_1_1UniformBuffer_af8774429a750b308db43f3abc1196f09} 
+eng\+::\+Uniform\+Buffer\+::\+Uniform\+Buffer (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{unsigned int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classeng_1_1UniformBuffer}{Uniform\+Buffer} and generates an Open\+GL buffer ID with initial data. 
+
+This constructor initializes the \doxylink{classeng_1_1UniformBuffer}{Uniform\+Buffer} object, generates an Open\+GL buffer ID, and uploads the provided data to the buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the uniform data to be uploaded. \\
+\hline
+{\em size} & Size of the data in bytes. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1UniformBuffer_a6f62c097ae98a30a9ce54e1a6d33bcda}\index{eng::UniformBuffer@{eng::UniformBuffer}!````~UniformBuffer@{\texorpdfstring{$\sim$}{\string~}UniformBuffer}}
+\index{````~UniformBuffer@{\texorpdfstring{$\sim$}{\string~}UniformBuffer}!eng::UniformBuffer@{eng::UniformBuffer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}UniformBuffer()}{\string~UniformBuffer()}}
+{\footnotesize\ttfamily \label{classeng_1_1UniformBuffer_a6f62c097ae98a30a9ce54e1a6d33bcda} 
+eng\+::\+Uniform\+Buffer\+::\texorpdfstring{$\sim$}{\string~}\+Uniform\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destroys the \doxylink{classeng_1_1UniformBuffer}{Uniform\+Buffer} and deletes the Open\+GL buffer. 
+
+This destructor cleans up the \doxylink{classeng_1_1UniformBuffer}{Uniform\+Buffer} object by deleting the associated Open\+GL buffer to free GPU resources. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1UniformBuffer_a6908f9b8fc1c9f758b2e3d4312c31728}\index{eng::UniformBuffer@{eng::UniformBuffer}!bind@{bind}}
+\index{bind@{bind}!eng::UniformBuffer@{eng::UniformBuffer}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily \label{classeng_1_1UniformBuffer_a6908f9b8fc1c9f758b2e3d4312c31728} 
+void eng\+::\+Uniform\+Buffer\+::bind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Binds the uniform buffer. 
+
+This method binds the uniform buffer object to make it the active buffer for subsequent Open\+GL operations. \Hypertarget{classeng_1_1UniformBuffer_aff9384df88b1def8722f3c936aa4683c}\index{eng::UniformBuffer@{eng::UniformBuffer}!bindToPoint@{bindToPoint}}
+\index{bindToPoint@{bindToPoint}!eng::UniformBuffer@{eng::UniformBuffer}}
+\doxysubsubsection{\texorpdfstring{bindToPoint()}{bindToPoint()}}
+{\footnotesize\ttfamily \label{classeng_1_1UniformBuffer_aff9384df88b1def8722f3c936aa4683c} 
+void eng\+::\+Uniform\+Buffer\+::bind\+To\+Point (\begin{DoxyParamCaption}\item[{unsigned int}]{binding\+Point}{}\end{DoxyParamCaption}) const}
+
+
+
+Binds the uniform buffer to a specific binding point in the shader. 
+
+This method binds the uniform buffer object to a given binding point, allowing shaders to access the data stored in the buffer at the specified binding point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em binding\+Point} & The binding point to which the buffer should be bound. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1UniformBuffer_a79fbbd04f76e60f4cc90ed519b2be48a}\index{eng::UniformBuffer@{eng::UniformBuffer}!unbind@{unbind}}
+\index{unbind@{unbind}!eng::UniformBuffer@{eng::UniformBuffer}}
+\doxysubsubsection{\texorpdfstring{unbind()}{unbind()}}
+{\footnotesize\ttfamily \label{classeng_1_1UniformBuffer_a79fbbd04f76e60f4cc90ed519b2be48a} 
+void eng\+::\+Uniform\+Buffer\+::unbind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Unbinds the uniform buffer. 
+
+This method unbinds the currently bound uniform buffer object, ensuring that no buffer is active for subsequent Open\+GL operations. \Hypertarget{classeng_1_1UniformBuffer_a8cc7b758049566b59f1a2b6780672667}\index{eng::UniformBuffer@{eng::UniformBuffer}!updateData@{updateData}}
+\index{updateData@{updateData}!eng::UniformBuffer@{eng::UniformBuffer}}
+\doxysubsubsection{\texorpdfstring{updateData()}{updateData()}}
+{\footnotesize\ttfamily \label{classeng_1_1UniformBuffer_a8cc7b758049566b59f1a2b6780672667} 
+void eng\+::\+Uniform\+Buffer\+::update\+Data (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{unsigned int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Updates the buffer data. 
+
+This method updates the contents of the uniform buffer by uploading new data to the buffer. It replaces the existing data with the provided data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data to be uploaded. \\
+\hline
+{\em size} & Size of the data in bytes. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/platform/opengl/GLBuffers.\+hpp\item 
+Engine/platform/opengl/GLBuffers.\+cpp\end{DoxyCompactItemize}

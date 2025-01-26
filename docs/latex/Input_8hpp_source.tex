@@ -1,0 +1,33 @@
+\doxysection{Input.\+hpp}
+\hypertarget{Input_8hpp_source}{}\label{Input_8hpp_source}\index{Engine/platform/io/Input.hpp@{Engine/platform/io/Input.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Keys.hpp"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }eng\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ \ \ \ *\ @class\ Input}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ \ *\ @brief\ Input\ handler\ for\ mouse\ and\ keyboard\ events.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ \ \ \ *\ This\ class\ handles\ the\ input\ from\ mouse\ and\ keyboard.\ It}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ \ *\ stores\ states\ of\ every\ key.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }Input\{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::map<Key,\ bool>\ keyStates;\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ Input();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classeng_1_1Input_a3b8b31d01c596a3f49e1386882e0cb1e}{isKeyPressed}}(Key\ key);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Input_a96a36433d98f107832854cc88a79d4fd}{setKeyPressed}}(Key\ key,\ \textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}

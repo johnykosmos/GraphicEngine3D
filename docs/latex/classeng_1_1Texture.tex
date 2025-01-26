@@ -1,0 +1,91 @@
+\doxysection{eng\+::Texture Class Reference}
+\hypertarget{classeng_1_1Texture}{}\label{classeng_1_1Texture}\index{eng::Texture@{eng::Texture}}
+
+
+A class for loading, binding, and managing 2D textures in Open\+GL.  
+
+
+
+
+{\ttfamily \#include $<$Texture.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classeng_1_1Texture_a0dc9f0c1b49c98df0abbe702e8d85455}{Texture}} (const char \texorpdfstring{$\ast$}{*}source, const \mbox{\hyperlink{structeng_1_1TextureSpec}{Texture\+Spec}} \&spec)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classeng_1_1Texture}{Texture} object and loads a texture from a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1Texture_a3a7b040f63997d941314d86495b76723}{\texorpdfstring{$\sim$}{\string~}\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em Destructor that frees the texture resource. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Texture_a115a576a026b7540bd66951f5ba53489}{bind}} () const
+\begin{DoxyCompactList}\small\item\em Binds the texture to the current Open\+GL texture unit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Texture_a251ae11776db7eff03a3c8f9b8085bf0}{unbind}} () const
+\begin{DoxyCompactList}\small\item\em Unbinds the texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for loading, binding, and managing 2D textures in Open\+GL. 
+
+This class is responsible for loading texture data from a file, creating an Open\+GL texture object, and setting texture parameters such as wrapping and filtering. The texture can then be bound for rendering. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classeng_1_1Texture_a0dc9f0c1b49c98df0abbe702e8d85455}\index{eng::Texture@{eng::Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!eng::Texture@{eng::Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}}
+{\footnotesize\ttfamily \label{classeng_1_1Texture_a0dc9f0c1b49c98df0abbe702e8d85455} 
+eng\+::\+Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{source}{, }\item[{const \mbox{\hyperlink{structeng_1_1TextureSpec}{Texture\+Spec}} \&}]{spec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a \doxylink{classeng_1_1Texture}{Texture} object and loads a texture from a file. 
+
+This constructor loads texture data from the specified file and creates an Open\+GL texture object using the parameters defined in the \doxylink{structeng_1_1TextureSpec}{Texture\+Spec} structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The file path to the texture image (e.\+g., PNG or JPEG file). \\
+\hline
+{\em spec} & A \doxylink{structeng_1_1TextureSpec}{Texture\+Spec} structure defining wrapping and filtering parameters. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If the texture fails to load, the texture object will not be initialized. 
+\end{DoxyNote}
+\Hypertarget{classeng_1_1Texture_a3a7b040f63997d941314d86495b76723}\index{eng::Texture@{eng::Texture}!````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}}
+\index{````~Texture@{\texorpdfstring{$\sim$}{\string~}Texture}!eng::Texture@{eng::Texture}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Texture()}{\string~Texture()}}
+{\footnotesize\ttfamily \label{classeng_1_1Texture_a3a7b040f63997d941314d86495b76723} 
+eng\+::\+Texture\+::\texorpdfstring{$\sim$}{\string~}\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor that frees the texture resource. 
+
+Automatically deletes the Open\+GL texture object to prevent memory leaks. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1Texture_a115a576a026b7540bd66951f5ba53489}\index{eng::Texture@{eng::Texture}!bind@{bind}}
+\index{bind@{bind}!eng::Texture@{eng::Texture}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily \label{classeng_1_1Texture_a115a576a026b7540bd66951f5ba53489} 
+void eng\+::\+Texture\+::bind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Binds the texture to the current Open\+GL texture unit. 
+
+This method makes the texture active for rendering operations. By default, it binds to {\ttfamily GL\+\_\+\+TEXTURE0}. \Hypertarget{classeng_1_1Texture_a251ae11776db7eff03a3c8f9b8085bf0}\index{eng::Texture@{eng::Texture}!unbind@{unbind}}
+\index{unbind@{unbind}!eng::Texture@{eng::Texture}}
+\doxysubsubsection{\texorpdfstring{unbind()}{unbind()}}
+{\footnotesize\ttfamily \label{classeng_1_1Texture_a251ae11776db7eff03a3c8f9b8085bf0} 
+void eng\+::\+Texture\+::unbind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Unbinds the texture. 
+
+This method makes the texture unactive for rendering operations. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/platform/opengl/Texture.\+hpp\item 
+Engine/platform/opengl/Texture.\+cpp\end{DoxyCompactItemize}

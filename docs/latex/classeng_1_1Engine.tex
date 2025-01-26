@@ -1,0 +1,94 @@
+\doxysection{eng\+::Engine Class Reference}
+\hypertarget{classeng_1_1Engine}{}\label{classeng_1_1Engine}\index{eng::Engine@{eng::Engine}}
+
+
+The core of the whole 3D engine.  
+
+
+
+
+{\ttfamily \#include $<$Engine.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classeng_1_1Window}{Window}} \& \mbox{\hyperlink{classeng_1_1Engine_a77d3f3da1e6280586068149b5229df60}{get\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Gets the window reference. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1Input}{Input}} \& \mbox{\hyperlink{classeng_1_1Engine_ad960923e3239f369d2791e06f998f5da}{get\+Input\+Handler}} ()
+\begin{DoxyCompactList}\small\item\em Gets the input\+Handler reference. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1Renderer}{Renderer}} \& \mbox{\hyperlink{classeng_1_1Engine_a7eb3e69c3ac540141f2e223d182f6875}{get\+Renderer}} ()
+\begin{DoxyCompactList}\small\item\em Gets the renderer reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classeng_1_1Engine_ab58c3faeb16b53ada5967fe9c192e8b2}\label{classeng_1_1Engine_ab58c3faeb16b53ada5967fe9c192e8b2} 
+static void {\bfseries init} (const \mbox{\hyperlink{structeng_1_1WindowSpec}{Window\+Spec}} \&window\+Spec)
+\begin{DoxyCompactList}\small\item\em Creates instance of the \doxylink{classeng_1_1Engine}{Engine} if does not exist. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classeng_1_1Engine}{Engine}} \& \mbox{\hyperlink{classeng_1_1Engine_ae15adcabdfcba2b78c5a7785cf18a5b8}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the instance of the \doxylink{classeng_1_1Engine}{Engine} class, creates one if does not exist. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The core of the whole 3D engine. 
+
+This class is the main component of the 3D engine, implemented as a Singleton to ensure that only one instance exists through the application\textquotesingle{}s lifetime. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1Engine_ad960923e3239f369d2791e06f998f5da}\index{eng::Engine@{eng::Engine}!getInputHandler@{getInputHandler}}
+\index{getInputHandler@{getInputHandler}!eng::Engine@{eng::Engine}}
+\doxysubsubsection{\texorpdfstring{getInputHandler()}{getInputHandler()}}
+{\footnotesize\ttfamily \label{classeng_1_1Engine_ad960923e3239f369d2791e06f998f5da} 
+\mbox{\hyperlink{classeng_1_1Input}{Input}} \& eng\+::\+Engine\+::get\+Input\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the input\+Handler reference. 
+
+\begin{DoxyReturn}{Returns}
+input\+Handler reference 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1Engine_ae15adcabdfcba2b78c5a7785cf18a5b8}\index{eng::Engine@{eng::Engine}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!eng::Engine@{eng::Engine}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{classeng_1_1Engine_ae15adcabdfcba2b78c5a7785cf18a5b8} 
+\mbox{\hyperlink{classeng_1_1Engine}{Engine}} \& eng\+::\+Engine\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the instance of the \doxylink{classeng_1_1Engine}{Engine} class, creates one if does not exist. 
+
+\begin{DoxyReturn}{Returns}
+Instance of the \doxylink{classeng_1_1Engine}{Engine}. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1Engine_a7eb3e69c3ac540141f2e223d182f6875}\index{eng::Engine@{eng::Engine}!getRenderer@{getRenderer}}
+\index{getRenderer@{getRenderer}!eng::Engine@{eng::Engine}}
+\doxysubsubsection{\texorpdfstring{getRenderer()}{getRenderer()}}
+{\footnotesize\ttfamily \label{classeng_1_1Engine_a7eb3e69c3ac540141f2e223d182f6875} 
+\mbox{\hyperlink{classeng_1_1Renderer}{Renderer}} \& eng\+::\+Engine\+::get\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the renderer reference. 
+
+\begin{DoxyReturn}{Returns}
+renderer reference 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1Engine_a77d3f3da1e6280586068149b5229df60}\index{eng::Engine@{eng::Engine}!getWindow@{getWindow}}
+\index{getWindow@{getWindow}!eng::Engine@{eng::Engine}}
+\doxysubsubsection{\texorpdfstring{getWindow()}{getWindow()}}
+{\footnotesize\ttfamily \label{classeng_1_1Engine_a77d3f3da1e6280586068149b5229df60} 
+\mbox{\hyperlink{classeng_1_1Window}{Window}} \& eng\+::\+Engine\+::get\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the window reference. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classeng_1_1Window}{Window} reference 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/core/Engine.\+hpp\item 
+Engine/core/Engine.\+cpp\end{DoxyCompactItemize}

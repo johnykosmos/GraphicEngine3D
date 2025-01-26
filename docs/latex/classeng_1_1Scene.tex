@@ -1,0 +1,263 @@
+\doxysection{eng\+::Scene Class Reference}
+\hypertarget{classeng_1_1Scene}{}\label{classeng_1_1Scene}\index{eng::Scene@{eng::Scene}}
+
+
+Manages the collection of lights, drawables, and the active camera in a 3D scene.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classeng_1_1Scene_a7c9e9d526d55d668938ff8d452534a9a}\label{classeng_1_1Scene_a7c9e9d526d55d668938ff8d452534a9a} 
+virtual void {\bfseries on\+Update} ()=0
+\begin{DoxyCompactList}\small\item\em Is called on every main loop iteration if scene is loaded. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\const std\+::vector$<$ T \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{classeng_1_1Scene_a9567253c0ac907386bea3ee52c1c56f9}{get\+Light\+List}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the list of lights of a specified type in the scene. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{structeng_1_1Drawable}{Drawable}} $>$ \& \mbox{\hyperlink{classeng_1_1Scene_aad5139124a4ec4f1ef8a1a3d66a56d33}{get\+Drawables}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the list of drawables in the scene. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classeng_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classeng_1_1Scene_aa37e60112ca0f14c566216c82ec4012f}{get\+Active\+Camera}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the active camera in the scene. \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1Scene_a59f8d46e92755995b303009feaf545ac}\label{classeng_1_1Scene_a59f8d46e92755995b303009feaf545ac} 
+template$<$$>$ const std\+::vector$<$ \mbox{\hyperlink{structeng_1_1PointLight}{Point\+Light}} \texorpdfstring{$\ast$}{*} $>$ \& {\bfseries get\+Light\+List} () const
+\item 
+\Hypertarget{classeng_1_1Scene_a638cd5dbb4a632ac3a0ec2364c5bc3cf}\label{classeng_1_1Scene_a638cd5dbb4a632ac3a0ec2364c5bc3cf} 
+template$<$$>$ const std\+::vector$<$ \mbox{\hyperlink{structeng_1_1DirectionalLight}{Directional\+Light}} \texorpdfstring{$\ast$}{*} $>$ \& {\bfseries get\+Light\+List} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classeng_1_1Scene_aa1635c2c16c7d0eac22792253b263a97}{add\+Light}} (\mbox{\hyperlink{structeng_1_1DirectionalLight}{Directional\+Light}} \&light)
+\begin{DoxyCompactList}\small\item\em Adds a new directional light to the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Scene_a4cbd982950b13a5dde4551f4c0554e28}{add\+Light}} (\mbox{\hyperlink{structeng_1_1PointLight}{Point\+Light}} \&light)
+\begin{DoxyCompactList}\small\item\em Adds a new point light to the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Scene_a1330db24bce9b8ab0d7d7745c0105782}{remove\+Light}} (\mbox{\hyperlink{structeng_1_1PointLight}{Point\+Light}} \&light)
+\begin{DoxyCompactList}\small\item\em Removes a point light from the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Scene_af970f2a5a0d75f3609717fd058fe5089}{remove\+Light}} (\mbox{\hyperlink{structeng_1_1DirectionalLight}{Directional\+Light}} \&light)
+\begin{DoxyCompactList}\small\item\em Removes a directional light from the scene. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{classeng_1_1Scene_a4ba80a712b2e4d4f56633b8f01fae2c8}{clear\+Light\+List}} ()
+\begin{DoxyCompactList}\small\item\em Clears the list of lights of a specified type in the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Scene_afdcedaa2acea2a2a45301f3192cad3b5}{add\+Drawable}} (const \mbox{\hyperlink{classeng_1_1Entity}{Entity}} \&entity, const \mbox{\hyperlink{structeng_1_1Material}{Material}} \&material)
+\begin{DoxyCompactList}\small\item\em Adds a new drawable entity to the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Scene_a4ee8aa6b173e9511043b3f3f353f372f}{remove\+Drawable}} (const \mbox{\hyperlink{classeng_1_1Entity}{Entity}} \&entity)
+\begin{DoxyCompactList}\small\item\em Removes a drawable entity from the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Scene_a8526ea1145c3c27f0c148e5bef822ab4}{clear\+Drawables}} ()
+\begin{DoxyCompactList}\small\item\em Clears the drawables list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeng_1_1Scene_a7fb8feaac6ccc2cb2eb116c9f50501ab}{set\+Active\+Camera}} (\mbox{\hyperlink{classeng_1_1Camera}{Camera}} \&camera)
+\begin{DoxyCompactList}\small\item\em Sets the active camera for the scene. \end{DoxyCompactList}\item 
+\Hypertarget{classeng_1_1Scene_a07022dcec4807f4b592738a936f16c83}\label{classeng_1_1Scene_a07022dcec4807f4b592738a936f16c83} 
+template$<$$>$ void {\bfseries clear\+Light\+List} ()
+\item 
+\Hypertarget{classeng_1_1Scene_a07022dcec4807f4b592738a936f16c83}\label{classeng_1_1Scene_a07022dcec4807f4b592738a936f16c83} 
+template$<$$>$ void {\bfseries clear\+Light\+List} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the collection of lights, drawables, and the active camera in a 3D scene. 
+
+The \doxylink{classeng_1_1Scene}{Scene} class provides methods to add, remove, and retrieve light sources and drawable entities in the scene. It also manages the active camera, which is used for rendering and scene transformations. The \doxylink{classeng_1_1Scene}{Scene} serves as a central container for all objects and components that are rendered or used during rendering. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1Scene_afdcedaa2acea2a2a45301f3192cad3b5}\index{eng::Scene@{eng::Scene}!addDrawable@{addDrawable}}
+\index{addDrawable@{addDrawable}!eng::Scene@{eng::Scene}}
+\doxysubsubsection{\texorpdfstring{addDrawable()}{addDrawable()}}
+{\footnotesize\ttfamily \label{classeng_1_1Scene_afdcedaa2acea2a2a45301f3192cad3b5} 
+void eng\+::\+Scene\+::add\+Drawable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classeng_1_1Entity}{Entity}} \&}]{entity}{, }\item[{const \mbox{\hyperlink{structeng_1_1Material}{Material}} \&}]{material}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Adds a new drawable entity to the scene. 
+
+This method inserts an entity and it\textquotesingle{}s material into the scene\textquotesingle{}s drawable list. It allows the renderer to access and use this entity during rendering.
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to be added. \\
+\hline
+{\em material} & The material of the entity \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1Scene_aa1635c2c16c7d0eac22792253b263a97}\index{eng::Scene@{eng::Scene}!addLight@{addLight}}
+\index{addLight@{addLight}!eng::Scene@{eng::Scene}}
+\doxysubsubsection{\texorpdfstring{addLight()}{addLight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classeng_1_1Scene_aa1635c2c16c7d0eac22792253b263a97} 
+void eng\+::\+Scene\+::add\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structeng_1_1DirectionalLight}{Directional\+Light}} \&}]{light}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Adds a new directional light to the scene. 
+
+This method inserts a directional light source into the scene\textquotesingle{}s light list. It allows the renderer to access and use this light during rendering.
+
+
+\begin{DoxyParams}{Parameters}
+{\em light} & The light source to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1Scene_a4cbd982950b13a5dde4551f4c0554e28}\index{eng::Scene@{eng::Scene}!addLight@{addLight}}
+\index{addLight@{addLight}!eng::Scene@{eng::Scene}}
+\doxysubsubsection{\texorpdfstring{addLight()}{addLight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classeng_1_1Scene_a4cbd982950b13a5dde4551f4c0554e28} 
+void eng\+::\+Scene\+::add\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structeng_1_1PointLight}{Point\+Light}} \&}]{light}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Adds a new point light to the scene. 
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+This method inserts a point light source into the scene\textquotesingle{}s light list. It allows the renderer to access and use this light during rendering.
+
+
+\begin{DoxyParams}{Parameters}
+{\em light} & The light source to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1Scene_a8526ea1145c3c27f0c148e5bef822ab4}\index{eng::Scene@{eng::Scene}!clearDrawables@{clearDrawables}}
+\index{clearDrawables@{clearDrawables}!eng::Scene@{eng::Scene}}
+\doxysubsubsection{\texorpdfstring{clearDrawables()}{clearDrawables()}}
+{\footnotesize\ttfamily \label{classeng_1_1Scene_a8526ea1145c3c27f0c148e5bef822ab4} 
+void eng\+::\+Scene\+::clear\+Drawables (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Clears the drawables list. 
+
+This method removes all drawables from the scene\textquotesingle{}s drawables list. \Hypertarget{classeng_1_1Scene_a4ba80a712b2e4d4f56633b8f01fae2c8}\index{eng::Scene@{eng::Scene}!clearLightList@{clearLightList}}
+\index{clearLightList@{clearLightList}!eng::Scene@{eng::Scene}}
+\doxysubsubsection{\texorpdfstring{clearLightList()}{clearLightList()}}
+{\footnotesize\ttfamily \label{classeng_1_1Scene_a4ba80a712b2e4d4f56633b8f01fae2c8} 
+template$<$typename T$>$ \\
+void eng\+::\+Scene\+::clear\+Light\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Clears the list of lights of a specified type in the scene. 
+
+This templated method removes all light sources of the specified type from the scene\textquotesingle{}s light list, effectively resetting the collection of that particular light type.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of light to clear (e.\+g., \doxylink{structeng_1_1PointLight}{Point\+Light}, \doxylink{structeng_1_1DirectionalLight}{Directional\+Light}). \\
+\hline
+\end{DoxyTemplParams}
+\Hypertarget{classeng_1_1Scene_aa37e60112ca0f14c566216c82ec4012f}\index{eng::Scene@{eng::Scene}!getActiveCamera@{getActiveCamera}}
+\index{getActiveCamera@{getActiveCamera}!eng::Scene@{eng::Scene}}
+\doxysubsubsection{\texorpdfstring{getActiveCamera()}{getActiveCamera()}}
+{\footnotesize\ttfamily \label{classeng_1_1Scene_aa37e60112ca0f14c566216c82ec4012f} 
+\mbox{\hyperlink{classeng_1_1Camera}{Camera}} \texorpdfstring{$\ast$}{*} eng\+::\+Scene\+::get\+Active\+Camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the active camera in the scene. 
+
+This method returns the pointer to the active camera in the scene, which is used for rendering. If no active camera is set, this method may return {\ttfamily nullptr}.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the active camera in the scene. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1Scene_aad5139124a4ec4f1ef8a1a3d66a56d33}\index{eng::Scene@{eng::Scene}!getDrawables@{getDrawables}}
+\index{getDrawables@{getDrawables}!eng::Scene@{eng::Scene}}
+\doxysubsubsection{\texorpdfstring{getDrawables()}{getDrawables()}}
+{\footnotesize\ttfamily \label{classeng_1_1Scene_aad5139124a4ec4f1ef8a1a3d66a56d33} 
+const std\+::vector$<$ \mbox{\hyperlink{structeng_1_1Drawable}{Drawable}} $>$ \& eng\+::\+Scene\+::get\+Drawables (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the list of drawables in the scene. 
+
+This method returns a constant reference to the vector containing all the drawables in the scene. \texorpdfstring{$\ast$}{*} \begin{DoxyReturn}{Returns}
+A constant reference to the vector containing all the drawables. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1Scene_a9567253c0ac907386bea3ee52c1c56f9}\index{eng::Scene@{eng::Scene}!getLightList@{getLightList}}
+\index{getLightList@{getLightList}!eng::Scene@{eng::Scene}}
+\doxysubsubsection{\texorpdfstring{getLightList()}{getLightList()}}
+{\footnotesize\ttfamily \label{classeng_1_1Scene_a9567253c0ac907386bea3ee52c1c56f9} 
+template$<$typename T$>$ \\
+const std\+::vector$<$ T \texorpdfstring{$\ast$}{*} $>$ \& eng\+::\+Scene\+::get\+Light\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the list of lights of a specified type in the scene. 
+
+This templated method returns a constant reference to the vector containing all light sources of the specified type in the scene. It can be used for querying the lights without modifying the list.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of light to retrieve (e.\+g., \doxylink{structeng_1_1PointLight}{Point\+Light}, \doxylink{structeng_1_1DirectionalLight}{Directional\+Light}). \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A constant reference to the vector containing pointers to all light sources of type T. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1Scene_a4ee8aa6b173e9511043b3f3f353f372f}\index{eng::Scene@{eng::Scene}!removeDrawable@{removeDrawable}}
+\index{removeDrawable@{removeDrawable}!eng::Scene@{eng::Scene}}
+\doxysubsubsection{\texorpdfstring{removeDrawable()}{removeDrawable()}}
+{\footnotesize\ttfamily \label{classeng_1_1Scene_a4ee8aa6b173e9511043b3f3f353f372f} 
+void eng\+::\+Scene\+::remove\+Drawable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classeng_1_1Entity}{Entity}} \&}]{entity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Removes a drawable entity from the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to be removed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1Scene_af970f2a5a0d75f3609717fd058fe5089}\index{eng::Scene@{eng::Scene}!removeLight@{removeLight}}
+\index{removeLight@{removeLight}!eng::Scene@{eng::Scene}}
+\doxysubsubsection{\texorpdfstring{removeLight()}{removeLight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classeng_1_1Scene_af970f2a5a0d75f3609717fd058fe5089} 
+void eng\+::\+Scene\+::remove\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structeng_1_1DirectionalLight}{Directional\+Light}} \&}]{light}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Removes a directional light from the scene. 
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. 
+
+This method removes a directional light source from the scene\textquotesingle{}s light list. It ensures that the renderer no longer uses this light during rendering.
+
+
+\begin{DoxyParams}{Parameters}
+{\em light} & The light source to be removed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1Scene_a1330db24bce9b8ab0d7d7745c0105782}\index{eng::Scene@{eng::Scene}!removeLight@{removeLight}}
+\index{removeLight@{removeLight}!eng::Scene@{eng::Scene}}
+\doxysubsubsection{\texorpdfstring{removeLight()}{removeLight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classeng_1_1Scene_a1330db24bce9b8ab0d7d7745c0105782} 
+void eng\+::\+Scene\+::remove\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structeng_1_1PointLight}{Point\+Light}} \&}]{light}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Removes a point light from the scene. 
+
+This method removes a point light source from the scene\textquotesingle{}s light list. It ensures that the renderer no longer uses this light during rendering.
+
+
+\begin{DoxyParams}{Parameters}
+{\em light} & The light source to be removed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classeng_1_1Scene_a7fb8feaac6ccc2cb2eb116c9f50501ab}\index{eng::Scene@{eng::Scene}!setActiveCamera@{setActiveCamera}}
+\index{setActiveCamera@{setActiveCamera}!eng::Scene@{eng::Scene}}
+\doxysubsubsection{\texorpdfstring{setActiveCamera()}{setActiveCamera()}}
+{\footnotesize\ttfamily \label{classeng_1_1Scene_a7fb8feaac6ccc2cb2eb116c9f50501ab} 
+void eng\+::\+Scene\+::set\+Active\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classeng_1_1Camera}{Camera}} \&}]{camera}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sets the active camera for the scene. 
+
+This method allows the user to specify which camera should be considered the active camera in the scene. The active camera will be used for rendering and scene transformations. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/core/Scene.\+hpp\item 
+Engine/core/Scene.\+cpp\end{DoxyCompactItemize}

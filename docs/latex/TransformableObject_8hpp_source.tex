@@ -1,0 +1,37 @@
+\doxysection{Transformable\+Object.\+hpp}
+\hypertarget{TransformableObject_8hpp_source}{}\label{TransformableObject_8hpp_source}\index{Engine/graphics/objects/TransformableObject.hpp@{Engine/graphics/objects/TransformableObject.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once\ }}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Typedefs.hpp"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }eng\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \ }
+\DoxyCodeLine{00007\ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classeng_1_1TransformableObject_aff37747658185f3f66fd81822a8234fb}{TransformableObject}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ Vec3\ rotation\ =\ \{0,\ 0,\ 0\};\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rotationAngle\ =\ 0.0f;\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ Vec3\ scaling\ =\ \{0,\ 0,\ 0\};\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ Mat4\ transform;\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1TransformableObject_aff37747658185f3f66fd81822a8234fb}{TransformableObject}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Mat4\&\ \mbox{\hyperlink{classeng_1_1TransformableObject_a5b276a98cf4daf735de44258ede4490c}{getTransform}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1TransformableObject_aff37747658185f3f66fd81822a8234fb}{TransformableObject}}\&\ \mbox{\hyperlink{classeng_1_1TransformableObject_a905004a33dae2bc64e6ffd0f831827c6}{rotate}}(\textcolor{keywordtype}{float}\ angle,\ \textcolor{keyword}{const}\ Vec3\&\ vector);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1TransformableObject_aff37747658185f3f66fd81822a8234fb}{TransformableObject}}\&\ \mbox{\hyperlink{classeng_1_1TransformableObject_a2b31c8be3edbde8db229151611e72ce0}{translate}}(\textcolor{keyword}{const}\ Vec3\&\ vector);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1TransformableObject_aff37747658185f3f66fd81822a8234fb}{TransformableObject}}\&\ \mbox{\hyperlink{classeng_1_1TransformableObject_a845354d76786585b052d4aecd204306f}{scale}}(\textcolor{keyword}{const}\ Vec3\&\ scaleVector);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1TransformableObject_aff37747658185f3f66fd81822a8234fb}{TransformableObject}}\&\ \mbox{\hyperlink{classeng_1_1TransformableObject_a4bfaf5253c5982a064110a523bcf4386}{setPosition}}(\textcolor{keyword}{const}\ Vec3\&\ position);}
+\DoxyCodeLine{00092\ \ \ \ \ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \}\ \textcolor{comment}{//\ namespace\ eng}}
+
+\end{DoxyCode}

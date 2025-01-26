@@ -1,0 +1,80 @@
+\doxysection{eng\+::Model\+Parser Class Reference}
+\hypertarget{classeng_1_1ModelParser}{}\label{classeng_1_1ModelParser}\index{eng::ModelParser@{eng::ModelParser}}
+
+
+Class responsible for parsing an OBJ model file and storing the parsed data.  
+
+
+
+
+{\ttfamily \#include $<$Model\+Parser.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classeng_1_1ModelParser_a19f057cb975d7c240df654bc732fb9d2}{parse\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Parses an OBJ file and extracts vertices, normals, texture coordinates, and faces. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structeng_1_1Vertex}{Vertex}} $>$ \mbox{\hyperlink{classeng_1_1ModelParser_a4fea368778def29d5a61c5f9b8a8f0d7}{get\+Vertices}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the list of vertices parsed from the OBJ file. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{classeng_1_1ModelParser_abbf86c27e17f5ef07045131ab2ea303b}{get\+Indices}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the list of indices representing the faces in the OBJ file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class responsible for parsing an OBJ model file and storing the parsed data. 
+
+This class handles reading data from an OBJ file, parsing vertices, normals, texture coordinates, and faces, and storing them in appropriate containers. It also manages a vertex cache to avoid redundant vertex data. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classeng_1_1ModelParser_abbf86c27e17f5ef07045131ab2ea303b}\index{eng::ModelParser@{eng::ModelParser}!getIndices@{getIndices}}
+\index{getIndices@{getIndices}!eng::ModelParser@{eng::ModelParser}}
+\doxysubsubsection{\texorpdfstring{getIndices()}{getIndices()}}
+{\footnotesize\ttfamily \label{classeng_1_1ModelParser_abbf86c27e17f5ef07045131ab2ea303b} 
+std\+::vector$<$ unsigned int $>$ eng\+::\+Model\+Parser\+::get\+Indices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the list of indices representing the faces in the OBJ file. 
+
+\begin{DoxyReturn}{Returns}
+The vector of face indices. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1ModelParser_a4fea368778def29d5a61c5f9b8a8f0d7}\index{eng::ModelParser@{eng::ModelParser}!getVertices@{getVertices}}
+\index{getVertices@{getVertices}!eng::ModelParser@{eng::ModelParser}}
+\doxysubsubsection{\texorpdfstring{getVertices()}{getVertices()}}
+{\footnotesize\ttfamily \label{classeng_1_1ModelParser_a4fea368778def29d5a61c5f9b8a8f0d7} 
+std\+::vector$<$ \mbox{\hyperlink{structeng_1_1Vertex}{Vertex}} $>$ eng\+::\+Model\+Parser\+::get\+Vertices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the list of vertices parsed from the OBJ file. 
+
+\begin{DoxyReturn}{Returns}
+The vector of vertices. 
+\end{DoxyReturn}
+\Hypertarget{classeng_1_1ModelParser_a19f057cb975d7c240df654bc732fb9d2}\index{eng::ModelParser@{eng::ModelParser}!parseFile@{parseFile}}
+\index{parseFile@{parseFile}!eng::ModelParser@{eng::ModelParser}}
+\doxysubsubsection{\texorpdfstring{parseFile()}{parseFile()}}
+{\footnotesize\ttfamily \label{classeng_1_1ModelParser_a19f057cb975d7c240df654bc732fb9d2} 
+bool eng\+::\+Model\+Parser\+::parse\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Parses an OBJ file and extracts vertices, normals, texture coordinates, and faces. 
+
+This function reads the OBJ file, processes each line, and parses vertex, normal, texture, and face data. The parsed data is stored in internal vectors and caches.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The path to the OBJ file to be parsed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the file was successfully parsed, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Engine/graphics/objects/Model\+Parser.\+hpp\item 
+Engine/graphics/objects/Model\+Parser.\+cpp\end{DoxyCompactItemize}

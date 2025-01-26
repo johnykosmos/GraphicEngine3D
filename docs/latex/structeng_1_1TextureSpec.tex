@@ -1,0 +1,36 @@
+\doxysection{eng\+::Texture\+Spec Struct Reference}
+\hypertarget{structeng_1_1TextureSpec}{}\label{structeng_1_1TextureSpec}\index{eng::TextureSpec@{eng::TextureSpec}}
+
+
+Specifies texture parameters for wrapping and filtering.  
+
+
+
+
+{\ttfamily \#include $<$Texture.\+hpp$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structeng_1_1TextureSpec_a2136432b39e8788f01587f2de938752c}\label{structeng_1_1TextureSpec_a2136432b39e8788f01587f2de938752c} 
+Texture\+Wrap {\bfseries horizontal\+Wrap} = Repeat
+\begin{DoxyCompactList}\small\item\em Wrapping mode for the horizontal (S-\/axis) texture coordinates. \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1TextureSpec_a26d6a0b9bf9bc423232fda21b711c5c6}\label{structeng_1_1TextureSpec_a26d6a0b9bf9bc423232fda21b711c5c6} 
+Texture\+Wrap {\bfseries vertical\+Wrap} = Repeat
+\begin{DoxyCompactList}\small\item\em Wrapping mode for the vertical (T-\/axis) texture coordinates. \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1TextureSpec_ae6c48ec4966e0650639ee2a431a4b68d}\label{structeng_1_1TextureSpec_ae6c48ec4966e0650639ee2a431a4b68d} 
+Texture\+Filter {\bfseries min\+Filter} = Mip\+Map\+Linear
+\begin{DoxyCompactList}\small\item\em Minification filter for scaling down the texture. \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1TextureSpec_a1338dfdd54e719e1814de3258c08337a}\label{structeng_1_1TextureSpec_a1338dfdd54e719e1814de3258c08337a} 
+Texture\+Filter {\bfseries mag\+Filter} = Linear
+\begin{DoxyCompactList}\small\item\em Magnification filter for scaling up the texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Specifies texture parameters for wrapping and filtering. 
+
+This struct allows users to define how a texture behaves when rendered. It includes options for horizontal and vertical wrapping, as well as minification and magnification filters. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Engine/platform/opengl/Texture.\+hpp\end{DoxyCompactItemize}

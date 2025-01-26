@@ -1,0 +1,46 @@
+\doxysection{Data\+UBO.\+hpp}
+\hypertarget{DataUBO_8hpp_source}{}\label{DataUBO_8hpp_source}\index{Engine/platform/opengl/DataUBO.hpp@{Engine/platform/opengl/DataUBO.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Typedefs.hpp"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ MAX\_POINT\_LIGHTS\ 20}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ MAX\_DIRECTIONAL\_LIGHTS\ 5}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }eng::DataUBO\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structeng_1_1DataUBO_1_1CameraData}{CameraData}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ Mat4\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1CameraData_a832a46a32f258b36dd78e19df5b86a9b}{projection}};\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ Vec3\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1CameraData_adbea09d66fad5d4906151ceff2f38298}{position}};\ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{struct\ }\textcolor{keyword}{alignas}(16)\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1DirLightData}{DirLightData}}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ Vec3\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1DirLightData_ad37a28b2d21d35753c27b416d6dca768}{color}};\ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1DirLightData_af455a77563900aea96ab4e905eac07c2}{padding1}};\ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ Vec3\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1DirLightData_aa575ffe9e759bcdb53fadee218fde611}{direction}};\ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1DirLightData_a1ecf2ea8567152b9d8466ea3fb7165ff}{padding2}};\ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{struct\ }\textcolor{keyword}{alignas}(16)\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1PointLightData}{PointLightData}}\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ Vec3\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1PointLightData_a88d5a36ce85d3d25c0ae6c1da1cc9f8e}{color}};\ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1PointLightData_abb8cae5075dad9d160ca8e8b12c4f3c9}{constant}};\ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Vec3\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1PointLightData_acb1d58618c54e104db72b57c4a3c8890}{position}};\ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1PointLightData_a77938a4b8c5379532e7c06b77a7029f2}{linear}};\ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ Vec3\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1PointLightData_a606a77c03afa8e10f32751f1225d6c66}{padding1}};\ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1PointLightData_a77f30c134e766f87500aaed6e813744f}{quadratic}};\ }
+\DoxyCodeLine{00055\ \ \ \ \ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{struct\ }\textcolor{keyword}{alignas}(16)\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1LightData}{LightData}}\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1LightData_a652db992a7d101dba7a55bf0f7bb4a0c}{isLightingEnabled}};\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1LightData_a325fb5f1f619c8cca12617cc134af7a2}{padding}};\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1LightData_a0be5a9b0a07a25d0168847e7586bb21a}{numberOfPointLights}};\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1LightData_af17591f6f2619accc7fb2b066b9512b8}{numberOfDirectionalLights}};\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structeng_1_1DataUBO_1_1PointLightData}{PointLightData}}\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1LightData_a942ecea2e762d7241d16432166a287ca}{pointLights}}[MAX\_POINT\_LIGHTS];\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structeng_1_1DataUBO_1_1DirLightData}{DirLightData}}\ \mbox{\hyperlink{structeng_1_1DataUBO_1_1LightData_a5aacf361a1919d37805ef8fa9101752a}{directionalLights}}[MAX\_DIRECTIONAL\_LIGHTS];\ }
+\DoxyCodeLine{00073\ \ \ \ \ \};}
+\DoxyCodeLine{00074\ \}\ \textcolor{comment}{//\ namespace\ eng}}
+
+\end{DoxyCode}

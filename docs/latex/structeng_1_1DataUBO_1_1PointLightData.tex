@@ -1,0 +1,47 @@
+\doxysection{eng\+::Data\+UBO\+::Point\+Light\+Data Struct Reference}
+\hypertarget{structeng_1_1DataUBO_1_1PointLightData}{}\label{structeng_1_1DataUBO_1_1PointLightData}\index{eng::DataUBO::PointLightData@{eng::DataUBO::PointLightData}}
+
+
+Represents a point light in the scene.  
+
+
+
+
+{\ttfamily \#include $<$Data\+UBO.\+hpp$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structeng_1_1DataUBO_1_1PointLightData_a88d5a36ce85d3d25c0ae6c1da1cc9f8e}\label{structeng_1_1DataUBO_1_1PointLightData_a88d5a36ce85d3d25c0ae6c1da1cc9f8e} 
+Vec3 {\bfseries color}
+\begin{DoxyCompactList}\small\item\em The color of the light (RGB). \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1DataUBO_1_1PointLightData_abb8cae5075dad9d160ca8e8b12c4f3c9}\label{structeng_1_1DataUBO_1_1PointLightData_abb8cae5075dad9d160ca8e8b12c4f3c9} 
+float {\bfseries constant}
+\begin{DoxyCompactList}\small\item\em The constant attenuation factor. \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1DataUBO_1_1PointLightData_acb1d58618c54e104db72b57c4a3c8890}\label{structeng_1_1DataUBO_1_1PointLightData_acb1d58618c54e104db72b57c4a3c8890} 
+Vec3 {\bfseries position}
+\begin{DoxyCompactList}\small\item\em The position of the light in world space. \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1DataUBO_1_1PointLightData_a77938a4b8c5379532e7c06b77a7029f2}\label{structeng_1_1DataUBO_1_1PointLightData_a77938a4b8c5379532e7c06b77a7029f2} 
+float {\bfseries linear}
+\begin{DoxyCompactList}\small\item\em The linear attenuation factor. \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1DataUBO_1_1PointLightData_a606a77c03afa8e10f32751f1225d6c66}\label{structeng_1_1DataUBO_1_1PointLightData_a606a77c03afa8e10f32751f1225d6c66} 
+Vec3 {\bfseries padding1}
+\begin{DoxyCompactList}\small\item\em Padding to align the next member to 16 bytes. \end{DoxyCompactList}\item 
+\Hypertarget{structeng_1_1DataUBO_1_1PointLightData_a77f30c134e766f87500aaed6e813744f}\label{structeng_1_1DataUBO_1_1PointLightData_a77f30c134e766f87500aaed6e813744f} 
+float {\bfseries quadratic}
+\begin{DoxyCompactList}\small\item\em The quadratic attenuation factor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a point light in the scene. 
+
+A point light emits light in all directions from a single position in space. The light\textquotesingle{}s intensity diminishes with distance based on attenuation factors.
+
+\begin{DoxyNote}{Note}
+The data is aligned to meet GPU uniform buffer layout requirements. 
+\end{DoxyNote}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Engine/platform/opengl/Data\+UBO.\+hpp\end{DoxyCompactItemize}

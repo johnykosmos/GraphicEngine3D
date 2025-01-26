@@ -1,0 +1,38 @@
+\doxysection{Keys.\+hpp}
+\hypertarget{Keys_8hpp_source}{}\label{Keys_8hpp_source}\index{Engine/platform/io/Keys.hpp@{Engine/platform/io/Keys.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }eng\{}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Key\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ W\ \ \ \ \ \ \ =\ GLFW\_KEY\_W,}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ A\ \ \ \ \ \ \ =\ GLFW\_KEY\_A,}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ S\ \ \ \ \ \ \ =\ GLFW\_KEY\_S,}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ D\ \ \ \ \ \ \ =\ GLFW\_KEY\_D,}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ Escape\ \ =\ GLFW\_KEY\_ESCAPE,}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ Space\ \ \ =\ GLFW\_KEY\_SPACE,}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ Enter\ \ \ =\ GLFW\_KEY\_ENTER,}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ Up\ \ \ \ \ \ =\ GLFW\_KEY\_UP,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ Down\ \ \ \ =\ GLFW\_KEY\_DOWN,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ Left\ \ \ \ =\ GLFW\_KEY\_LEFT,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ Right\ \ \ =\ GLFW\_KEY\_RIGHT}
+\DoxyCodeLine{00018\ \ \ \ \ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{enum\ class}\ MouseButton\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ Left\ \ \ \ =\ GLFW\_MOUSE\_BUTTON\_LEFT,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ Right\ \ \ =\ GLFW\_MOUSE\_BUTTON\_RIGHT,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ Middle\ \ =\ GLFW\_MOUSE\_BUTTON\_MIDDLE}
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{const}\ Key\ keyEnumeration[]\ =\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ Key::W,\ Key::A,\ Key::S,\ Key::D,\ Key::Escape,\ Key::Space,\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ Key::Enter,\ Key::Up,\ Key::Down,\ Key::Left,\ Key::Right}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ translateGLFWKey(\textcolor{keywordtype}{int}\ key,\ Key\ \&mappedKey);}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}

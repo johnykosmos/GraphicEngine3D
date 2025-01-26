@@ -1,0 +1,40 @@
+\doxysection{Mesh.\+hpp}
+\hypertarget{Mesh_8hpp_source}{}\label{Mesh_8hpp_source}\index{Engine/graphics/Mesh.hpp@{Engine/graphics/Mesh.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}GLBuffers.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}VertexArray.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}VertexLayout.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }eng\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classeng_1_1Mesh_ad4871032eda025e27f6ef0df58caf1ca}{Mesh}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1VertexBuffer}{VertexBuffer}}\ vb;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1IndexBuffer}{IndexBuffer}}\ ib;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1VertexBufferLayout}{VertexBufferLayout}}\ layout;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1VertexArray}{VertexArray}}\ va;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1Mesh_ad4871032eda025e27f6ef0df58caf1ca}{Mesh}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classeng_1_1Mesh_ad4871032eda025e27f6ef0df58caf1ca}{Mesh}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structeng_1_1Vertex}{Vertex}}\ vertices[],\ \textcolor{keywordtype}{size\_t}\ vertexCount,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ indices[],\ \textcolor{keywordtype}{size\_t}\ indexCount);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1Mesh_ae70a420e926f9ec3c603076ad5f668b3}{\string~Mesh}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1VertexArray}{VertexArray}}\&\ \mbox{\hyperlink{classeng_1_1Mesh_a21779641ad815a98124a613cb9fa0065}{getVertexArray}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Mesh_a82204cf4aa9754749c170822489a4410}{updateData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structeng_1_1Vertex}{Vertex}}\ vertices[],\ \textcolor{keywordtype}{size\_t}\ vertexCount,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ indices[],\ \textcolor{keywordtype}{size\_t}\ indexCount);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \};}
+\DoxyCodeLine{00089\ \}\ }
+
+\end{DoxyCode}

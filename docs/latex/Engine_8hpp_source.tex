@@ -1,0 +1,38 @@
+\doxysection{Engine.\+hpp}
+\hypertarget{Engine_8hpp_source}{}\label{Engine_8hpp_source}\index{Engine/core/Engine.hpp@{Engine/core/Engine.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Input.hpp"{}}\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Renderer.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Window.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }eng\{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }Engine\{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1Window}{Window}}\ window;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1Input}{Input}}\ inputHandler;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1Renderer}{Renderer}}\ renderer;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<Engine>\ eInstance;\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ Engine(\textcolor{keyword}{const}\ \mbox{\hyperlink{structeng_1_1WindowSpec}{WindowSpec}}\&\ windowSpec);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ Engine(\textcolor{keyword}{const}\ Engine\&)\ =\ \textcolor{keyword}{delete};\ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ Engine\&\ operator=(\textcolor{keyword}{const}\ Engine\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1Engine_ab58c3faeb16b53ada5967fe9c192e8b2}{init}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structeng_1_1WindowSpec}{WindowSpec}}\&\ windowSpec);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ Engine\&\ \mbox{\hyperlink{classeng_1_1Engine_ae15adcabdfcba2b78c5a7785cf18a5b8}{getInstance}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1Window}{Window}}\&\ \mbox{\hyperlink{classeng_1_1Engine_a77d3f3da1e6280586068149b5229df60}{getWindow}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1Input}{Input}}\&\ \mbox{\hyperlink{classeng_1_1Engine_ad960923e3239f369d2791e06f998f5da}{getInputHandler}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1Renderer}{Renderer}}\&\ \mbox{\hyperlink{classeng_1_1Engine_a7eb3e69c3ac540141f2e223d182f6875}{getRenderer}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \};}
+\DoxyCodeLine{00059\ \}}
+
+\end{DoxyCode}

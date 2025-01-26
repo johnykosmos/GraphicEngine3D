@@ -1,0 +1,67 @@
+\doxysection{Camera.\+hpp}
+\hypertarget{Camera_8hpp_source}{}\label{Camera_8hpp_source}\index{Engine/graphics/Camera.hpp@{Engine/graphics/Camera.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <glm/mat4x4.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Typedefs.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }eng\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classeng_1_1Camera}{Camera}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classeng_1_1Camera_a081afba5aa8444b03bca162bfbfe0b06}{\string~Camera}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ Mat4\ \mbox{\hyperlink{classeng_1_1Camera_a80e49fa9c4aacc6d24f22ab38061e9ce}{getViewProjection}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ Vec3\ \mbox{\hyperlink{classeng_1_1Camera_a16a3c7ec98883e50b226b14db5e4f916}{getPosition}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00041\ \ \ \ \ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classeng_1_1PerspectiveCamera_a710a13c685b26970c6c1dbd4f688daee}{PerspectiveCamera}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classeng_1_1Camera}{Camera}}\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ Vec3\ position;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fov;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ aspectRatio;\ \ \ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ yaw;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ pitch;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ Vec3\ front;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ Vec3\ up;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ Vec3\ right;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ Mat4\ viewProjection;\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ updateCameraVectors();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ updateViewProjection();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a710a13c685b26970c6c1dbd4f688daee}{PerspectiveCamera}}(Vec3\ startPosition,\ \textcolor{keywordtype}{float}\ aspectRatio,\ \textcolor{keywordtype}{float}\ startYaw,\ \textcolor{keywordtype}{float}\ startPitch);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ Mat4\ \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a8fb504806832c2a67c77f71fe8a8d068}{getViewProjection}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ Vec3\ \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a10395ad6bcf1bbc887a945ab58a2d762}{getPosition}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a6bb1be369055207890bc603830a67c51}{getYaw}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classeng_1_1PerspectiveCamera_aafc052cc13415cf7673942edf55f9544}{getPitch}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vec3\ \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a6c4cf049fd89f685259f342ae61c2474}{getFront}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Vec3\ \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a95ca03bd3769e8a546885670ab98ad37}{getRight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a99875c9cf2335b426e53bd904c01d2fa}{setYaw}}(\textcolor{keywordtype}{float}\ newYaw);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1PerspectiveCamera_af2835e9473b6ecb6c40ed4a3c3b45cee}{setPitch}}(\textcolor{keywordtype}{float}\ newPitch);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classeng_1_1PerspectiveCamera_a9d91c96e251c64b89baf3ecc39b5694a}{setPosition}}(\textcolor{keyword}{const}\ Vec3\&\ newPosition);}
+\DoxyCodeLine{00144\ \ \ \ \ \};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \}}
+\DoxyCodeLine{00147\ }
+
+\end{DoxyCode}
