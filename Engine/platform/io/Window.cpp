@@ -1,8 +1,9 @@
-#include "Window.hpp"
 #include <glad/glad.h>
+#include "Window.hpp"
 #include "Engine.hpp"
 #include "GLFW/glfw3.h"
 #include "Keys.hpp"
+#include <iostream>
 
 void framebufferSizeCallback(GLFWwindow* window, int width, int height){
         glViewport(0, 0, width, height);
