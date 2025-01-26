@@ -1,4 +1,5 @@
 #include "Light.hpp"
+#include "Typedefs.hpp"
 #include "glad/glad.h"
 #include <GL/gl.h>
 #include "Renderer.hpp"
@@ -19,6 +20,7 @@ namespace eng {
         instanceLayout.push<float>(4);
         instanceLayout.push<float>(4); 
         instanceLayout.push<float>(4);
+
     } 
 
     void Renderer::bindMaterial(const Material& material, 
@@ -118,7 +120,8 @@ namespace eng {
             instanceBuffer.updateData(call.transforms.data(), 
                     call.transforms.size() * sizeof(Mat4));
             call.va->configureAttributes(instanceBuffer, instanceLayout, true);
-            drawInstanced(*call.va, *call.material, scene, call.transforms.size());
+            bindMaterial(*call.material, scene);
+            drawInstanced(*call.va, call.transforms.size());
         }
         drawCallList.clear();
     }
@@ -131,9 +134,7 @@ namespace eng {
     }
 
     void Renderer::drawInstanced(const VertexArray& vao, 
-            const Material& material, const Scene& scene,
             unsigned int instancesCount){
-        bindMaterial(material, scene);
         vao.bind();
         glDrawElementsInstanced(GL_TRIANGLES, vao.getIndexBuffer()->getCount(), GL_UNSIGNED_INT, 0, instancesCount);
         vao.unbind();
