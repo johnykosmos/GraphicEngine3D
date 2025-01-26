@@ -58,4 +58,37 @@ namespace eng{
     unsigned int IndexBuffer::getCount() const{
         return count;
     }
+    
+    UniformBuffer::UniformBuffer() {
+        glGenBuffers(1, &id);
+    }
+
+    UniformBuffer::UniformBuffer(const void* data, 
+            unsigned int size) : UniformBuffer() {
+        updateData(data, size); 
+    }
+
+    void UniformBuffer::bindToPoint(unsigned int bindingPoint) const {
+        glBindBufferBase(GL_UNIFORM_BUFFER, bindingPoint, id);
+    }
+
+    void UniformBuffer::bind() const {
+        glBindBuffer(GL_UNIFORM_BUFFER, id);
+    }
+
+    void UniformBuffer::unbind() const{
+        glBindBuffer(GL_UNIFORM_BUFFER, 0);
+    }
+
+    void UniformBuffer::updateData(const void* data, unsigned int size) {
+        bind();
+        glBufferData(GL_UNIFORM_BUFFER, size, nullptr, GL_STATIC_DRAW);
+        glBufferSubData(GL_UNIFORM_BUFFER, 0, size, data); 
+    }
+
+    UniformBuffer::~UniformBuffer(){
+        glDeleteBuffers(1, &id);
+    }
+
+
 }
