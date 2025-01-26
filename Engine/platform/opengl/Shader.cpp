@@ -37,8 +37,8 @@ namespace eng {
         vertexSource = ss[VERTEX].str();
         fragmentSource = ss[FRAGMENT].str();
 
-          std::cout << "Vertex Shader:\n" << ss[VERTEX].str() << std::endl;
-    std::cout << "Fragment Shader:\n" << ss[FRAGMENT].str() << std::endl;
+        std::cout << "Vertex Shader:\n" << ss[VERTEX].str() << std::endl;
+        std::cout << "Fragment Shader:\n" << ss[FRAGMENT].str() << std::endl;
 
         return true;
     }
@@ -131,7 +131,6 @@ namespace eng {
         auto location = glGetUniformLocation(id, uniform); 
         glUniform1f(location, value);
     }
-
 
     void Shader::unbind() const {
         glUseProgram(0);

@@ -1,8 +1,8 @@
+#include "Window.hpp"
 #include <glad/glad.h>
 #include "Engine.hpp"
 #include "GLFW/glfw3.h"
 #include "Keys.hpp"
-#include <iostream>
 
 void framebufferSizeCallback(GLFWwindow* window, int width, int height){
         glViewport(0, 0, width, height);
@@ -69,10 +69,10 @@ namespace eng{
         glfwSwapInterval(interval);
     }
     
-    std::pair<int, int> Window::getResolution() {
-        int width, height;
-        glfwGetWindowSize(window, &width, &height);
-        return std::make_pair(width, height);
+    WindowResolution Window::getResolution() {
+        WindowResolution windowRes; 
+        glfwGetWindowSize(window, &windowRes.width, &windowRes.height);
+        return windowRes;
     }
 
     bool Window::shouldWindowClose(){

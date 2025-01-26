@@ -123,4 +123,83 @@ namespace eng{
              */
             unsigned int getCount() const;
     };
-}
+
+    
+    /**
+     * @class UniformBuffer
+     * @brief Represents a Uniform Buffer Object (UBO) in OpenGL.
+     * 
+     * This class provides an abstraction for managing uniform buffers in OpenGL. 
+     * It allows you to create, bind, update, and manage uniform buffer objects, 
+     * which are used to share data between the CPU and shaders.
+     */
+    class UniformBuffer {
+        private:
+            unsigned int id; ///< The OpenGL buffer ID for the uniform buffer.
+
+        public:
+            /**
+             * @brief Constructs a UniformBuffer and generates an OpenGL buffer ID.
+             * 
+             * This constructor initializes the UniformBuffer object and generates
+             * an OpenGL buffer ID for use with UBOs.
+             */
+            UniformBuffer();
+
+            /**
+             * @brief Constructs a UniformBuffer and generates an OpenGL buffer ID with initial data.
+             * 
+             * This constructor initializes the UniformBuffer object, generates an OpenGL
+             * buffer ID, and uploads the provided data to the buffer.
+             * 
+             * @param data Pointer to the uniform data to be uploaded.
+             * @param size Size of the data in bytes.
+             */
+            UniformBuffer(const void* data, unsigned int size);
+
+            /**
+             * @brief Destroys the UniformBuffer and deletes the OpenGL buffer.
+             * 
+             * This destructor cleans up the UniformBuffer object by deleting the
+             * associated OpenGL buffer to free GPU resources.
+             */
+            ~UniformBuffer();
+
+            /**
+             * @brief Binds the uniform buffer to a specific binding point in the shader.
+             * 
+             * This method binds the uniform buffer object to a given binding point, allowing
+             * shaders to access the data stored in the buffer at the specified binding point.
+             * 
+             * @param bindingPoint The binding point to which the buffer should be bound.
+             */
+            void bindToPoint(unsigned int bindingPoint) const;
+
+            /**
+             * @brief Binds the uniform buffer.
+             * 
+             * This method binds the uniform buffer object to make it the active buffer
+             * for subsequent OpenGL operations.
+             */
+            void bind() const;
+
+            /**
+             * @brief Unbinds the uniform buffer.
+             * 
+             * This method unbinds the currently bound uniform buffer object, ensuring that
+             * no buffer is active for subsequent OpenGL operations.
+             */
+            void unbind() const;
+
+            /**
+             * @brief Updates the buffer data.
+             * 
+             * This method updates the contents of the uniform buffer by uploading new
+             * data to the buffer. It replaces the existing data with the provided data.
+             * 
+             * @param data Pointer to the data to be uploaded.
+             * @param size Size of the data in bytes.
+             */
+            void updateData(const void* data, unsigned int size);
+    };
+} // namespace eng

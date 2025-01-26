@@ -1,6 +1,9 @@
+#include "Light.hpp"
+#include "Typedefs.hpp"
 #include "glad/glad.h"
 #include <GL/gl.h>
 #include "Renderer.hpp"
+#include "DataUBO.hpp"
 
 namespace eng {
     
@@ -18,30 +21,11 @@ namespace eng {
         instanceLayout.push<float>(4);
         instanceLayout.push<float>(4); 
         instanceLayout.push<float>(4);
+
     } 
 
-    void Renderer::bindMaterial(const Material& material, 
-            const Scene& scene) {
+    void Renderer::bindMaterial(const Material& material) {
         material.shader->bind();
-        material.shader->setUniformMat4("projection", 
-                scene.getActiveCamera()->getViewProjection());
-
-        auto lights = scene.getLightList();
-        material.shader->setUniform1i("numberOfLights", lights.size());
-        for (int i = 0; i < lights.size(); i++) {
-            material.shader->setUniformVec3(("lights[" + std::to_string(i) + 
-                    "].position").c_str(), lights[i]->position);
-            material.shader->setUniformVec3(("lights[" + std::to_string(i) + 
-                    "].color").c_str(), lights[i]->color);
-            material.shader->setUniform1f(("lights[" + std::to_string(i) + 
-                                "].constant").c_str(), lights[i]->constant);
-            material.shader->setUniform1f(("lights[" + std::to_string(i) + 
-                                "].linear").c_str(), lights[i]->linear);
-            material.shader->setUniform1f(("lights[" + std::to_string(i) + 
-                    "].quadratic").c_str(), lights[i]->quadratic);
-        }
-        material.shader->setUniformVec3("cameraPos",
-                scene.getActiveCamera()->getPosition());
 
         material.shader->setUniformVec3("material.albedo", material.albedo);
         material.shader->setUniformVec3("material.ambient", material.ambient);
@@ -59,17 +43,49 @@ namespace eng {
         }
     }
 
+    void Renderer::uploadCameraUBO(const Mat4& projection,
+            const Vec3& position) {
+        DataUBO::CameraData data = {
+            .projection = projection,
+            .position = position
+        };
+        cameraUBO.bindToPoint(0);
+        cameraUBO.updateData(&data, sizeof(data));
+    }
+
+    void Renderer::uploadLightUBO(const std::vector<PointLight*>& pointLights,
+                        const std::vector<DirectionalLight*>& dirLights) {
+        DataUBO::LightData data;
+        data.numberOfPointLights = pointLights.size();
+        data.numberOfDirectionalLights = dirLights.size();
+
+        for (int i = 0; i < pointLights.size(); i++) {
+            data.pointLights[i] = {
+                .color = pointLights[i]->color,
+                .constant = pointLights[i]->constant,
+                .position = pointLights[i]->position,
+                .linear = pointLights[i]->linear,
+                .quadratic = pointLights[i]->quadratic
+            };
+        }
+
+        for (int i = 0; i < dirLights.size(); i++) {
+            data.directionalLights[i] = {
+                .color = dirLights[i]->color,
+                .direction = dirLights[i]->direction
+            };
+        }
+
+        lightUBO.bindToPoint(1);
+        lightUBO.updateData(&data, sizeof(data));
+    }
+
     void Renderer::clear() const {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
 
     void Renderer::clearToColor(const Vec3& color) const {
          glClearColor(color.x,color.y, color.z, 1.0f);
-    }
-
-    void Renderer::drawEntity(const Entity& entity, const Material& material) {
-        batchCalls(entity.getMesh().getVertexArray(),
-                material, entity.getTransform());        
     }
 
     void Renderer::batchCalls(const VertexArray& va, const Material& material,
@@ -94,26 +110,39 @@ namespace eng {
             drawEntity(*drawable.entity, *drawable.material);
         }
 
+         uploadCameraUBO(
+                scene.getActiveCamera()->getViewProjection(), 
+                scene.getActiveCamera()->getPosition()
+                );
+
+        uploadLightUBO(
+                scene.getLightList<PointLight>(), 
+                scene.getLightList<DirectionalLight>()
+                );
+
         for (auto& call : drawCallList) {
             instanceBuffer.updateData(call.transforms.data(), 
                     call.transforms.size() * sizeof(Mat4));
             call.va->configureAttributes(instanceBuffer, instanceLayout, true);
-            drawInstanced(*call.va, *call.material, scene, call.transforms.size());
+            bindMaterial(*call.material);
+            drawInstanced(*call.va, call.transforms.size());
         }
         drawCallList.clear();
     }
 
-    void Renderer::drawIndexed(const VertexArray& vao, const Material& material){
-        //bindMaterial(material);
+    void Renderer::drawEntity(const Entity& entity, const Material& material) {
+        batchCalls(entity.getMesh().getVertexArray(),
+                material, entity.getTransform());        
+    }
+
+    void Renderer::drawIndexed(const VertexArray& vao){
         vao.bind();
         glDrawElements(GL_TRIANGLES, vao.getIndexBuffer()->getCount(), GL_UNSIGNED_INT, 0);
         vao.unbind();
     }
 
     void Renderer::drawInstanced(const VertexArray& vao, 
-            const Material& material, const Scene& scene,
             unsigned int instancesCount){
-        bindMaterial(material, scene);
         vao.bind();
         glDrawElementsInstanced(GL_TRIANGLES, vao.getIndexBuffer()->getCount(), GL_UNSIGNED_INT, 0, instancesCount);
         vao.unbind();
