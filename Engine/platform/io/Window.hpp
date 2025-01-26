@@ -1,10 +1,19 @@
 #pragma once
 
 #include <GLFW/glfw3.h>
-#include <utility>
 
 
 namespace eng {
+
+    /**
+     * @struct WindowResolution
+     * @brief Window resolution.
+     */
+    struct WindowResolution {
+        int width;
+        int height;
+    };
+
     /**
      * @struct WindowSpec
      * @brief Window specification.
@@ -48,9 +57,9 @@ namespace eng {
 
             /**
              * @brief Gets window resolution
-             * @return Pair of ints representing the resolution
+             * @return Struct of two ints representing the resolution
              */
-            std::pair<int, int> getResolution();
+             WindowResolution getResolution();
 
             /*
              * @brief Checks if window should close.
