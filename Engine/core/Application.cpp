@@ -15,8 +15,8 @@ void DebugCallback(GLenum source, GLenum type, GLuint id, GLenum severity,
 }
 
 namespace eng{
-    Application::Application(){
-        Engine::init(WindowSpec());
+    Application::Application(const WindowSpec& windowspec){
+        Engine::init(windowspec);
     }
 
     void Application::setScene(Scene& scene) {

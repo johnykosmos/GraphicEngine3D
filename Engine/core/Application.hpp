@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Scene.hpp"
+#include "Window.hpp"
 
 namespace eng{
     /**
@@ -16,7 +17,7 @@ namespace eng{
             Scene* currentScene = nullptr;
 
         public:
-            explicit Application();
+            explicit Application(const WindowSpec& windowspec = WindowSpec());
 
             /**
              * @brief Is called on every main loop iteration
