@@ -26,12 +26,12 @@ add_library(
 
 target_include_directories(
     Engine PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/core
-    ${CMAKE_CURRENT_SOURCE_DIR}/graphics
-    ${CMAKE_CURRENT_SOURCE_DIR}/graphics/objects
-    ${CMAKE_CURRENT_SOURCE_DIR}/graphics/objects/shapes
-    ${CMAKE_CURRENT_SOURCE_DIR}/platform/io
-    ${CMAKE_CURRENT_SOURCE_DIR}/platform/opengl
+    ${CMAKE_CURRENT_LIST_DIR}/core
+    ${CMAKE_CURRENT_LIST_DIR}/graphics
+    ${CMAKE_CURRENT_LIST_DIR}/graphics/objects
+    ${CMAKE_CURRENT_LIST_DIR}/graphics/objects/shapes
+    ${CMAKE_CURRENT_LIST_DIR}/platform/io
+    ${CMAKE_CURRENT_LIST_DIR}/platform/opengl
 )
 
 
