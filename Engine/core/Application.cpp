@@ -29,7 +29,7 @@ namespace eng{
         Renderer& renderer = eng.getRenderer();
         
         glEnable(GL_DEBUG_OUTPUT);
-        glDebugMessageCallback(DebugCallback, nullptr);
+        //glDebugMessageCallback(DebugCallback, nullptr);
 
         while(!window.shouldWindowClose()){
             window.pollEvents();
