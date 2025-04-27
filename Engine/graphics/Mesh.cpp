@@ -16,7 +16,7 @@ namespace eng {
             updateData(vertices, vertexCount, indices, indexCount);
         }
 
-    VertexArray& Mesh::getVertexArray() {
+    const VertexArray& Mesh::getVertexArray() const {
         return va;
     }
 

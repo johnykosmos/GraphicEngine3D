@@ -73,7 +73,7 @@ namespace eng {
              * 
              * @return VertexArray& The reference to the vertex array object.
              */
-            VertexArray& getVertexArray();
+            const VertexArray& getVertexArray() const;
 
             /**
              * @brief Updates all the mesh data with the provided vertex and index data.

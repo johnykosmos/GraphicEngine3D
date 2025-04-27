@@ -19,7 +19,7 @@ namespace eng {
              * @brief Retrieves the mesh transformation matrix of the entity.
              * @return Mesh& A reference to the mesh of the entity.
              */
-            virtual Mesh& getMesh() const = 0;
+            virtual const Mesh& getMesh() const = 0;
     };
 
 
