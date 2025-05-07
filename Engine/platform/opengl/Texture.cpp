@@ -17,7 +17,9 @@ namespace eng {
         glGenTextures(1, &id); 
         bind();
 
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        GLenum format = (nrChannels == 4) ? GL_RGBA : GL_RGB;
+
+        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
 
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, spec.horizontalWrap);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, spec.verticalWrap);
