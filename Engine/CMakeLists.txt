@@ -17,6 +17,7 @@ add_library(
     platform/io/Window.cpp
     platform/io/Keys.cpp
     platform/io/Input.cpp
+    platform/io/Event.cpp
     platform/opengl/GLBuffers.cpp
     platform/opengl/VertexLayout.cpp
     platform/opengl/VertexArray.cpp
