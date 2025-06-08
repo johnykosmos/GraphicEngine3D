@@ -1,6 +1,7 @@
 #include <glad/glad.h>
 #include "Window.hpp"
 #include "Engine.hpp"
+#include "Event.hpp"
 #include "GLFW/glfw3.h"
 #include "Keys.hpp"
 #include <iostream>
@@ -18,9 +19,11 @@ void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods
 
     if(action == GLFW_PRESS){
         input.setKeyPressed(mappedKey, true);
-    }
-    else if(action == GLFW_RELEASE)
+        input.pushEvent(eng::Event(eng::EventType::KeyPressedEvent, eng::KeyEvent{mappedKey}));
+    } else if(action == GLFW_RELEASE) {
         input.setKeyPressed(mappedKey, false);
+        input.pushEvent(eng::Event(eng::EventType::KeyReleasedEvent, eng::KeyEvent{mappedKey}));
+    }
 }
 
 namespace eng{

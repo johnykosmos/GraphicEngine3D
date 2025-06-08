@@ -1,6 +1,8 @@
 #pragma once
 
 #include <map>
+#include <queue>
+#include "Event.hpp"
 #include "Keys.hpp"
 
 
@@ -16,6 +18,7 @@ namespace eng {
     class Input{
         private:
             static std::map<Key, bool> keyStates; 
+            static std::queue<Event> eventQueue;
 
         public:
             Input();
@@ -32,5 +35,9 @@ namespace eng {
              * @param value A bool value; true if pressed, false if not.
              */
             void setKeyPressed(Key key, bool value);
+
+            void pushEvent(Event event);
+
+            bool pollEvents(Event& event);
     };
 }
